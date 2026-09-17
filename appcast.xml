@@ -6,6 +6,26 @@
         <description>Update feed for CodeMerge.</description>
         <language>en</language>
         <item>
+            <title>1.0.1</title>
+            <pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Fixed the paywall panel rendering see-through when the trial expires</li>
+                    <li>Menu bar icon now shows a red badge once the trial's expired</li>
+                    <li>Shortcuts and the right-click menu are now correctly gated behind an active license/trial</li>
+                    <li>Custom Layout preview rebuilt: auto-fills the grid, adds a tray for windows that don't fit, and lets you switch split templates right from the preview</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                url="https://github.com/harelyaish/CodeMerge-releases/releases/download/v1.0.1/CodeMerge.zip"
+                sparkle:edSignature="S5eIpbdguD9fAm2sd6P3rM5NKxtMwwk9FpnxNop5YQE/dzom+p5ysUmsSypjwW8znbyRFm/rPWms3iWj3Ef2Bg=="
+                length="2603273"
+                type="application/octet-stream" />
+        </item>
+        <item>
             <title>1.0.0</title>
             <pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate>
             <sparkle:version>1</sparkle:version>
