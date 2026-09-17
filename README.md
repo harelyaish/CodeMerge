@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/macOS-13%2B-black?style=flat-square&logo=apple">
   <img src="https://img.shields.io/badge/license-personal%20use-lightgrey?style=flat-square">
   <img src="https://img.shields.io/github/v/release/harelyaish/CodeMerge?style=flat-square&color=FF6B35">
+  <a href="https://github.com/harelyaish"><img src="https://img.shields.io/badge/follow-%40harelyaish-black?style=flat-square&logo=github"></a>
 </p>
 
 **CodeMerge** is a macOS menu-bar utility that bundles a dozen small daily-use tools into one dropdown, so you stop juggling separate apps (and their separate Dock icons, keyboard shortcuts, and menu bars) for things you do constantly. Everything lives behind a single icon in your menu bar — click it, or use a global keyboard shortcut, and it's there.
