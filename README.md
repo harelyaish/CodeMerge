@@ -22,7 +22,7 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 
 ## Contents
 
-[Screenshots](#screenshots) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates)
+[Screenshots](#screenshots) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
 
 ## Screenshots
 
@@ -141,4 +141,43 @@ CodeMerge checks for updates itself — **Settings → General → Check for Upd
 
 ## Requirements
 
-macOS 13 (Ventura) or later.
+macOS 13 (Ventura) or later, Apple Silicon or Intel.
+
+## FAQ
+
+**Why does macOS say it's from an "unidentified developer"?**
+CodeMerge isn't distributed through the App Store or Apple's notarization service, so any copy that goes through a browser download gets flagged the same way any indie app without an Apple Developer account would be. It isn't a sign anything is wrong with the app — see [If macOS won't open the app](#if-macos-wont-open-the-app) above for the one-time fix, or use the curl install, which skips it entirely.
+
+**Does it work on Apple Silicon and Intel Macs?**
+Yes, one universal build covers both.
+
+**Is my data sent anywhere?**
+No, aside from two plain HTTPS calls with no account or API key involved — see [What talks to the network](#what-talks-to-the-network) above. Everything else (clipboard history, screenshots, notes, timers, settings) stays on your Mac.
+
+**What if I want a refund?**
+Contact Gumroad support from your purchase receipt email — refunds are handled through Gumroad, not this repo.
+
+**Can I use my license on more than one Mac?**
+The license is personal and non-transferable, but nothing technical stops you from using it on your own multiple Macs — it isn't hardware-locked.
+
+## Support
+
+Found a bug or have a question? [Open an issue](https://github.com/harelyaish/CodeMerge/issues) on this repo.
+
+## License
+
+Buying a license key grants you a personal, non-transferable right to install and run the compiled app. It's closed-source and proprietary — the license doesn't grant any right to redistribute, resell, or reverse-engineer it.
+
+## Uninstalling
+
+Drag `CodeMerge.app` from `/Applications` to the Trash, then remove its saved settings:
+
+```bash
+rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
+```
+
+(Installed via Homebrew? `brew uninstall --cask codemerge` does both steps for you.)
+
+## Changelog
+
+See the [Releases page](https://github.com/harelyaish/CodeMerge/releases) for what changed in each version.
