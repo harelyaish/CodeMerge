@@ -20,8 +20,6 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 [![Buy CodeMerge — $5](https://img.shields.io/badge/Buy_CodeMerge-%245_lifetime-FF6B35?style=for-the-badge)](https://harelyaish.gumroad.com/l/codemerge)
 [![Download latest release](https://img.shields.io/badge/Download-latest_release-black?style=for-the-badge&logo=apple)](https://github.com/harelyaish/CodeMerge/releases/latest)
 
-This repo hosts only the compiled app — no source code.
-
 ## Contents
 
 [Screenshots](#screenshots) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates)
