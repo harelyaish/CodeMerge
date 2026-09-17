@@ -7,12 +7,13 @@
 # cleanly with no extra "Open Anyway" step needed.
 set -euo pipefail
 
-VERSION="1.0.0"
-URL="https://github.com/harelyaish/CodeMerge-releases/releases/download/v${VERSION}/CodeMerge.zip"
+# GitHub's "latest" redirect always points at whichever release is newest,
+# so this never needs bumping by hand when a new version ships.
+URL="https://github.com/harelyaish/CodeMerge-releases/releases/latest/download/CodeMerge.zip"
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "$TMP_DIR"' EXIT
 
-echo "Downloading CodeMerge ${VERSION}..."
+echo "Downloading CodeMerge..."
 curl -fsSL -o "$TMP_DIR/CodeMerge.zip" "$URL"
 
 echo "Installing to /Applications..."
