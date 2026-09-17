@@ -1,4 +1,6 @@
-# CodeMerge
+<p align="center">
+  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge-releases/main/banner.png" alt="CodeMerge — the menu-bar utility for macOS" width="100%">
+</p>
 
 A macOS menu-bar utility: quick app launcher, window splitting and custom layouts, screenshots, clipboard history, a file shelf, and more — all from one icon in your menu bar.
 
