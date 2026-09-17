@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/license-personal%20use-lightgrey?style=flat-square">
   <img src="https://img.shields.io/github/v/release/harelyaish/CodeMerge?style=flat-square&color=FF6B35">
   <a href="https://github.com/harelyaish"><img src="https://img.shields.io/badge/follow-%40harelyaish-black?style=flat-square&logo=github"></a>
+  <a href="https://www.paypal.com/paypalme/HarelYaish"><img src="https://img.shields.io/badge/tip-PayPal-00457C?style=flat-square&logo=paypal&logoColor=white"></a>
 </p>
 
 **CodeMerge** is a macOS menu-bar utility that bundles a dozen small daily-use tools into one dropdown, so you stop juggling separate apps (and their separate Dock icons, keyboard shortcuts, and menu bars) for things you do constantly. Everything lives behind a single icon in your menu bar — click it, or use a global keyboard shortcut, and it's there.
@@ -164,6 +165,8 @@ The license is personal and non-transferable, but nothing technical stops you fr
 ## Support
 
 Found a bug or have a question? [Open an issue](https://github.com/harelyaish/CodeMerge/issues) on this repo.
+
+Already bought a license and want to support development further? [Leave a tip via PayPal](https://www.paypal.com/paypalme/HarelYaish) — entirely optional, separate from the $5 purchase.
 
 ## License
 
