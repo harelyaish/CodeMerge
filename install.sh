@@ -9,7 +9,7 @@ set -euo pipefail
 
 # GitHub's "latest" redirect always points at whichever release is newest,
 # so this never needs bumping by hand when a new version ships.
-URL="https://github.com/harelyaish/CodeMerge-releases/releases/latest/download/CodeMerge.zip"
+URL="https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip"
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "$TMP_DIR"' EXIT
 
