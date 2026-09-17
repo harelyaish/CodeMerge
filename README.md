@@ -2,6 +2,17 @@
   <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/banner.png" alt="CodeMerge — the menu-bar utility for macOS" width="100%">
 </p>
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=18&pause=1800&color=FF6B35&center=true&vCenter=true&width=600&lines=One+menu+bar.+A+dozen+tools.;Screenshots%2C+clipboard%2C+timers%2C+weather...;Custom+window+layouts%2C+one+shortcut+away.;%245+once.+No+subscription.+Ever." alt="Typing SVG">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/downloads/harelyaish/CodeMerge/total?style=flat-square&label=downloads&color=FF6B35">
+  <img src="https://img.shields.io/badge/macOS-13%2B-black?style=flat-square&logo=apple">
+  <img src="https://img.shields.io/badge/license-personal%20use-lightgrey?style=flat-square">
+  <img src="https://img.shields.io/github/v/release/harelyaish/CodeMerge?style=flat-square&color=FF6B35">
+</p>
+
 **CodeMerge** is a macOS menu-bar utility that bundles a dozen small daily-use tools into one dropdown, so you stop juggling separate apps (and their separate Dock icons, keyboard shortcuts, and menu bars) for things you do constantly. Everything lives behind a single icon in your menu bar — click it, or use a global keyboard shortcut, and it's there.
 
 Free to try for 30 days, full features. $5 once, for life — no subscription, no recurring charge.
@@ -10,6 +21,10 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 [![Download latest release](https://img.shields.io/badge/Download-latest_release-black?style=for-the-badge&logo=apple)](https://github.com/harelyaish/CodeMerge/releases/latest)
 
 This repo hosts only the compiled app — no source code.
+
+## Contents
+
+[Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates)
 
 ## Install
 
@@ -46,6 +61,10 @@ Either way, this is a one-time step per copy of the app — once you've approved
 ## After installing
 
 CodeMerge lives in your menu bar — click its icon to open the dropdown, or right-click it for quick actions (Lock Screen, Settings, and — once your trial ends — buying a license). You get full access for 30 days; after that, [buy a lifetime license for $5](https://harelyaish.gumroad.com/l/codemerge) and paste the key Gumroad emails you into **Settings → License**.
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:FF6B35&height=3&section=header" width="100%">
+</p>
 
 ## Every feature, explained
 
