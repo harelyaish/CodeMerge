@@ -29,12 +29,10 @@ This repo hosts only the compiled app — no source code.
 ## Screenshots
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/screenshots/dropdown.png" alt="The CodeMerge dropdown, open" width="30%">
-  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/screenshots/settings.png" alt="CodeMerge Settings — General" width="46%">
-  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/screenshots/converter.png" alt="The unit/currency converter" width="30%">
+  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/screenshots/hero.png" alt="The CodeMerge dropdown, open on a real desktop" width="100%">
 </p>
 
-<p align="center"><sub>The dropdown, Settings → General, and the converter — all straight from a real running copy of the app.</sub></p>
+<p align="center"><sub>The dropdown, open — straight from a real running copy of the app.</sub></p>
 
 ## Install
 
