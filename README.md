@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge-releases/main/banner.png" alt="CodeMerge — the menu-bar utility for macOS" width="100%">
+  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/banner.png" alt="CodeMerge — the menu-bar utility for macOS" width="100%">
 </p>
 
 **CodeMerge** is a macOS menu-bar utility that bundles a dozen small daily-use tools into one dropdown, so you stop juggling separate apps (and their separate Dock icons, keyboard shortcuts, and menu bars) for things you do constantly. Everything lives behind a single icon in your menu bar — click it, or use a global keyboard shortcut, and it's there.
@@ -7,7 +7,7 @@
 Free to try for 30 days, full features. $5 once, for life — no subscription, no recurring charge.
 
 [![Buy CodeMerge — $5](https://img.shields.io/badge/Buy_CodeMerge-%245_lifetime-FF6B35?style=for-the-badge)](https://harelyaish.gumroad.com/l/codemerge)
-[![Download latest release](https://img.shields.io/badge/Download-latest_release-black?style=for-the-badge&logo=apple)](https://github.com/harelyaish/CodeMerge-releases/releases/latest)
+[![Download latest release](https://img.shields.io/badge/Download-latest_release-black?style=for-the-badge&logo=apple)](https://github.com/harelyaish/CodeMerge/releases/latest)
 
 This repo hosts only the compiled app — no source code.
 
@@ -28,14 +28,21 @@ This repo hosts only the compiled app — no source code.
 Paste this into Terminal and press Return:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/harelyaish/CodeMerge-releases/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/harelyaish/CodeMerge/main/install.sh | bash
 ```
 
 That downloads the app, installs it to `/Applications`, and opens it — no extra "this app is from an unidentified developer" step needed, since it never goes through a browser download.
 
 ### Prefer not to use Terminal?
 
-[Download the zip directly](https://github.com/harelyaish/CodeMerge-releases/releases/latest/download/CodeMerge.zip), unzip it, drag `CodeMerge.app` to Applications, then **right-click the app → Open** the first time (macOS blocks a plain double-click on an app downloaded this way — right-click → Open bypasses that one-time warning).
+[Download the zip directly](https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip), unzip it, drag `CodeMerge.app` to Applications, then **right-click the app → Open** the first time (macOS blocks a plain double-click on an app downloaded this way — right-click → Open bypasses that one-time warning).
+
+### Prefer Homebrew?
+
+```bash
+brew tap harelyaish/codemerge https://github.com/harelyaish/CodeMerge
+brew install --cask codemerge
+```
 
 ## After installing
 
