@@ -53,36 +53,36 @@ The grid in the middle of the dropdown holds these tools — Settings → Main W
 
 | Icon | Feature | What it does |
 |---|---|---|
-| 📷 | Screenshot (full screen) | Captures the whole screen straight to the clipboard, and keeps a copy in Recent Captures (unless you've turned that off in Settings → Screenshots). |
-| ✂️ | Screenshot (select area) | Same as above, but you drag to select a region first, using macOS's own native selection tool. |
-| ⏏️ | Eject disks | Unmounts every ejectable external volume at once. If any refuse (e.g. a file is still open on them), it tells you which ones and why. |
-| ⌨️ | Clean keyboard | Puts up a full-screen overlay that blocks every keystroke, so you can wipe your keyboard without triggering anything — your trackpad or mouse still work, so you can click to end it (or use the shortcut you assigned it). |
-| ❌ | Quit all apps | Quits every other running app in one click. Never quits CodeMerge itself. |
-| 📋 | Clipboard history | Keeps your last 10 copied items — click any one to copy it again. |
-| 🗂️ | File shelf | A temporary drag-and-drop holding tray for files, images, or videos — drag something in, it stays for 5 minutes or until it hits 100 MB (whichever comes first), and you can preview it (Quick Look) or drag it back out into any other app or folder. |
-| 🌙 | Prevent sleep | Toggles keeping your Mac awake on/off, the same idea as `caffeinate` — the icon fills in solid while it's active. |
-| 🪟 | Window split / Custom layouts | Cycles the frontmost window through split layouts (half-screen, quarters, or a full custom grid you design), or full-screen. In Custom Layout mode you can drag windows between grid cells in a live preview; windows that don't fit the current grid wait in a small overflow tray until you assign them a spot. |
-| 🎵 | Now Playing | Shows what's currently playing in Music or Spotify, with play/pause/skip controls right from the dropdown. |
-| ⏱️ | Timer | Start as many simultaneous countdowns as you want, each with its own label — the nearest one counts down live on the menu-bar icon itself, so you don't need the dropdown open to track it. |
-| 💧 | Color picker | Turns your cursor into an eyedropper — click any pixel on your screen and its hex color code is copied to your clipboard. |
-| ⌘ | Command palette | Search and run commands you've saved yourself — a shell command, an AppleScript, a URL to open, or **Plain Text** to just copy something to your clipboard (handy for canned replies or text you paste often). Add and edit these in Settings → Command Palette. |
-| ⏺ | Screen recording | Starts a screen recording with a small floating pause/stop control that stays on top; finished recordings land in Recent Captures, same as screenshots. |
-| ☁️ | Weather | Shows current conditions — temperature, feels-like, high/low, humidity, wind — for your location, worked out from your IP address (no location permission prompt, no GPS). |
-| 📝 | Quick Note | One scratch note that's still exactly as you left it the next time you open the dropdown — good for something you need to jot down for a minute, not a full notes app. |
-| 🔒 | Lock Screen | Locks your Mac straight to the login screen, one click. |
-| ⇄ | Converter | Converts length, weight, and temperature entirely offline, plus currency using live exchange rates that refresh periodically and are cached so it still works if you're briefly offline. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screenshot-full.png" width="28"> | Screenshot (full screen) | Captures the whole screen straight to the clipboard, and keeps a copy in Recent Captures (unless you've turned that off in Settings → Screenshots). |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screenshot-area.png" width="28"> | Screenshot (select area) | Same as above, but you drag to select a region first, using macOS's own native selection tool. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/eject.png" width="28"> | Eject disks | Unmounts every ejectable external volume at once. If any refuse (e.g. a file is still open on them), it tells you which ones and why. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clean-keyboard.png" width="28"> | Clean keyboard | Puts up a full-screen overlay that blocks every keystroke, so you can wipe your keyboard without triggering anything — your trackpad or mouse still work, so you can click to end it (or use the shortcut you assigned it). |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quit-all.png" width="28"> | Quit all apps | Quits every other running app in one click. Never quits CodeMerge itself. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clipboard.png" width="28"> | Clipboard history | Keeps your last 10 copied items — click any one to copy it again. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/file-shelf.png" width="28"> | File shelf | A temporary drag-and-drop holding tray for files, images, or videos — drag something in, it stays for 5 minutes or until it hits 100 MB (whichever comes first), and you can preview it (Quick Look) or drag it back out into any other app or folder. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/prevent-sleep.png" width="28"> | Prevent sleep | Toggles keeping your Mac awake on/off, the same idea as `caffeinate` — the icon fills in solid while it's active. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/window-split.png" width="28"> | Window split / Custom layouts | Cycles the frontmost window through split layouts (half-screen, quarters, or a full custom grid you design), or full-screen. In Custom Layout mode you can drag windows between grid cells in a live preview; windows that don't fit the current grid wait in a small overflow tray until you assign them a spot. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/now-playing.png" width="28"> | Now Playing | Shows what's currently playing in Music or Spotify, with play/pause/skip controls right from the dropdown. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/timer.png" width="28"> | Timer | Start as many simultaneous countdowns as you want, each with its own label — the nearest one counts down live on the menu-bar icon itself, so you don't need the dropdown open to track it. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/color-picker.png" width="28"> | Color picker | Turns your cursor into an eyedropper — click any pixel on your screen and its hex color code is copied to your clipboard. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/command-palette.png" width="28"> | Command palette | Search and run commands you've saved yourself — a shell command, an AppleScript, a URL to open, or **Plain Text** to just copy something to your clipboard (handy for canned replies or text you paste often). Add and edit these in Settings → Command Palette. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screen-recording.png" width="28"> | Screen recording | Starts a screen recording with a small floating pause/stop control that stays on top; finished recordings land in Recent Captures, same as screenshots. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/weather.png" width="28"> | Weather | Shows current conditions — temperature, feels-like, high/low, humidity, wind — for your location, worked out from your IP address (no location permission prompt, no GPS). |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quick-note.png" width="28"> | Quick Note | One scratch note that's still exactly as you left it the next time you open the dropdown — good for something you need to jot down for a minute, not a full notes app. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/lock-screen.png" width="28"> | Lock Screen | Locks your Mac straight to the login screen, one click. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/converter.png" width="28"> | Converter | Converts length, weight, and temperature entirely offline, plus currency using live exchange rates that refresh periodically and are cached so it still works if you're briefly offline. |
 
 ### The action row (bottom of the dropdown)
 
 | Icon | What it does |
 |---|---|
-| ⚙️ Settings | Opens the Settings window, right where you'd expect it, anchored to the menu-bar icon. |
-| 🙈 Hide desktop icons & Dock | One click covers every icon and widget on your desktop and auto-hides the Dock, so you get a clean screen for a screenshot or screen share — click again (or use the same switch in Settings → General) to bring everything back. |
-| ⏻ Quit CodeMerge | Quits the app itself. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/settings.png" width="28"> Settings | Opens the Settings window, right where you'd expect it, anchored to the menu-bar icon. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/hide-desktop.png" width="28"> Hide desktop icons & Dock | One click covers every icon and widget on your desktop and auto-hides the Dock, so you get a clean screen for a screenshot or screen share — click again (or use the same switch in Settings → General) to bring everything back. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/power.png" width="28"> Quit CodeMerge | Quits the app itself. |
 
 ### Settings, in brief
 
-Open Settings from the ⚙️ icon or by right-clicking the menu-bar icon:
+Open Settings from the <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/settings.png" width="18" valign="middle"> icon or by right-clicking the menu-bar icon:
 
 - **Main Window** — choose exactly which icons/stats show in the dropdown, and drag to reorder them.
 - **Appearance** — pick an accent color/theme for the dropdown, previewed live rather than as a static swatch.
