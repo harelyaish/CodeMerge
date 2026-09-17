@@ -11,18 +11,6 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 
 This repo hosts only the compiled app — no source code.
 
-## What's inside
-
-- **App launcher** — pin your most-used apps to the dropdown for one-click launching, no Dock hunting.
-- **Custom window layouts** — split your screen into a grid (2×, 4×, 8×, or a layout you define) and drop windows into cells by dragging them in a live preview. Windows that don't fit the current grid wait in an overflow tray until you assign them a spot.
-- **Window switching** — cycle between your split layout and full-screen-per-app with one shortcut; switching windows raises and activates the one you land on.
-- **Screenshots & screen recordings** — capture a region or a window without digging through system shortcuts.
-- **Clipboard history** — CodeMerge remembers what you've copied so you can paste something from a few steps back, not just the last thing.
-- **File shelf** — drag files onto the menu bar icon to hold onto them temporarily, then drag them out again wherever you need them — useful for moving files between apps or folders without juggling Finder windows.
-- **System stats at a glance** — CPU, memory, disk, battery, and temperature, always visible from the dropdown.
-- **Quick notes, timers, unit/currency conversion, weather, a command palette, and a one-click Desktop/Dock declutter** — the small utilities you'd otherwise open a separate app for.
-- **Accent themes** — match the dropdown's look to your system theme or pick your own accent color.
-
 ## Install
 
 Paste this into Terminal and press Return:
@@ -31,11 +19,11 @@ Paste this into Terminal and press Return:
 curl -fsSL https://raw.githubusercontent.com/harelyaish/CodeMerge/main/install.sh | bash
 ```
 
-That downloads the app, installs it to `/Applications`, and opens it — no extra "this app is from an unidentified developer" step needed, since it never goes through a browser download.
+That downloads the app, installs it to `/Applications`, and opens it — no extra "this app is from an unidentified developer" step needed, since it never goes through a browser download. **This is the recommended way to install** — it's the only method that skips macOS's blocking dialog entirely.
 
 ### Prefer not to use Terminal?
 
-[Download the zip directly](https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip), unzip it, drag `CodeMerge.app` to Applications, then **right-click the app → Open** the first time (macOS blocks a plain double-click on an app downloaded this way — right-click → Open bypasses that one-time warning).
+[Download the zip directly](https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip), unzip it, and drag `CodeMerge.app` to Applications. Because this went through a browser, macOS marks the file "quarantined" and will refuse to open it the first time — see **[If macOS won't open the app](#if-macos-wont-open-the-app)** below for the exact steps.
 
 ### Prefer Homebrew?
 
@@ -44,9 +32,83 @@ brew tap harelyaish/codemerge https://github.com/harelyaish/CodeMerge
 brew install --cask codemerge
 ```
 
+Homebrew's download is also quarantined by macOS the same way a browser download is, so the first launch needs the same steps below.
+
+## If macOS won't open the app
+
+This only affects the **zip download** and **Homebrew** install methods (the curl command above skips it entirely). It's standard macOS behavior for any app that isn't distributed through the App Store or an Apple-notarized installer — it isn't specific to CodeMerge, and it isn't a sign anything is wrong with the download.
+
+1. Try **right-click (or Control-click) the app → Open**. On some macOS versions this shows a dialog with an **Open** button — click it and you're done, permanently, for this copy of the app.
+2. If that shows a blocking dialog instead (only "Move to Trash" and "Done", no way to open it), go to **System Settings → Privacy & Security**, scroll down to the **Security** section, and look for a line saying *"CodeMerge.app was blocked to protect your Mac"* with an **Open Anyway** button next to it. Click it, authenticate if asked, then try opening the app again — one more confirmation dialog appears, this time with a real **Open** button.
+
+Either way, this is a one-time step per copy of the app — once you've approved it, every future launch (Dock, Spotlight, login items) works normally with no warnings.
+
 ## After installing
 
 CodeMerge lives in your menu bar — click its icon to open the dropdown, or right-click it for quick actions (Lock Screen, Settings, and — once your trial ends — buying a license). You get full access for 30 days; after that, [buy a lifetime license for $5](https://harelyaish.gumroad.com/l/codemerge) and paste the key Gumroad emails you into **Settings → License**.
+
+## Every feature, explained
+
+The grid in the middle of the dropdown holds these tools — Settings → Main Window controls which ones show and in what order:
+
+| Icon | Feature | What it does |
+|---|---|---|
+| 📷 | Screenshot (full screen) | Captures the whole screen straight to the clipboard, and keeps a copy in Recent Captures (unless you've turned that off in Settings → Screenshots). |
+| ✂️ | Screenshot (select area) | Same as above, but you drag to select a region first, using macOS's own native selection tool. |
+| ⏏️ | Eject disks | Unmounts every ejectable external volume at once. If any refuse (e.g. a file is still open on them), it tells you which ones and why. |
+| ⌨️ | Clean keyboard | Puts up a full-screen overlay that blocks every keystroke, so you can wipe your keyboard without triggering anything — your trackpad or mouse still work, so you can click to end it (or use the shortcut you assigned it). |
+| ❌ | Quit all apps | Quits every other running app in one click. Never quits CodeMerge itself. |
+| 📋 | Clipboard history | Keeps your last 10 copied items — click any one to copy it again. |
+| 🗂️ | File shelf | A temporary drag-and-drop holding tray for files, images, or videos — drag something in, it stays for 5 minutes or until it hits 100 MB (whichever comes first), and you can preview it (Quick Look) or drag it back out into any other app or folder. |
+| 🌙 | Prevent sleep | Toggles keeping your Mac awake on/off, the same idea as `caffeinate` — the icon fills in solid while it's active. |
+| 🪟 | Window split / Custom layouts | Cycles the frontmost window through split layouts (half-screen, quarters, or a full custom grid you design), or full-screen. In Custom Layout mode you can drag windows between grid cells in a live preview; windows that don't fit the current grid wait in a small overflow tray until you assign them a spot. |
+| 🎵 | Now Playing | Shows what's currently playing in Music or Spotify, with play/pause/skip controls right from the dropdown. |
+| ⏱️ | Timer | Start as many simultaneous countdowns as you want, each with its own label — the nearest one counts down live on the menu-bar icon itself, so you don't need the dropdown open to track it. |
+| 💧 | Color picker | Turns your cursor into an eyedropper — click any pixel on your screen and its hex color code is copied to your clipboard. |
+| ⌘ | Command palette | Search and run commands you've saved yourself — a shell command, an AppleScript, a URL to open, or **Plain Text** to just copy something to your clipboard (handy for canned replies or text you paste often). Add and edit these in Settings → Command Palette. |
+| ⏺ | Screen recording | Starts a screen recording with a small floating pause/stop control that stays on top; finished recordings land in Recent Captures, same as screenshots. |
+| ☁️ | Weather | Shows current conditions — temperature, feels-like, high/low, humidity, wind — for your location, worked out from your IP address (no location permission prompt, no GPS). |
+| 📝 | Quick Note | One scratch note that's still exactly as you left it the next time you open the dropdown — good for something you need to jot down for a minute, not a full notes app. |
+| 🔒 | Lock Screen | Locks your Mac straight to the login screen, one click. |
+| ⇄ | Converter | Converts length, weight, and temperature entirely offline, plus currency using live exchange rates that refresh periodically and are cached so it still works if you're briefly offline. |
+
+### The action row (bottom of the dropdown)
+
+| Icon | What it does |
+|---|---|
+| ⚙️ Settings | Opens the Settings window, right where you'd expect it, anchored to the menu-bar icon. |
+| 🙈 Hide desktop icons & Dock | One click covers every icon and widget on your desktop and auto-hides the Dock, so you get a clean screen for a screenshot or screen share — click again (or use the same switch in Settings → General) to bring everything back. |
+| ⏻ Quit CodeMerge | Quits the app itself. |
+
+### Settings, in brief
+
+Open Settings from the ⚙️ icon or by right-clicking the menu-bar icon:
+
+- **Main Window** — choose exactly which icons/stats show in the dropdown, and drag to reorder them.
+- **Appearance** — pick an accent color/theme for the dropdown, previewed live rather than as a static swatch.
+- **Keyboard Shortcuts** — assign a system-wide keyboard shortcut to almost any feature (opening the dropdown, screenshots, window split, lock screen, and more), so you never need to click the menu bar at all for the things you use most.
+- **Command Palette** — add, edit, and reorder your own saved commands (shell/AppleScript/URL/plain-text).
+- **License** — see your trial status, or enter the license key Gumroad emails you after purchase.
+- **General** — launch-at-login, the desktop/Dock declutter toggle, and update checking.
+
+CodeMerge also launches automatically at login (if you leave that on) and has no Dock icon — it behaves purely as a background menu-bar utility.
+
+### Permissions it may ask you for
+
+Nothing is requested up front. Each permission below is only asked for the first time you actually use the one feature that needs it:
+
+| Feature | Permission | Where to check/change it |
+|---|---|---|
+| Screenshots, screen recording | Screen Recording | System Settings → Privacy & Security → Screen & System Audio Recording |
+| Clean Keyboard, global keyboard shortcuts, Lock Screen | Accessibility | System Settings → Privacy & Security → Accessibility |
+| Now Playing controls | Automation (Music) | Prompted automatically the first time you use it |
+| Window split / Custom Layouts | Accessibility | System Settings → Privacy & Security → Accessibility |
+
+CPU temperature and the desktop/Dock declutter feature need **no permission at all**.
+
+### What talks to the network
+
+Almost nothing in CodeMerge does. Two features make plain HTTPS calls, neither needing any account or API key: **Weather** (`ipapi.co` for your approximate location from your IP, `api.open-meteo.com` for the forecast) and the **currency converter** (`api.frankfurter.app`, which republishes European Central Bank exchange rates). Nothing else talks to the network, and no credentials of yours are ever read or sent anywhere.
 
 ## Updates
 
