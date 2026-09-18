@@ -12,6 +12,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0b0b0d">
 <link rel="icon" href="assets/app-icon.png">
+<link rel="canonical" href="https://harelyaish.github.io/CodeMerge/">
+<link rel="alternate" type="application/atom+xml" title="CodeMerge releases" href="https://github.com/harelyaish/CodeMerge/releases.atom">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CodeMerge","operatingSystem":"macOS 13+","applicationCategory":"UtilitiesApplication","description":"A macOS menu-bar utility: screenshots, clipboard history, file shelf, window layouts, Now Playing, timers, OCR and more.","offers":{"@type":"Offer","price":"5.00","priceCurrency":"USD"},"image":"https://harelyaish.github.io/CodeMerge/assets/og.png","url":"https://harelyaish.github.io/CodeMerge/"}</script>
 <style>
 :root{--bg:#0b0b0d;--bg2:#101013;--card:#141417;--card2:#1a1a1e;--line:#26262b;--text:#f2f2f4;--muted:#9a9aa3;--orange:#f26b35;--orange2:#ff9a5c;--glow:rgba(242,107,53,.28)}
 [data-theme=light]{--bg:#faf8f6;--bg2:#f3efeb;--card:#ffffff;--card2:#f6f2ee;--line:#e6dfd8;--text:#1b1b1f;--muted:#6b6b74;--glow:rgba(242,107,53,.20)}
@@ -292,6 +295,86 @@ footer a:hover{color:var(--text)}
 .confetti{position:fixed;pointer-events:none;z-index:300;width:9px;height:14px;animation:cf 1.4s ease-out forwards}
 @keyframes cf{to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}
 @media(max-width:940px){.play,.tool.on,.price{grid-template-columns:1fr}.bento{grid-template-columns:1fr 1fr}.bc.s2,.bc.s3,.bc.s4{grid-column:span 2}.vids{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}nav .links{display:none}.float{display:none}.dropdown{right:14px}}
+
+/* ===== v3 additions ===== */
+.langbtn{font-size:13px;font-weight:700;width:auto;padding:0 12px}
+[dir=rtl] body{font-family:-apple-system,"Arial Hebrew","Helvetica Neue",Arial,sans-serif}
+[dir=rtl] .eyebrow{letter-spacing:0}[dir=rtl] .head,[dir=rtl] .lead{text-align:right}
+[dir=rtl] .bc,[dir=rtl] .pcard,[dir=rtl] .faq,[dir=rtl] .tool,[dir=rtl] .cmp th,[dir=rtl] .cmp td{text-align:right}
+.dark2{}
+/* story */
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.sticky-stage{position:sticky;top:96px}
+.steps .step{min-height:64vh;display:flex;flex-direction:column;justify-content:center;opacity:.32;transition:opacity .4s}
+.steps .step.on{opacity:1}
+.steps .num{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;font-weight:800;display:grid;place-items:center;margin-bottom:16px}
+.steps h3{font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;margin-bottom:8px}.steps p{color:var(--muted);font-size:17px;max-width:420px}
+.desk.s2{margin:0;max-width:none;aspect-ratio:16/11}
+.dropdown.dk{background:rgba(255,255,255,.62);color:#1d1d1f}
+.dropdown .tmr{margin-top:8px;font:700 22px ui-monospace,Menlo,monospace;text-align:center;opacity:0;height:0;transition:.4s}
+.dropdown .tmr.on{opacity:1;height:30px}
+/* shortcuts */
+.kbd{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.krow{display:flex;gap:8px;justify-content:center;margin-bottom:8px}
+.key{width:52px;height:52px;border-radius:11px;background:var(--card2);border:1px solid var(--line);border-bottom-width:3px;display:grid;place-items:center;font-weight:700;font-size:15px;color:var(--muted);transition:.12s;cursor:pointer;user-select:none}
+.key.mod{width:74px;font-size:13px}.key.on{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;border-color:transparent;transform:translateY(2px)}
+.key.used::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#3fb950;margin:-34px -34px 0 0}
+.key{position:relative}
+.sc-top{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+.sc-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin-top:20px}
+.sc-item{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-size:13px;transition:.25s}
+.sc-item img{width:26px;height:26px;border-radius:7px}.sc-item b{margin-left:auto;font-family:ui-monospace,Menlo,monospace;color:var(--orange)}
+.sc-item.hit{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 14%,var(--bg));transform:scale(1.04)}
+.msg{font-size:14px;color:var(--muted);min-height:22px}.msg.ok{color:#3fb950}.msg.bad{color:#f85149}
+/* quiz */
+.quiz{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.quiz h3{font-size:14px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.qres{display:grid;gap:9px;align-content:start}
+.qres .r{display:flex;gap:12px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:9px 12px;animation:fade .35s}
+.qres .r img{width:38px;height:38px;border-radius:10px}.qres .r span{font-size:13px;color:var(--muted);display:block}
+.qempty{color:var(--muted);border:1.5px dashed var(--line);border-radius:16px;padding:40px 20px;text-align:center}
+/* who */
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.who .wc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;transition:.3s}
+.who .wc:hover{transform:translateY(-6px);border-color:var(--orange)}
+.who .wc .em{font-size:34px}.who h3{margin:10px 0 6px;font-size:18px}.who p{color:var(--muted);font-size:14px;margin-bottom:12px}
+.who .ic{display:flex;gap:6px;flex-wrap:wrap}.who .ic img{width:32px;height:32px;border-radius:8px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal button{border:1px solid var(--line);background:var(--card);padding:0;border-radius:18px;overflow:hidden;cursor:zoom-in;position:relative}
+.gal img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s}
+.gal button:hover img{transform:scale(1.06)}
+.gal .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;text-align:left;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+#lb{position:fixed;inset:0;z-index:250;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:30px}
+#lb.on{display:flex;animation:fade .2s}#lb img,#lb video{max-width:min(1100px,94vw);max-height:78vh;border-radius:14px}
+#lb .lc{color:#ddd;font-size:14px}
+#lb button{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:#ffffff22;color:#fff;font-size:22px;cursor:pointer}
+#lb .prev{left:22px}#lb .next{right:22px}#lb .x{top:22px;right:22px;transform:none}
+/* install */
+.inst{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.code{position:relative;background:#010409;border:1px solid #30363d;border-radius:14px;padding:16px 84px 16px 16px;font:13.5px/1.6 ui-monospace,Menlo,monospace;color:#e6edf3;white-space:pre-wrap;word-break:break-all;margin-top:14px}
+.code button{position:absolute;top:10px;right:10px;border:1px solid #30363d;background:#161b22;color:#e6edf3;border-radius:8px;padding:5px 11px;font-size:12px;cursor:pointer}
+.code button:hover{border-color:var(--orange)}.code button.ok{background:#238636;border-color:#238636}
+.steps2{counter-reset:s;display:grid;gap:12px;margin-top:14px;padding:0}.steps2 li{list-style:none;counter-increment:s;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 52px;position:relative;font-size:14.5px}
+.steps2 li::before{content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:8px;background:var(--orange);color:#fff;font-weight:800;display:grid;place-items:center;font-size:13px}
+/* updates */
+.upd{display:grid;grid-template-columns:1.25fr .75fr;gap:26px;align-items:start}
+.rel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;margin-bottom:14px;position:relative}
+.rel.new::before{content:"LATEST";position:absolute;top:-10px;right:18px;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;padding:3px 10px;border-radius:99px}
+.rel h3{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;font-size:22px}.rel h3 small{font-size:13px;color:var(--muted);font-weight:500}
+.rel ul{margin:12px 0 0;padding-left:20px;color:var(--muted);font-size:14.5px;display:grid;gap:6px}.rel ul b{color:var(--text)}
+.rel h4{margin:14px 0 4px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange)}
+.side{display:grid;gap:14px;position:sticky;top:90px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
+.box h3{font-size:17px;margin-bottom:6px}.box p.s{color:var(--muted);font-size:13.5px;margin-bottom:12px}
+.box label{display:block;font-size:12px;color:var(--muted);margin:10px 0 4px}
+.box input,.box select,.box textarea{width:100%}
+.box textarea{background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:11px;padding:11px 14px;font:inherit;font-size:14.5px;min-height:96px;resize:vertical;outline:none}
+.box textarea:focus{border-color:var(--orange)}
+.vres{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:14px;background:var(--bg);border:1px solid var(--line);min-height:44px}
+.vres.up{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 12%,var(--bg))}.vres.ok{border-color:#3fb950}
+@media(max-width:940px){.story,.quiz,.inst,.upd{grid-template-columns:1fr}.who{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr}.sticky-stage{position:relative;top:0}.steps .step{min-height:32vh}.side{position:static}.key{width:36px;height:40px;font-size:12px}.key.mod{width:52px}}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -300,9 +383,10 @@ footer a:hover{color:var(--text)}
 
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="assets/app-icon.png" alt="">CodeMerge</a>
-  <div class="links"><a href="#features">Features</a><a href="#try">Try it</a><a href="#tools">Mini tools</a><a href="#watch">Watch</a><a href="#price">Price</a><a href="#faq">FAQ</a></div>
+  <div class="links"><a href="#features">Features</a><a href="#try">Try it</a><a href="#tools">Mini tools</a><a href="#updates">Updates</a><a href="#install">Install</a><a href="#faq">FAQ</a></div>
   <div class="navr">
     <button class="iconbtn" id="palBtn" title="Search tools (⌘K)">⌕</button>
+    <button class="iconbtn langbtn" id="langBtn" title="עברית / English">עב</button>
     <button class="iconbtn" id="themeBtn" title="Light / dark site">☾</button>
     <a class="btn primary sm" href="https://harelyaish.gumroad.com/l/codemerge" data-mag>Buy — $5</a>
   </div>
@@ -359,6 +443,25 @@ footer a:hover{color:var(--text)}
   </div>
 </div></section>
 
+
+<section id="story" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">How it feels</div><h2 class="rv">Scroll — watch your Mac get faster.</h2></div>
+  <div class="story">
+    <div class="sticky-stage"><div class="desk s2" id="d2">
+      <div class="mb"><span> Finder &nbsp; File &nbsp; Edit &nbsp; View</span><div class="r"><span>Fri 18 Sep</span><i class="ci" id="d2ci"></i><span>22:46</span></div></div>
+      <div class="win" id="d2w1"></div><div class="win" id="d2w2"></div><div class="win" id="d2w3"></div>
+      <div class="dropdown" id="d2dd"><div class="g" id="d2g" style="margin-bottom:8px"></div><div class="row">CPU <i><u style="--w:8%"></u></i></div><div class="row">RAM <i><u style="--w:62%"></u></i></div><div class="tmr" id="d2t">24:59</div></div>
+      <div class="caption" id="d2cap">One click away</div>
+    </div></div>
+    <div class="steps" id="d2steps">
+      <div class="step on" data-s="0"><div class="num">1</div><h3>One icon. Everything inside.</h3><p>Click the menu-bar icon and 23 tools drop down — no Dock icons, no extra windows.</p></div>
+      <div class="step" data-s="1"><div class="num">2</div><h3>Snap your windows.</h3><p>Halves, quarters or a custom grid. One shortcut cycles the front window through them.</p></div>
+      <div class="step" data-s="2"><div class="num">3</div><h3>Match your Mac.</h3><p>Pick a Light and a Dark theme, then flip between them with the sun/moon button.</p></div>
+      <div class="step" data-s="3"><div class="num">4</div><h3>Keep focus.</h3><p>Start a timer and the countdown lives right in the menu bar while you work.</p></div>
+    </div>
+  </div>
+</div></section>
+
 <section id="try" style="padding-top:20px"><div class="wrap">
   <div class="head"><div class="eyebrow rv">Try it</div><h2 class="rv">The real dropdown — play with it.</h2><p class="lead rv">Click a tool and it opens right in the panel, like the app. Pick your apps, hide tools, set an accent color, change the frost and the wallpaper.</p></div>
   <div class="play rv">
@@ -400,6 +503,27 @@ footer a:hover{color:var(--text)}
     <div class="scr" id="scr"></div></div>
 </div></section>
 
+
+<section id="shortcuts" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Shortcuts</div><h2 class="rv">Give any tool its own shortcut.</h2><p class="lead rv">CodeMerge lets you assign a global keyboard shortcut to almost any tool. Try it: choose a tool, then press the combo you want — or click the keys.</p></div>
+  <div class="kbd rv">
+    <div class="sc-top"><select id="scTool"></select><div class="seg" id="scMods" style="min-width:290px"><button data-m="⌃">⌃ Ctrl</button><button data-m="⌥">⌥ Opt</button><button data-m="⇧">⇧ Shift</button><button data-m="⌘">⌘ Cmd</button></div><button class="btn sm primary" id="scClear">Clear all</button></div>
+    <div id="kbd2"></div>
+    <div class="msg" id="scMsg">Pick a tool, hold your modifiers and press a letter — or click a key.</div>
+    <div class="sc-list" id="scList"></div>
+  </div>
+</div></section>
+
+<section id="quiz" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Build your menu bar</div><h2 class="rv">What do you do all day?</h2><p class="lead rv">Tick what sounds like you — we'll suggest the tools and a theme to start with.</p></div>
+  <div class="quiz rv">
+    <div><h3>I often…</h3><div class="chips2" id="qchips"></div>
+      <h3 style="margin-top:22px">I prefer…</h3><div class="seg" id="qmode"><button data-m="light" class="on">A light Mac</button><button data-m="dark">A dark Mac</button></div>
+      <p style="color:var(--muted);font-size:13px;margin-top:16px">Nothing is sent anywhere — this runs in your browser.</p></div>
+    <div><h3>Your starter menu bar</h3><div class="qres" id="qres"></div></div>
+  </div>
+</div></section>
+
 <section id="watch" style="padding-top:20px"><div class="wrap">
   <div class="head"><div class="eyebrow rv">Watch</div><h2 class="rv">Ten seconds each.</h2></div>
   <div class="vids rv">
@@ -410,6 +534,28 @@ footer a:hover{color:var(--text)}
   <div class="term rv"><img src="assets/terminal-hero.svg" alt="CodeMerge in a terminal" loading="lazy"></div>
 </div></section>
 
+
+<section id="who" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Made for</div><h2 class="rv">Whatever your day looks like.</h2></div>
+  <div class="who">
+    <div class="wc rv"><div class="em">👩‍💻</div><h3>Developers</h3><p>Free a stuck port, keep snippets pinned, tile your editor and terminal.</p><div class="ic"><img src="assets/icons/kill-port.png" alt=""><img src="assets/icons/clipboard.png" alt=""><img src="assets/icons/window-split.png" alt=""><img src="assets/icons/command-palette.png" alt=""></div></div>
+    <div class="wc rv" style="--d:.06s"><div class="em">🎨</div><h3>Designers</h3><p>Grab a color from anywhere, shrink images, snap a screenshot in one click.</p><div class="ic"><img src="assets/icons/color-picker.png" alt=""><img src="assets/icons/image-resizer.png" alt=""><img src="assets/icons/screenshot-area.png" alt=""><img src="assets/icons/file-shelf.png" alt=""></div></div>
+    <div class="wc rv" style="--d:.12s"><div class="em">🎓</div><h3>Students</h3><p>Copy text out of slides, run study timers, keep a scratch note handy.</p><div class="ic"><img src="assets/icons/text-grab.png" alt=""><img src="assets/icons/timer.png" alt=""><img src="assets/icons/quick-note.png" alt=""><img src="assets/icons/converter.png" alt=""></div></div>
+    <div class="wc rv" style="--d:.18s"><div class="em">🏠</div><h3>Remote workers</h3><p>Music in the menu bar, a clean-keyboard mode for calls, one-click lock.</p><div class="ic"><img src="assets/icons/now-playing.png" alt=""><img src="assets/icons/audio-output.png" alt=""><img src="assets/icons/clean-keyboard.png" alt=""><img src="assets/icons/lock-screen.png" alt=""></div></div>
+  </div>
+</div></section>
+
+<section id="gallery" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Gallery</div><h2 class="rv">A closer look.</h2><p class="lead rv">Click any tile to open it full size.</p></div>
+  <div class="gal rv" id="gal">
+    <button data-t="img" data-src="assets/g-promo.png"><img src="assets/g-promo.png" alt="Promo" loading="lazy"><span class="cap">$5 once. No subscription.</span></button>
+    <button data-t="img" data-src="assets/g-themes.png"><img src="assets/g-themes.png" alt="Themes" loading="lazy"><span class="cap">Light. Dark. Frosted glass.</span></button>
+    <button data-t="img" data-src="assets/g-wall.png"><img src="assets/g-wall.png" alt="Icons" loading="lazy"><span class="cap">One menu bar. A dozen tools.</span></button>
+    <button data-t="vid" data-src="assets/codemerge-3-features.mp4"><img src="assets/codemerge-3-features.jpg" alt="Features video" loading="lazy"><span class="cap">▶ Features and price</span></button>
+    <button data-t="vid" data-src="assets/codemerge-1-tagline.mp4"><img src="assets/codemerge-1-tagline.jpg" alt="Tagline video" loading="lazy"><span class="cap">▶ The tagline</span></button>
+    <button data-t="vid" data-src="assets/codemerge-2-intro.mp4"><img src="assets/codemerge-2-intro.jpg" alt="Intro video" loading="lazy"><span class="cap">▶ The intro</span></button>
+  </div>
+</div></section>
 <section style="padding-top:20px"><div class="wrap">
   <div class="head"><div class="eyebrow rv">Replace a folder of apps</div><h2 class="rv">One install instead of seven.</h2></div>
   <table class="cmp rv"><tr><th>You'd normally install</th><th>Job</th><th>In CodeMerge</th></tr>
@@ -435,6 +581,40 @@ footer a:hover{color:var(--text)}
   </div>
 </div></section>
 
+
+<section id="updates" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Updates</div><h2 class="rv">Already have CodeMerge? See what's new.</h2><p class="lead rv">Live from the GitHub releases. Check your version, read the notes, or tell me what to build next.</p></div>
+  <div class="upd">
+    <div id="relList"><div class="rel new"><h3>v1.1.1 <small>latest</small></h3><ul><li><b>Themes:</b> separate Light and Dark groups (6 each), a sun/moon quick switch, frosted glass, the Mirror themes.</li><li><b>Now Playing:</b> live progress bar, and Shuffle All / Favorites / Playlists / Genres in the playing menu.</li><li><b>Spotify:</b> fixed layout flicker; honest Resume feedback.</li></ul></div></div>
+    <div class="side">
+      <div class="box"><h3>Am I up to date?</h3><p class="s">Find your version in Settings → General (or CodeMerge menu).</p><label for="myv">Your version</label><input id="myv" placeholder="e.g. 1.1.0" inputmode="decimal"><div class="vres" id="vres">Type your version to compare.</div>
+        <div class="code" style="margin-top:12px;padding-right:74px">brew upgrade --cask codemerge<button data-copy="brew upgrade --cask codemerge">Copy</button></div>
+        <p class="s" style="margin:10px 0 0">Or: Settings → General → <b>Check for Updates…</b></p>
+        <p class="s" style="margin:8px 0 0"><a href="https://github.com/harelyaish/CodeMerge/releases.atom" style="text-decoration:underline">Subscribe via RSS</a> · <a href="https://github.com/harelyaish/CodeMerge/releases" style="text-decoration:underline">All releases</a></p></div>
+      <div class="box"><h3>💡 Suggest an idea</h3><p class="s">Missing something? Tell me — ideas shape the next release. This opens your email app.</p>
+        <label for="ideaType">Type</label><select id="ideaType"><option>New feature</option><option>Improvement</option><option>Bug report</option><option>New theme / look</option><option>Something else</option></select>
+        <label for="ideaTxt">Your idea</label><textarea id="ideaTxt" placeholder="I'd love a tool that…"></textarea>
+        <label for="ideaVer">Your CodeMerge version (optional)</label><input id="ideaVer" placeholder="1.1.1">
+        <button class="btn primary sm" id="ideaBtn" style="margin-top:14px;width:100%;justify-content:center">Send by email</button>
+        <p class="s" id="ideaMsg" style="margin:10px 0 0"></p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="install" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Get started</div><h2 class="rv">Installed in under a minute.</h2></div>
+  <div class="inst rv">
+    <div class="box"><div class="tabs" id="itabs" style="margin-bottom:0"><button class="tab on" data-i="t">Terminal</button><button class="tab" data-i="b">Homebrew</button><button class="tab" data-i="m">Manual</button></div>
+      <div id="ip-t"><p class="s" style="margin-top:14px">Recommended — skips the "unidentified developer" step.</p><div class="code">curl -fsSL https://raw.githubusercontent.com/harelyaish/CodeMerge/main/install.sh | bash<button data-copy="curl -fsSL https://raw.githubusercontent.com/harelyaish/CodeMerge/main/install.sh | bash">Copy</button></div></div>
+      <div id="ip-b" style="display:none"><p class="s" style="margin-top:14px">Two commands:</p><div class="code">brew tap harelyaish/codemerge https://github.com/harelyaish/CodeMerge
+brew install --cask codemerge<button data-copy="brew tap harelyaish/codemerge https://github.com/harelyaish/CodeMerge && brew install --cask codemerge">Copy</button></div></div>
+      <div id="ip-m" style="display:none"><p class="s" style="margin-top:14px"><a href="https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip" style="text-decoration:underline">Download the zip</a>, unzip, and drag <b>CodeMerge.app</b> to Applications. macOS will block the first launch — see the steps on the right.</p></div>
+    </div>
+    <div class="box"><h3>macOS won't open it?</h3><p class="s">Normal for any indie app outside the App Store. One-time fix:</p>
+      <ol class="steps2"><li>Right-click (or Control-click) the app → <b>Open</b>, then click Open.</li><li>If it only offers "Move to Trash": <b>System Settings → Privacy &amp; Security</b>, scroll to Security, click <b>Open Anyway</b>.</li><li>Approve once — every later launch is normal.</li></ol></div>
+  </div>
+</div></section>
+
 <section id="faq" style="padding-top:20px"><div class="wrap">
   <div class="head" style="text-align:center"><div class="eyebrow rv">FAQ</div><h2 class="rv">Questions, answered.</h2></div>
   <div class="faq rv">
@@ -453,10 +633,11 @@ footer a:hover{color:var(--text)}
   <p class="lead rv" style="margin:0 auto 30px">30 days free. Then $5, once.</p>
   <div class="cta rv"><a class="btn primary" href="https://harelyaish.gumroad.com/l/codemerge" data-mag>Get CodeMerge — $5</a><a class="btn ghost" href="https://github.com/harelyaish/CodeMerge" data-mag>View on GitHub</a></div></div></section>
 
-<footer><div class="wrap"><span>© CodeMerge · macOS menu-bar utility</span><span><a href="https://github.com/harelyaish/CodeMerge">GitHub</a> · <a href="cards.html">Share cards</a> · <a href="https://www.paypal.com/paypalme/HarelYaish">Tip</a></span></div></footer>
+<footer><div class="wrap"><span>© CodeMerge · macOS menu-bar utility</span><span><a href="https://github.com/harelyaish/CodeMerge">GitHub</a> · <a href="cards.html">Share cards</a> · <a href="updates.html">Changelog</a> · <a href="#updates">Suggest an idea</a> · <a href="https://www.paypal.com/paypalme/HarelYaish">Tip</a></span></div></footer>
 
 <div id="sticky"><span>CodeMerge · $5 once</span><a class="btn primary sm" href="https://harelyaish.gumroad.com/l/codemerge">Buy</a></div>
 
+<div id="lb"><button class="x" id="lbx">✕</button><button class="prev" id="lbp">‹</button><button class="next" id="lbn">›</button><div id="lbm"></div><div class="lc" id="lbc"></div></div>
 <div id="pal"><div class="pbox"><input id="pq" placeholder="Search the 23 tools…  (Esc to close)" autocomplete="off"><div class="plist" id="pl"></div></div></div>
 
 <script>
@@ -576,6 +757,82 @@ $("pl").addEventListener("click",e=>{const p=e.target.closest(".pi");if(p&&pl[p.
 function pick(t){po(false);document.getElementById("try").scrollIntoView();setTimeout(()=>{document.querySelectorAll("#grid button").forEach(b=>b.classList.toggle("on",b.dataset.h===t[1]));$("hint").textContent=t[1]+" — "+t[2]},500)}
 addEventListener("keydown",e=>{if((e.metaKey||e.ctrlKey)&&e.key==="k"){e.preventDefault();po(!$("pal").classList.contains("on"))}
  if(!$("pal").classList.contains("on"))return;if(e.key==="Escape")po(false);if(e.key==="ArrowDown"){ps=Math.min(ps+1,pl.length-1);rp($("pq").value);e.preventDefault()}if(e.key==="ArrowUp"){ps=Math.max(ps-1,0);rp($("pq").value);e.preventDefault()}if(e.key==="Enter"&&pl[ps])pick(pl[ps])});
+
+/* ===== v3 JS ===== */
+const CONTACT="harelyaish23@gmail.com";
+/* scroll story */
+(function(){const d=document,g=id=>d.getElementById(id);g("d2g").innerHTML=T.slice(0,18).map(([n],i)=>`<img style="--i:${i}" src="assets/icons/${n}.png" alt="">`).join("");
+const L={free:[[6,12,44,60],[40,20,50,62],[24,40,42,50]],halves:[[1,7,48,90],[51,7,48,90],null],quart:[[1,7,48,44],[51,7,48,44],[26,53,48,44]]};
+function pl(k){["d2w1","d2w2","d2w3"].forEach((id,i)=>{const w=g(id),p=L[k][i];if(!p){w.style.opacity=0;return}w.style.opacity=1;w.style.left=p[0]+"%";w.style.top=p[1]+"%";w.style.width=p[2]+"%";w.style.height=p[3]+"%"})}
+function st(i){const dd=g("d2dd"),cap=g("d2cap");g("d2ci").classList.toggle("on",i!==1);dd.classList.toggle("open",i!==1);dd.classList.toggle("dk",i===2);g("d2t").classList.toggle("on",i===3);
+ if(i===0){pl("free");cap.textContent="One click away"}if(i===1){pl("halves");cap.textContent="Windows snapped to halves"}if(i===2){pl("free");cap.textContent="Light theme ⇄ Dark theme"}if(i===3){pl("free");cap.textContent="Timer counting in the menu bar"}
+ d.querySelectorAll("#d2steps .step").forEach(x=>x.classList.toggle("on",+x.dataset.s===i))}
+pl("free");st(0);
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)st(+e.target.dataset.s)}),{rootMargin:"-45% 0px -45% 0px"});d.querySelectorAll("#d2steps .step").forEach(x=>so.observe(x));
+let tv=1499;setInterval(()=>{tv=tv>0?tv-1:1499;g("d2t").textContent=Math.floor(tv/60)+":"+String(tv%60).padStart(2,"0")},1000)})();
+/* shortcut explorer */
+(function(){const g=id=>document.getElementById(id);const rows=["1234567890","QWERTYUIOP","ASDFGHJKL","ZXCVBNM"];
+g("kbd2").innerHTML=rows.map(r=>`<div class="krow">${[...r].map(k=>`<div class="key" data-k="${k}">${k}</div>`).join("")}</div>`).join("");
+g("scTool").innerHTML=T.map(([n,t])=>`<option value="${n}">${t}</option>`).join("");
+let mods=new Set(),map={};const sym={Control:"⌃",Alt:"⌥",Shift:"⇧",Meta:"⌘"};
+function combo(k){return [...["⌃","⌥","⇧","⌘"].filter(m=>mods.has(m)),k].join("")}
+function draw(){g("scMods").querySelectorAll("button").forEach(b=>b.classList.toggle("on",mods.has(b.dataset.m)));
+ document.querySelectorAll("#kbd2 .key").forEach(k=>k.classList.toggle("used",Object.keys(map).some(c=>c.endsWith(k.dataset.k))));
+ g("scList").innerHTML=Object.entries(map).map(([c,n])=>{const t=T.find(x=>x[0]===n);return `<div class="sc-item" data-c="${c}"><img src="assets/icons/${n}.png" alt=""><span>${t[1]}</span><b>${c}</b></div>`}).join("")}
+function msg(t,c=""){const m=g("scMsg");m.textContent=t;m.className="msg "+c}
+function assign(k){if(!mods.size){msg("Add at least one modifier (⌃ ⌥ ⇧ ⌘) so it doesn't clash with typing.","bad");return}const c=combo(k),tool=g("scTool").value;
+ if(map[c]&&map[c]!==tool){msg(`${c} is already used by ${T.find(x=>x[0]===map[c])[1]}.`,"bad");return}
+ for(const x of Object.keys(map))if(map[x]===tool)delete map[x];map[c]=tool;msg(`${c} → ${T.find(x=>x[0]===tool)[1]}. Press it to try it.`,"ok");draw();
+ const n=g("scTool"),i=n.selectedIndex;n.selectedIndex=(i+1)%n.options.length}
+function fire(c){const el=[...document.querySelectorAll(".sc-item")].find(x=>x.dataset.c===c);if(!el)return false;el.classList.add("hit");setTimeout(()=>el.classList.remove("hit"),700);msg("Opened "+T.find(x=>x[0]===map[c])[1]+" ✓","ok");return true}
+g("scMods").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const m=b.dataset.m;mods.has(m)?mods.delete(m):mods.add(m);draw()});
+g("kbd2").addEventListener("click",e=>{const k=e.target.closest(".key");if(k){k.classList.add("on");setTimeout(()=>k.classList.remove("on"),200);assign(k.dataset.k)}});
+g("scClear").onclick=()=>{map={};mods.clear();draw();msg("Cleared.")};
+addEventListener("keydown",e=>{if(!document.getElementById("shortcuts").matches(":hover")&&!document.getElementById("shortcuts").contains(document.activeElement))return;
+ if(/^(INPUT|TEXTAREA)$/.test(e.target.tagName))return;
+ const k=e.key.length===1?e.key.toUpperCase():null;if(!k||!/[A-Z0-9]/.test(k))return;
+ const m=new Set();if(e.ctrlKey)m.add("⌃");if(e.altKey)m.add("⌥");if(e.shiftKey)m.add("⇧");if(e.metaKey)m.add("⌘");
+ const kk=document.querySelector(`#kbd2 .key[data-k="${k}"]`);if(kk){kk.classList.add("on");setTimeout(()=>kk.classList.remove("on"),200)}
+ const c=[...["⌃","⌥","⇧","⌘"].filter(x=>m.has(x)),k].join("");if(m.size&&map[c]){e.preventDefault();fire(c);return}
+ if(m.size){mods=m;draw();e.preventDefault();assign(k)}});
+draw()})();
+/* quiz */
+(function(){const g=id=>document.getElementById(id);const Q={"take screenshots":["screenshot-area","screenshot-full","text-grab"],"copy & paste a lot":["clipboard","quick-note","command-palette"],"juggle many windows":["window-split","quit-all","prevent-sleep"],"listen to music while I work":["now-playing","audio-output"],"share or move files":["file-shelf","image-resizer","eject"],"need focus timers":["timer","clean-keyboard","lock-screen"],"work with code":["kill-port","command-palette","color-picker"],"convert things":["converter","random-generator","weather"]};
+let pick=new Set(["take screenshots","copy & paste a lot"]),mode="light";
+g("qchips").innerHTML=Object.keys(Q).map(k=>`<button data-k="${k}">${k[0].toUpperCase()+k.slice(1)}</button>`).join("");
+function r(){g("qchips").querySelectorAll("button").forEach(b=>b.classList.toggle("on",pick.has(b.dataset.k)));
+ const sel=[];pick.forEach(k=>Q[k].forEach(t=>{if(!sel.includes(t))sel.push(t)}));
+ const th=mode==="dark"?"Midnight (dark)":"Default (light)";
+ g("qres").innerHTML=sel.length?sel.slice(0,10).map(n=>{const t=T.find(x=>x[0]===n);return `<div class="r"><img src="assets/icons/${n}.png" alt=""><div><b>${t[1]}</b><span>${t[2]}</span></div></div>`}).join("")+`<div class="r"><div style="font-size:26px">🎨</div><div><b>Theme: ${th}</b><span>Pick one Light and one Dark, flip with the sun/moon button.</span></div></div>`:`<div class="qempty">Tick a few things on the left.</div>`}
+g("qchips").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;pick.has(b.dataset.k)?pick.delete(b.dataset.k):pick.add(b.dataset.k);r()});
+g("qmode").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;mode=b.dataset.m;g("qmode").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));r()});r()})();
+/* gallery lightbox */
+(function(){const g=id=>document.getElementById(id);const items=[...document.querySelectorAll("#gal button")];let i=0;
+function show(n){i=(n+items.length)%items.length;const b=items[i],m=g("lbm");m.innerHTML=b.dataset.t==="vid"?`<video src="${b.dataset.src}" controls autoplay loop playsinline style="max-width:min(1100px,94vw);max-height:78vh;border-radius:14px"></video>`:`<img src="${b.dataset.src}" alt="">`;g("lbc").textContent=b.querySelector(".cap").textContent+"  ·  "+(i+1)+" / "+items.length;g("lb").classList.add("on")}
+function close(){g("lb").classList.remove("on");g("lbm").innerHTML=""}
+items.forEach((b,n)=>b.onclick=()=>show(n));g("lbx").onclick=close;g("lbp").onclick=()=>show(i-1);g("lbn").onclick=()=>show(i+1);g("lb").addEventListener("click",e=>{if(e.target.id==="lb")close()});
+addEventListener("keydown",e=>{if(!g("lb").classList.contains("on"))return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(i-1);if(e.key==="ArrowRight")show(i+1)})})();
+/* install tabs + copy */
+document.getElementById("itabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;document.querySelectorAll("#itabs .tab").forEach(x=>x.classList.toggle("on",x===b));["t","b","m"].forEach(k=>document.getElementById("ip-"+k).style.display=k===b.dataset.i?"":"none")});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-copy]");if(!b)return;const t=b.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove()});const o=b.textContent;b.textContent="Copied ✓";b.classList.add("ok");setTimeout(()=>{b.textContent=o;b.classList.remove("ok")},1400)});
+/* updates: releases + version check + idea mail */
+(function(){const g=id=>document.getElementById(id);let latest="1.1.1";
+function md(t){t=(t||"").replace(/</g,"&lt;");const out=[];let ul=false;t.split(/\r?\n/).forEach(l=>{if(/^#{1,4}\s/.test(l)){if(ul){out.push("</ul>");ul=false}out.push("<h4>"+l.replace(/^#+\s/,"")+"</h4>")}else if(/^\s*[-*]\s/.test(l)){if(!ul){out.push("<ul>");ul=true}out.push("<li>"+l.replace(/^\s*[-*]\s/,"").replace(/\*\*(.+?)\*\*/g,"<b>$1</b>")+"</li>")}else if(l.trim()){if(ul){out.push("</ul>");ul=false}out.push("<p style='color:var(--muted);font-size:14.5px;margin-top:8px'>"+l.replace(/\*\*(.+?)\*\*/g,"<b>$1</b>")+"</p>")}});if(ul)out.push("</ul>");return out.join("")}
+fetch("https://api.github.com/repos/harelyaish/CodeMerge/releases").then(r=>r.json()).then(rs=>{if(!Array.isArray(rs)||!rs.length)return;latest=rs[0].tag_name.replace(/^v/,"");
+ g("relList").innerHTML=rs.slice(0,4).map((r,i)=>`<div class="rel ${i===0?"new":""}"><h3>${r.name||r.tag_name} <small>${new Date(r.published_at).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"})}</small></h3>${md(r.body)}</div>`).join("")+`<a class="btn ghost sm" href="updates.html">Full changelog →</a>`}).catch(()=>{});
+const cmp=(a,b)=>{a=a.split(".").map(Number);b=b.split(".").map(Number);for(let i=0;i<3;i++){const d=(a[i]||0)-(b[i]||0);if(d)return d>0?1:-1}return 0};
+g("myv").addEventListener("input",e=>{const v=e.target.value.trim().replace(/^v/i,""),r=g("vres");if(!/^\d+(\.\d+){0,2}$/.test(v)){r.className="vres";r.textContent="Type your version to compare.";return}
+ const c=cmp(v,latest);if(c<0){r.className="vres up";r.innerHTML=`Update available: <b>${latest}</b> (you have ${v}). Run the command below or use Settings → General → Check for Updates.`}else{r.className="vres ok";r.innerHTML=c===0?`You're up to date — <b>${latest}</b> ✓`:`You're ahead of the latest release (${latest}) — a preview build?`}});
+g("ideaBtn").onclick=()=>{const t=g("ideaTxt").value.trim(),m=g("ideaMsg");if(t.length<8){m.textContent="Please write a sentence or two first.";return}
+ const sub=encodeURIComponent("CodeMerge idea: "+g("ideaType").value),v=g("ideaVer").value.trim(),body=encodeURIComponent(t+"\n\n— Type: "+g("ideaType").value+(v?"\n— CodeMerge version: "+v:"")+"\n— Sent from harelyaish.github.io/CodeMerge");
+ m.innerHTML=`Opening your email app… didn't open? Write to <b>${CONTACT}</b>.`;location.href=`mailto:${CONTACT}?subject=${sub}&body=${body}`}})();
+/* Hebrew */
+(function(){const HE={"Features":"תכונות","Try it":"נסו","Mini tools":"כלים","Updates":"עדכונים","Install":"התקנה","FAQ":"שאלות","Buy — $5":"קנו — $5","One menu bar.":"שורת תפריטים אחת.","Screenshots, clipboard history, window layouts, Now Playing, timers, OCR and more — behind a single icon in your Mac's menu bar.":"צילומי מסך, היסטוריית לוח, חלונות חכמים, מוזיקה, טיימרים, OCR ועוד — מאחורי אייקון אחד בשורת התפריטים של ה-Mac.","Get CodeMerge — $5 once":"קבלו את CodeMerge — $5 חד-פעמי","Free 30-day trial":"30 יום ניסיון חינם","How it feels":"איך זה מרגיש","Scroll — watch your Mac get faster.":"גללו — וראו את ה-Mac הופך למהיר יותר.","One icon. Everything inside.":"אייקון אחד. הכול בפנים.","Snap your windows.":"סדרו את החלונות.","Match your Mac.":"התאימו ל-Mac שלכם.","Keep focus.":"שמרו על ריכוז.","Small tools, done properly.":"כלים קטנים, עשויים נכון.","Try it ":"נסו","The real dropdown — play with it.":"התפריט האמיתי — שחקו איתו.","Mini tools ":"כלים","Working demos. Go on, use them.":"הדגמות חיות. קדימה, נסו אותן.","Shortcuts":"קיצורים","Give any tool its own shortcut.":"תנו לכל כלי קיצור משלו.","Build your menu bar":"בנו את שורת התפריטים","What do you do all day?":"מה אתם עושים כל היום?","Made for":"מיועד ל","Whatever your day looks like.":"איך שלא נראה היום שלכם.","Gallery":"גלריה","A closer look.":"מבט מקרוב.","Watch":"צפו","Ten seconds each.":"עשר שניות כל אחד.","Replace a folder of apps":"החליפו תיקייה של אפליקציות","One install instead of seven.":"התקנה אחת במקום שבע.","Price":"מחיר","$5. Once. That's it.":"$5. פעם אחת. זהו.","Buy CodeMerge":"קנו את CodeMerge","Already have CodeMerge? See what's new.":"כבר יש לכם CodeMerge? ראו מה חדש.","Am I up to date?":"האם אני מעודכן?","💡 Suggest an idea":"💡 הציעו רעיון","Send by email":"שלחו במייל","Get started":"מתחילים","Installed in under a minute.":"מותקן בפחות מדקה.","macOS won't open it?":"macOS לא פותח את האפליקציה?","Questions, answered.":"שאלות ותשובות.","Get your menu bar working":"תנו לשורת התפריטים שלכם לעבוד","as hard as you do.":"קשה כמוכם.","30 days free. Then $5, once.":"30 יום חינם. אחר כך $5, פעם אחת.","View on GitHub":"ל-GitHub","Get CodeMerge — $5":"קנו — $5","Does it work on Apple Silicon and Intel?":"האם זה עובד על Apple Silicon ו-Intel?","Is my data sent anywhere?":"האם המידע שלי נשלח לאנשהו?","What if I want a refund?":"מה אם אני רוצה החזר?","How do updates work?":"איך עובדים העדכונים?","Kill port":"סגירת פורט","Text Grab":"העתקת טקסט ממסך","Clipboard history":"היסטוריית לוח","Now Playing":"מוזיקה מתנגנת","Window layouts":"פריסות חלונות","Timers":"טיימרים","Image Resizer":"הקטנת תמונות","12 themes":"12 ערכות נושא","Converter":"ממיר","Random":"אקראי","Timer":"טיימר","Developers":"מפתחים","Designers":"מעצבים","Students":"סטודנטים","Remote workers":"עובדים מרחוק","Light":"בהיר","Dark":"כהה","Appearance":"מראה","Theme":"ערכת נושא","Wallpaper behind":"רקע מאחור","Your idea":"הרעיון שלכם","Your version":"הגרסה שלכם","Full changelog →":"יומן שינויים מלא →","Copy":"העתק"};
+const orig=new Map();let he=false;
+function walk(fn){const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement&&!/SCRIPT|STYLE|TEXTAREA|OPTION/.test(n.parentElement.tagName)&&n.nodeValue.trim()?1:2});let n;while(n=w.nextNode())fn(n)}
+function apply(on){walk(n=>{const t=n.nodeValue.trim();if(on){if(HE[t]){if(!orig.has(n))orig.set(n,n.nodeValue);n.nodeValue=n.nodeValue.replace(t,HE[t])}}else if(orig.has(n)){n.nodeValue=orig.get(n);orig.delete(n)}});document.documentElement.lang=on?"he":"en";document.documentElement.dir=on?"rtl":"ltr";document.getElementById("langBtn").textContent=on?"EN":"עב"}
+document.getElementById("langBtn").onclick=()=>{he=!he;apply(he);try{localStorage.setItem("cml",he?"he":"en")}catch(e){}};
+try{if(localStorage.getItem("cml")==="he"){he=true;setTimeout(()=>apply(true),50)}}catch(e){}})();
 </script>
 </body>
 </html>
