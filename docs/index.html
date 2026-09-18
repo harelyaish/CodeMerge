@@ -297,10 +297,6 @@ footer a:hover{color:var(--text)}
 @media(max-width:940px){.play,.tool.on,.price{grid-template-columns:1fr}.bento{grid-template-columns:1fr 1fr}.bc.s2,.bc.s3,.bc.s4{grid-column:span 2}.vids{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}nav .links{display:none}.float{display:none}.dropdown{right:14px}}
 
 /* ===== v3 additions ===== */
-.langbtn{font-size:13px;font-weight:700;width:auto;padding:0 12px}
-[dir=rtl] body{font-family:-apple-system,"Arial Hebrew","Helvetica Neue",Arial,sans-serif}
-[dir=rtl] .eyebrow{letter-spacing:0}[dir=rtl] .head,[dir=rtl] .lead{text-align:right}
-[dir=rtl] .bc,[dir=rtl] .pcard,[dir=rtl] .faq,[dir=rtl] .tool,[dir=rtl] .cmp th,[dir=rtl] .cmp td{text-align:right}
 .dark2{}
 /* story */
 .story{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
@@ -313,19 +309,6 @@ footer a:hover{color:var(--text)}
 .dropdown.dk{background:rgba(255,255,255,.62);color:#1d1d1f}
 .dropdown .tmr{margin-top:8px;font:700 22px ui-monospace,Menlo,monospace;text-align:center;opacity:0;height:0;transition:.4s}
 .dropdown .tmr.on{opacity:1;height:30px}
-/* shortcuts */
-.kbd{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
-.krow{display:flex;gap:8px;justify-content:center;margin-bottom:8px}
-.key{width:52px;height:52px;border-radius:11px;background:var(--card2);border:1px solid var(--line);border-bottom-width:3px;display:grid;place-items:center;font-weight:700;font-size:15px;color:var(--muted);transition:.12s;cursor:pointer;user-select:none}
-.key.mod{width:74px;font-size:13px}.key.on{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;border-color:transparent;transform:translateY(2px)}
-.key.used::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#3fb950;margin:-34px -34px 0 0}
-.key{position:relative}
-.sc-top{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
-.sc-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin-top:20px}
-.sc-item{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-size:13px;transition:.25s}
-.sc-item img{width:26px;height:26px;border-radius:7px}.sc-item b{margin-left:auto;font-family:ui-monospace,Menlo,monospace;color:var(--orange)}
-.sc-item.hit{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 14%,var(--bg));transform:scale(1.04)}
-.msg{font-size:14px;color:var(--muted);min-height:22px}.msg.ok{color:#3fb950}.msg.bad{color:#f85149}
 /* quiz */
 .quiz{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:34px}
 .quiz h3{font-size:14px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
@@ -373,7 +356,7 @@ footer a:hover{color:var(--text)}
 .box textarea:focus{border-color:var(--orange)}
 .vres{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:14px;background:var(--bg);border:1px solid var(--line);min-height:44px}
 .vres.up{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 12%,var(--bg))}.vres.ok{border-color:#3fb950}
-@media(max-width:940px){.story,.quiz,.inst,.upd{grid-template-columns:1fr}.who{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr}.sticky-stage{position:relative;top:0}.steps .step{min-height:32vh}.side{position:static}.key{width:36px;height:40px;font-size:12px}.key.mod{width:52px}}
+@media(max-width:940px){.story,.quiz,.inst,.upd{grid-template-columns:1fr}.who{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr}.sticky-stage{position:relative;top:0}.steps .step{min-height:32vh}.side{position:static}}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
@@ -386,7 +369,6 @@ footer a:hover{color:var(--text)}
   <div class="links"><a href="#features">Features</a><a href="#try">Try it</a><a href="#tools">Mini tools</a><a href="#updates">Updates</a><a href="#install">Install</a><a href="#faq">FAQ</a></div>
   <div class="navr">
     <button class="iconbtn" id="palBtn" title="Search tools (⌘K)">⌕</button>
-    <button class="iconbtn langbtn" id="langBtn" title="עברית / English">עב</button>
     <button class="iconbtn" id="themeBtn" title="Light / dark site">☾</button>
     <a class="btn primary sm" href="https://harelyaish.gumroad.com/l/codemerge" data-mag>Buy — $5</a>
   </div>
@@ -504,15 +486,7 @@ footer a:hover{color:var(--text)}
 </div></section>
 
 
-<section id="shortcuts" style="padding-top:20px"><div class="wrap">
-  <div class="head"><div class="eyebrow rv">Shortcuts</div><h2 class="rv">Give any tool its own shortcut.</h2><p class="lead rv">CodeMerge lets you assign a global keyboard shortcut to almost any tool. Try it: choose a tool, then press the combo you want — or click the keys.</p></div>
-  <div class="kbd rv">
-    <div class="sc-top"><select id="scTool"></select><div class="seg" id="scMods" style="min-width:290px"><button data-m="⌃">⌃ Ctrl</button><button data-m="⌥">⌥ Opt</button><button data-m="⇧">⇧ Shift</button><button data-m="⌘">⌘ Cmd</button></div><button class="btn sm primary" id="scClear">Clear all</button></div>
-    <div id="kbd2"></div>
-    <div class="msg" id="scMsg">Pick a tool, hold your modifiers and press a letter — or click a key.</div>
-    <div class="sc-list" id="scList"></div>
-  </div>
-</div></section>
+
 
 <section id="quiz" style="padding-top:20px"><div class="wrap">
   <div class="head"><div class="eyebrow rv">Build your menu bar</div><h2 class="rv">What do you do all day?</h2><p class="lead rv">Tick what sounds like you — we'll suggest the tools and a theme to start with.</p></div>
@@ -770,32 +744,6 @@ function st(i){const dd=g("d2dd"),cap=g("d2cap");g("d2ci").classList.toggle("on"
 pl("free");st(0);
 const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)st(+e.target.dataset.s)}),{rootMargin:"-45% 0px -45% 0px"});d.querySelectorAll("#d2steps .step").forEach(x=>so.observe(x));
 let tv=1499;setInterval(()=>{tv=tv>0?tv-1:1499;g("d2t").textContent=Math.floor(tv/60)+":"+String(tv%60).padStart(2,"0")},1000)})();
-/* shortcut explorer */
-(function(){const g=id=>document.getElementById(id);const rows=["1234567890","QWERTYUIOP","ASDFGHJKL","ZXCVBNM"];
-g("kbd2").innerHTML=rows.map(r=>`<div class="krow">${[...r].map(k=>`<div class="key" data-k="${k}">${k}</div>`).join("")}</div>`).join("");
-g("scTool").innerHTML=T.map(([n,t])=>`<option value="${n}">${t}</option>`).join("");
-let mods=new Set(),map={};const sym={Control:"⌃",Alt:"⌥",Shift:"⇧",Meta:"⌘"};
-function combo(k){return [...["⌃","⌥","⇧","⌘"].filter(m=>mods.has(m)),k].join("")}
-function draw(){g("scMods").querySelectorAll("button").forEach(b=>b.classList.toggle("on",mods.has(b.dataset.m)));
- document.querySelectorAll("#kbd2 .key").forEach(k=>k.classList.toggle("used",Object.keys(map).some(c=>c.endsWith(k.dataset.k))));
- g("scList").innerHTML=Object.entries(map).map(([c,n])=>{const t=T.find(x=>x[0]===n);return `<div class="sc-item" data-c="${c}"><img src="assets/icons/${n}.png" alt=""><span>${t[1]}</span><b>${c}</b></div>`}).join("")}
-function msg(t,c=""){const m=g("scMsg");m.textContent=t;m.className="msg "+c}
-function assign(k){if(!mods.size){msg("Add at least one modifier (⌃ ⌥ ⇧ ⌘) so it doesn't clash with typing.","bad");return}const c=combo(k),tool=g("scTool").value;
- if(map[c]&&map[c]!==tool){msg(`${c} is already used by ${T.find(x=>x[0]===map[c])[1]}.`,"bad");return}
- for(const x of Object.keys(map))if(map[x]===tool)delete map[x];map[c]=tool;msg(`${c} → ${T.find(x=>x[0]===tool)[1]}. Press it to try it.`,"ok");draw();
- const n=g("scTool"),i=n.selectedIndex;n.selectedIndex=(i+1)%n.options.length}
-function fire(c){const el=[...document.querySelectorAll(".sc-item")].find(x=>x.dataset.c===c);if(!el)return false;el.classList.add("hit");setTimeout(()=>el.classList.remove("hit"),700);msg("Opened "+T.find(x=>x[0]===map[c])[1]+" ✓","ok");return true}
-g("scMods").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const m=b.dataset.m;mods.has(m)?mods.delete(m):mods.add(m);draw()});
-g("kbd2").addEventListener("click",e=>{const k=e.target.closest(".key");if(k){k.classList.add("on");setTimeout(()=>k.classList.remove("on"),200);assign(k.dataset.k)}});
-g("scClear").onclick=()=>{map={};mods.clear();draw();msg("Cleared.")};
-addEventListener("keydown",e=>{if(!document.getElementById("shortcuts").matches(":hover")&&!document.getElementById("shortcuts").contains(document.activeElement))return;
- if(/^(INPUT|TEXTAREA)$/.test(e.target.tagName))return;
- const k=e.key.length===1?e.key.toUpperCase():null;if(!k||!/[A-Z0-9]/.test(k))return;
- const m=new Set();if(e.ctrlKey)m.add("⌃");if(e.altKey)m.add("⌥");if(e.shiftKey)m.add("⇧");if(e.metaKey)m.add("⌘");
- const kk=document.querySelector(`#kbd2 .key[data-k="${k}"]`);if(kk){kk.classList.add("on");setTimeout(()=>kk.classList.remove("on"),200)}
- const c=[...["⌃","⌥","⇧","⌘"].filter(x=>m.has(x)),k].join("");if(m.size&&map[c]){e.preventDefault();fire(c);return}
- if(m.size){mods=m;draw();e.preventDefault();assign(k)}});
-draw()})();
 /* quiz */
 (function(){const g=id=>document.getElementById(id);const Q={"take screenshots":["screenshot-area","screenshot-full","text-grab"],"copy & paste a lot":["clipboard","quick-note","command-palette"],"juggle many windows":["window-split","quit-all","prevent-sleep"],"listen to music while I work":["now-playing","audio-output"],"share or move files":["file-shelf","image-resizer","eject"],"need focus timers":["timer","clean-keyboard","lock-screen"],"work with code":["kill-port","command-palette","color-picker"],"convert things":["converter","random-generator","weather"]};
 let pick=new Set(["take screenshots","copy & paste a lot"]),mode="light";
@@ -826,13 +774,6 @@ g("myv").addEventListener("input",e=>{const v=e.target.value.trim().replace(/^v/
 g("ideaBtn").onclick=()=>{const t=g("ideaTxt").value.trim(),m=g("ideaMsg");if(t.length<8){m.textContent="Please write a sentence or two first.";return}
  const sub=encodeURIComponent("CodeMerge idea: "+g("ideaType").value),v=g("ideaVer").value.trim(),body=encodeURIComponent(t+"\n\n— Type: "+g("ideaType").value+(v?"\n— CodeMerge version: "+v:"")+"\n— Sent from harelyaish.github.io/CodeMerge");
  m.innerHTML=`Opening your email app… didn't open? Write to <b>${CONTACT}</b>.`;location.href=`mailto:${CONTACT}?subject=${sub}&body=${body}`}})();
-/* Hebrew */
-(function(){const HE={"Features":"תכונות","Try it":"נסו","Mini tools":"כלים","Updates":"עדכונים","Install":"התקנה","FAQ":"שאלות","Buy — $5":"קנו — $5","One menu bar.":"שורת תפריטים אחת.","Screenshots, clipboard history, window layouts, Now Playing, timers, OCR and more — behind a single icon in your Mac's menu bar.":"צילומי מסך, היסטוריית לוח, חלונות חכמים, מוזיקה, טיימרים, OCR ועוד — מאחורי אייקון אחד בשורת התפריטים של ה-Mac.","Get CodeMerge — $5 once":"קבלו את CodeMerge — $5 חד-פעמי","Free 30-day trial":"30 יום ניסיון חינם","How it feels":"איך זה מרגיש","Scroll — watch your Mac get faster.":"גללו — וראו את ה-Mac הופך למהיר יותר.","One icon. Everything inside.":"אייקון אחד. הכול בפנים.","Snap your windows.":"סדרו את החלונות.","Match your Mac.":"התאימו ל-Mac שלכם.","Keep focus.":"שמרו על ריכוז.","Small tools, done properly.":"כלים קטנים, עשויים נכון.","Try it ":"נסו","The real dropdown — play with it.":"התפריט האמיתי — שחקו איתו.","Mini tools ":"כלים","Working demos. Go on, use them.":"הדגמות חיות. קדימה, נסו אותן.","Shortcuts":"קיצורים","Give any tool its own shortcut.":"תנו לכל כלי קיצור משלו.","Build your menu bar":"בנו את שורת התפריטים","What do you do all day?":"מה אתם עושים כל היום?","Made for":"מיועד ל","Whatever your day looks like.":"איך שלא נראה היום שלכם.","Gallery":"גלריה","A closer look.":"מבט מקרוב.","Watch":"צפו","Ten seconds each.":"עשר שניות כל אחד.","Replace a folder of apps":"החליפו תיקייה של אפליקציות","One install instead of seven.":"התקנה אחת במקום שבע.","Price":"מחיר","$5. Once. That's it.":"$5. פעם אחת. זהו.","Buy CodeMerge":"קנו את CodeMerge","Already have CodeMerge? See what's new.":"כבר יש לכם CodeMerge? ראו מה חדש.","Am I up to date?":"האם אני מעודכן?","💡 Suggest an idea":"💡 הציעו רעיון","Send by email":"שלחו במייל","Get started":"מתחילים","Installed in under a minute.":"מותקן בפחות מדקה.","macOS won't open it?":"macOS לא פותח את האפליקציה?","Questions, answered.":"שאלות ותשובות.","Get your menu bar working":"תנו לשורת התפריטים שלכם לעבוד","as hard as you do.":"קשה כמוכם.","30 days free. Then $5, once.":"30 יום חינם. אחר כך $5, פעם אחת.","View on GitHub":"ל-GitHub","Get CodeMerge — $5":"קנו — $5","Does it work on Apple Silicon and Intel?":"האם זה עובד על Apple Silicon ו-Intel?","Is my data sent anywhere?":"האם המידע שלי נשלח לאנשהו?","What if I want a refund?":"מה אם אני רוצה החזר?","How do updates work?":"איך עובדים העדכונים?","Kill port":"סגירת פורט","Text Grab":"העתקת טקסט ממסך","Clipboard history":"היסטוריית לוח","Now Playing":"מוזיקה מתנגנת","Window layouts":"פריסות חלונות","Timers":"טיימרים","Image Resizer":"הקטנת תמונות","12 themes":"12 ערכות נושא","Converter":"ממיר","Random":"אקראי","Timer":"טיימר","Developers":"מפתחים","Designers":"מעצבים","Students":"סטודנטים","Remote workers":"עובדים מרחוק","Light":"בהיר","Dark":"כהה","Appearance":"מראה","Theme":"ערכת נושא","Wallpaper behind":"רקע מאחור","Your idea":"הרעיון שלכם","Your version":"הגרסה שלכם","Full changelog →":"יומן שינויים מלא →","Copy":"העתק"};
-const orig=new Map();let he=false;
-function walk(fn){const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement&&!/SCRIPT|STYLE|TEXTAREA|OPTION/.test(n.parentElement.tagName)&&n.nodeValue.trim()?1:2});let n;while(n=w.nextNode())fn(n)}
-function apply(on){walk(n=>{const t=n.nodeValue.trim();if(on){if(HE[t]){if(!orig.has(n))orig.set(n,n.nodeValue);n.nodeValue=n.nodeValue.replace(t,HE[t])}}else if(orig.has(n)){n.nodeValue=orig.get(n);orig.delete(n)}});document.documentElement.lang=on?"he":"en";document.documentElement.dir=on?"rtl":"ltr";document.getElementById("langBtn").textContent=on?"EN":"עב"}
-document.getElementById("langBtn").onclick=()=>{he=!he;apply(he);try{localStorage.setItem("cml",he?"he":"en")}catch(e){}};
-try{if(localStorage.getItem("cml")==="he"){he=true;setTimeout(()=>apply(true),50)}}catch(e){}})();
 </script>
 </body>
 </html>
