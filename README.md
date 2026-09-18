@@ -24,7 +24,7 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 
 ## Contents
 
-[Gallery](#gallery) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
+[Gallery](#gallery) · [Videos](#videos) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
 
 ## Gallery
 
@@ -38,6 +38,16 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 <p align="center">
   <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-icon-wall.png" alt="One menu bar, a dozen tools" width="100%">
 </p>
+
+## Videos
+
+<p align="center">
+  <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-1-tagline.mp4"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-1-tagline.jpg" alt="One menu bar. A dozen tools." width="32%"></a>
+  <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-2-intro.mp4"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-2-intro.jpg" alt="CodeMerge intro" width="32%"></a>
+  <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-3-features.mp4"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-3-features.jpg" alt="Features and price" width="32%"></a>
+</p>
+
+<p align="center"><sub>Click a thumbnail to play — 1080p, about 10 seconds each.</sub></p>
 
 ## Install
 
