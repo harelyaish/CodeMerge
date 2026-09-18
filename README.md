@@ -41,18 +41,18 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 ## Videos
 
 <p align="center">
-  <video src="https://github.com/harelyaish/CodeMerge/raw/main/videos/codemerge-3-features.mp4" poster="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-3-features.jpg" controls muted playsinline width="100%"></video>
-  <br><sub>Features and price — <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-3-features.mp4">open the video file</a></sub>
+  <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-3-features.mp4"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-3-features.gif" alt="Features and price" width="100%"></a>
+  <br><sub>Features and price — <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-3-features.mp4">watch in full 1080p</a></sub>
 </p>
 
 <p align="center">
-  <video src="https://github.com/harelyaish/CodeMerge/raw/main/videos/codemerge-1-tagline.mp4" poster="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-1-tagline.jpg" controls muted playsinline width="100%"></video>
-  <br><sub>One menu bar. A dozen tools. — <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-1-tagline.mp4">open the video file</a></sub>
+  <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-1-tagline.mp4"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-1-tagline.gif" alt="One menu bar. A dozen tools." width="100%"></a>
+  <br><sub>One menu bar. A dozen tools. — <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-1-tagline.mp4">watch in full 1080p</a></sub>
 </p>
 
 <p align="center">
-  <video src="https://github.com/harelyaish/CodeMerge/raw/main/videos/codemerge-2-intro.mp4" poster="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-2-intro.jpg" controls muted playsinline width="100%"></video>
-  <br><sub>CodeMerge intro — <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-2-intro.mp4">open the video file</a></sub>
+  <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-2-intro.mp4"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-2-intro.gif" alt="CodeMerge intro" width="100%"></a>
+  <br><sub>CodeMerge intro — <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-2-intro.mp4">watch in full 1080p</a></sub>
 </p>
 
 ## Install
