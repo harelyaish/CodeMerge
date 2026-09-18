@@ -32,8 +32,7 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
   <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-promo.png" alt="CodeMerge — $5 once, no subscription" width="100%">
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-features.png" alt="Everything you reach for, in one click" width="49%">
-  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-themes.png" alt="Light and dark themes" width="49%">
+  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-themes.png" alt="Light and dark themes" width="100%">
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-icon-wall.png" alt="One menu bar, a dozen tools" width="100%">
