@@ -190,6 +190,12 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 
 ## Changelog
 
+### 1.1.1
+
+- Themes: separate Light and Dark groups (Default, Midnight, Forest, Sunset, Monochrome, Mirror in each), a sun/moon quick switch in the main window, frosted-glass panels, and controls that follow the theme.
+- Now Playing: real-time progress bar, and Shuffle All / Favorites / Playlists / Genres / Open Music in the playing menu.
+- Spotify: fixed layout flicker and honest Resume feedback.
+
 ### 1.1.0
 
 - New tools: Image Resizer, Random Generator, Audio Output, Text Grab and Kill Process on Port.
