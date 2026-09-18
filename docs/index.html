@@ -1,273 +1,512 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CodeMerge — one menu bar, a dozen tools</title>
-<meta name="description" content="CodeMerge is a macOS menu-bar utility: screenshots, clipboard history, file shelf, window layouts, Now Playing, timers and more. $5 once, no subscription.">
+<meta name="description" content="CodeMerge is a macOS menu-bar utility: screenshots, clipboard history, file shelf, window layouts, Now Playing, timers, OCR and more. $5 once, no subscription.">
+<meta property="og:title" content="CodeMerge — one menu bar, a dozen tools">
+<meta property="og:description" content="Screenshots, clipboard history, window layouts, Now Playing, timers, OCR and more — behind a single icon in your Mac's menu bar. $5 once.">
+<meta property="og:image" content="https://harelyaish.github.io/CodeMerge/assets/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0b0d">
 <link rel="icon" href="assets/app-icon.png">
 <style>
-:root{--bg:#0b0b0d;--card:#141417;--line:#26262b;--text:#f2f2f4;--muted:#9a9aa3;--orange:#f26b35}
+:root{--bg:#0b0b0d;--bg2:#101013;--card:#141417;--card2:#1a1a1e;--line:#26262b;--text:#f2f2f4;--muted:#9a9aa3;--orange:#f26b35;--orange2:#ff9a5c;--glow:rgba(242,107,53,.28)}
+[data-theme=light]{--bg:#faf8f6;--bg2:#f3efeb;--card:#ffffff;--card2:#f6f2ee;--line:#e6dfd8;--text:#1b1b1f;--muted:#6b6b74;--glow:rgba(242,107,53,.20)}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(11,11,13,.7);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+button{font:inherit;color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+::selection{background:var(--orange);color:#fff}
+/* progress + cursor glow */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--orange),var(--orange2));z-index:100}
+#cursor{position:fixed;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,var(--glow),transparent 62%);transition:opacity .3s;opacity:0}
+/* nav */
+nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(16px) saturate(1.4);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .brand img{width:28px;height:28px;border-radius:7px}
 nav .links{display:flex;gap:22px;color:var(--muted);font-size:14px}
-nav .links a:hover{color:var(--text)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line);transition:.15s}
-.btn.primary{background:var(--orange);border-color:var(--orange);color:#fff}
-.btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.btn.ghost:hover{background:#1b1b1f}
+nav .links a{position:relative;padding:4px 0}
+nav .links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--orange);transform:scaleX(0);transition:transform .25s;transform-origin:left}
+nav .links a:hover{color:var(--text)}nav .links a:hover::after{transform:scaleX(1)}
+.navr{display:flex;align-items:center;gap:10px}
+.iconbtn{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--card);cursor:pointer;display:grid;place-items:center;font-size:16px;transition:.2s}
+.iconbtn:hover{border-color:var(--orange);transform:translateY(-1px)}
+kbd{font:600 11px ui-monospace,Menlo,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 6px;color:var(--muted);background:var(--card)}
+.btn{position:relative;display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:13px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--card);cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;will-change:transform}
+.btn.primary{background:linear-gradient(135deg,var(--orange),var(--orange2));border-color:transparent;color:#fff;box-shadow:0 10px 30px -8px rgba(242,107,53,.6)}
+.btn.primary:hover{box-shadow:0 16px 40px -8px rgba(242,107,53,.8)}
+.btn.ghost:hover{border-color:var(--orange)}
+.btn.sm{padding:9px 16px;font-size:14px;border-radius:11px}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
 /* hero */
-.hero{position:relative;overflow:hidden;padding:96px 0 84px;text-align:center}
-.hero::before{content:"";position:absolute;inset:auto -10% -40% -10%;height:80%;background:radial-gradient(ellipse at 50% 100%,rgba(242,107,53,.28),transparent 65%);pointer-events:none}
-.float{position:absolute;inset:0;pointer-events:none}
-.float img{position:absolute;width:58px;height:58px;opacity:.55;transition:transform .25s ease-out}
-.hero .icon{width:96px;height:96px;border-radius:22px;box-shadow:0 20px 60px rgba(242,107,53,.35);margin-bottom:26px;position:relative}
-.hero h1{font-size:clamp(38px,6.2vw,72px);line-height:1.05;letter-spacing:-.03em;font-weight:800;position:relative}
-.hero h1 span{color:var(--orange)}
-.hero p{max-width:620px;margin:20px auto 32px;color:var(--muted);font-size:19px;position:relative}
-.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
-.hero small{display:block;margin-top:16px;color:var(--muted);font-size:13px;position:relative}
-section{padding:84px 0}
-.eyebrow{color:var(--orange);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
-h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
-.lead{color:var(--muted);max-width:620px;font-size:18px}
-/* terminal */
-.term{margin-top:40px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#010409}
-.term img{display:block;width:100%}
-/* playground */
-.play{display:grid;grid-template-columns:1fr 340px;gap:32px;margin-top:40px;align-items:start}
-.stage{position:relative;border-radius:22px;min-height:640px;overflow:hidden;display:flex;justify-content:center;align-items:flex-start;padding:36px 20px;border:1px solid var(--line);transition:background .4s}
+.hero{position:relative;overflow:hidden;padding:88px 0 70px;text-align:center;isolation:isolate}
+.aurora{position:absolute;inset:-20%;z-index:-1;filter:blur(70px);opacity:.75;pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;animation:drift 18s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:46%;height:60%;left:6%;top:10%;background:#f26b35;opacity:.42}
+.aurora i:nth-child(2){width:40%;height:55%;right:4%;top:0;background:#c4475d;opacity:.34;animation-delay:-6s;animation-duration:22s}
+.aurora i:nth-child(3){width:36%;height:50%;left:34%;bottom:-8%;background:#6a4bd6;opacity:.28;animation-delay:-11s}
+[data-theme=light] .aurora{opacity:.4}
+@keyframes drift{to{transform:translate(9%,-8%) scale(1.18) rotate(12deg)}}
+.grain{position:absolute;inset:0;z-index:-1;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none}
+.float{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.float img{position:absolute;width:58px;height:58px;opacity:.5;transition:transform .3s ease-out;animation:bob 6s ease-in-out infinite alternate;animation-delay:var(--bd,0s)}
+@keyframes bob{to{margin-top:14px}}
+.pill{display:flex;width:fit-content;margin-inline:auto;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:color-mix(in srgb,var(--card) 80%,transparent);font-size:13px;color:var(--muted);margin-bottom:22px;backdrop-filter:blur(8px)}
+.pill b{color:var(--text)}.dot{width:7px;height:7px;border-radius:50%;background:#3fb950;box-shadow:0 0 0 0 rgba(63,185,80,.6);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 8px rgba(63,185,80,0)}100%{box-shadow:0 0 0 0 rgba(63,185,80,0)}}
+.hero .icon{display:block;margin-inline:auto;width:92px;height:92px;border-radius:21px;box-shadow:0 20px 60px rgba(242,107,53,.4);margin-bottom:24px;animation:pop 1s cubic-bezier(.2,1.4,.3,1) both}
+@keyframes pop{from{transform:scale(.4) rotate(-12deg);opacity:0}}
+.hero h1{font-size:clamp(40px,6.6vw,80px);line-height:1.04;letter-spacing:-.035em;font-weight:800}
+.hero h1 .o{background:linear-gradient(120deg,var(--orange),var(--orange2) 50%,#ffd0a8);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.type{display:inline-block;min-width:1ch;border-right:3px solid var(--orange);padding-right:4px;animation:caret 1s steps(2) infinite}
+@keyframes caret{50%{border-color:transparent}}
+.hero p.lead{max-width:640px;margin:22px auto 32px;color:var(--muted);font-size:19px}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero small{display:block;margin-top:18px;color:var(--muted);font-size:13px}
+/* desktop stage */
+.desk{position:relative;margin:56px auto 0;max-width:940px;border-radius:22px;border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9.6;background:linear-gradient(135deg,#f6a05f,#c4475d 45%,#3a2a6b);box-shadow:0 40px 120px -20px rgba(0,0,0,.55);text-align:left}
+.desk .mb{position:absolute;top:0;left:0;right:0;height:30px;background:rgba(20,20,24,.55);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:12px;color:#fff;z-index:3}
+.desk .mb span{opacity:.92}.desk .mb .r{display:flex;gap:14px;align-items:center}
+.desk .mb .ci{width:16px;height:16px;border-radius:4px;transition:.2s}
+.desk .mb .ci.on{background:#fff2;box-shadow:0 0 0 4px #fff2}
+.desk .win{position:absolute;border-radius:12px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(10px);transition:all .8s cubic-bezier(.3,1.2,.4,1)}
+.desk .win::before{content:"";position:absolute;left:10px;top:9px;width:9px;height:9px;border-radius:50%;background:#ff5f56;box-shadow:14px 0 #ffbd2e,28px 0 #27c93f}
+.dropdown{position:absolute;top:36px;right:96px;width:230px;padding:11px;border-radius:20px;background:rgba(30,30,34,.55);backdrop-filter:blur(24px) saturate(1.6);border:1px solid rgba(255,255,255,.16);color:#f0f0f2;z-index:2;transform-origin:88% 0;transform:scale(.2);opacity:0;transition:transform .5s cubic-bezier(.2,1.3,.4,1),opacity .3s}
+.dropdown.open{transform:none;opacity:1}
+.dropdown .g{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.dropdown .g img{width:100%;border-radius:8px;opacity:0;transform:scale(.6);transition:.35s cubic-bezier(.2,1.6,.4,1);transition-delay:calc(var(--i)*22ms)}
+.dropdown.open .g img{opacity:1;transform:none}
+.dropdown .row{display:flex;align-items:center;gap:8px;font-size:11px;margin:0 0 7px}
+.dropdown .row i{flex:1;height:5px;border-radius:3px;background:#fff2;overflow:hidden}
+.dropdown .row u{display:block;height:100%;background:var(--orange);width:0;transition:width 1.2s .4s}
+.dropdown.open .row u{width:var(--w)}
+.desk .caption{position:absolute;left:18px;bottom:16px;z-index:3;background:rgba(0,0,0,.45);backdrop-filter:blur(10px);color:#fff;font-size:13px;padding:8px 14px;border-radius:10px;transition:.3s}
+/* marquee */
+.marq{overflow:hidden;padding:26px 0;border-block:1px solid var(--line);background:var(--bg2);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marq .track{display:flex;gap:14px;width:max-content;animation:mq 40s linear infinite}
+.marq .track.rev{animation-direction:reverse;margin-top:14px;animation-duration:52s}
+.marq:hover .track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.chip{display:flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;border-radius:14px;background:var(--card);border:1px solid var(--line);white-space:nowrap;font-size:14px;font-weight:600}
+.chip img{width:34px;height:34px;border-radius:9px}
+/* sections */
+section{position:relative;padding:96px 0}
+.eyebrow{color:var(--orange);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(30px,4.4vw,52px);letter-spacing:-.03em;line-height:1.08;margin-bottom:16px;font-weight:800}
+.lead{color:var(--muted);max-width:640px;font-size:18px}
+.head{margin-bottom:44px}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.stats div{background:var(--card);padding:34px 20px;text-align:center}
+.stats b{display:block;font-size:clamp(34px,5vw,58px);letter-spacing:-.04em;font-weight:800;background:linear-gradient(135deg,var(--text),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats div>span{color:var(--muted);font-size:14px}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.bc{position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;overflow:hidden;transition:border-color .3s,transform .3s;transform-style:preserve-3d;--mx:50%;--my:50%}
+.bc::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx) var(--my),var(--glow),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.bc:hover{border-color:color-mix(in srgb,var(--orange) 55%,var(--line))}.bc:hover::before{opacity:1}
+.bc.s2{grid-column:span 2}.bc.s3{grid-column:span 3}.bc.s4{grid-column:span 4}
+.bc h3{font-size:19px;margin:16px 0 6px;letter-spacing:-.01em}.bc p{color:var(--muted);font-size:14.5px}
+.demo{height:132px;border-radius:16px;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;position:relative;font:13px ui-monospace,Menlo,monospace}
+.demo.tall{height:190px}
+.o{color:var(--orange)}
+.caret2{display:inline-block;width:7px;height:15px;background:var(--orange);vertical-align:-2px;animation:caret 1s steps(2) infinite}
+.kill{color:#3fb950;opacity:0;animation:kl 6s infinite}@keyframes kl{0%,55%{opacity:0}62%,90%{opacity:1}100%{opacity:0}}
+.ocr{position:relative;width:78%;font-family:-apple-system,sans-serif;font-size:14px;color:var(--text)}
+.ocr .frame{position:absolute;inset:-8px;border:2px solid var(--orange);border-radius:8px;animation:fr 5s infinite;opacity:0}
+@keyframes fr{0%,15%{opacity:0;transform:scale(1.15)}30%,70%{opacity:1;transform:scale(1)}100%{opacity:0}}
+.ocr .toast{position:absolute;right:-6px;bottom:-42px;background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:4px 9px;font-size:11px;animation:ts 5s infinite;opacity:0}
+@keyframes ts{0%,50%{opacity:0;transform:translateY(6px)}65%,90%{opacity:1;transform:none}100%{opacity:0}}
+.clip{width:80%;display:grid;gap:6px}.clip div{background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;animation:cl 6s infinite;opacity:0}
+.clip div:nth-child(2){animation-delay:.6s}.clip div:nth-child(3){animation-delay:1.2s}
+@keyframes cl{0%{opacity:0;transform:translateY(-10px)}12%,88%{opacity:1;transform:none}100%{opacity:0}}
+@property --v{syntax:"<percentage>";inherits:false;initial-value:0%}
+.ring2{width:78px;height:78px;border-radius:50%;background:conic-gradient(var(--orange) var(--v,0%),var(--line) 0);display:grid;place-items:center;animation:tm 8s linear infinite}
+.ring2 i{width:64px;height:64px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-style:normal;font-size:16px}
+@keyframes tm{from{--v:100%}to{--v:0%}}
+.np{width:82%;display:grid;gap:8px;font-family:-apple-system,sans-serif}
+.np .t{display:flex;gap:10px;align-items:center}.np .t>i{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,#f26b35,#8a3aa8);animation:spin 8s linear infinite}
+@keyframes spin{50%{filter:hue-rotate(60deg)}}
+.np .pb{height:5px;border-radius:3px;background:var(--line);overflow:hidden}.np .pb u{display:block;height:100%;width:0;background:var(--orange);animation:pb 8s linear infinite}
+@keyframes pb{to{width:100%}}
+.eq{display:flex;gap:3px;align-items:flex-end;height:22px}.eq i{width:4px;background:var(--orange);border-radius:2px;animation:eq 1s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}.eq i:nth-child(4){animation-delay:.1s}
+@keyframes eq{from{height:4px}to{height:22px}}
+.rs{display:flex;align-items:center;gap:14px;font-family:-apple-system,sans-serif}
+.rs .img{width:62px;height:62px;border-radius:10px;background:linear-gradient(135deg,#5b8cff,#f26b35);animation:shr 4s ease-in-out infinite}
+@keyframes shr{50%{transform:scale(.86);filter:saturate(.7)}}
+.rs b{color:#3fb950;animation:sz 4s infinite}@keyframes sz{0%,30%{opacity:.25}50%,100%{opacity:1}}
+.wgrid{display:grid;grid-template:1fr 1fr/1fr 1fr;gap:6px;width:78%;height:78%}
+.wgrid i{border-radius:8px;background:var(--card2);border:1px solid var(--line);animation:wg 6s infinite}
+.wgrid i:nth-child(1){animation-delay:0s}.wgrid i:nth-child(2){animation-delay:.5s}.wgrid i:nth-child(3){animation-delay:1s}.wgrid i:nth-child(4){animation-delay:1.5s}
+@keyframes wg{0%,10%{background:var(--card2)}25%,60%{background:color-mix(in srgb,var(--orange) 40%,var(--card2));border-color:var(--orange)}80%,100%{background:var(--card2)}}
+.swatches{display:flex;gap:8px}.swatches i{width:34px;height:34px;border-radius:50%;animation:sw 5s ease-in-out infinite;animation-delay:calc(var(--k)*.25s)}
+@keyframes sw{50%{transform:translateY(-10px) scale(1.12)}}
+/* try it */
+.play{display:grid;grid-template-columns:1fr 340px;gap:30px;align-items:start}
+.stage{position:relative;border-radius:24px;min-height:660px;overflow:hidden;display:flex;justify-content:center;align-items:flex-start;padding:36px 20px;border:1px solid var(--line);transition:background .5s}
 .wp0{background:linear-gradient(135deg,#f6a05f,#c4475d 45%,#3a2a6b)}
 .wp1{background:linear-gradient(160deg,#0f2027,#2c5364 55%,#7fb2c8)}
 .wp2{background:radial-gradient(circle at 25% 20%,#ffd6a5,transparent 45%),radial-gradient(circle at 80% 70%,#a0c4ff,transparent 45%),#fdfcfb}
-.panel{position:relative;width:300px;padding:14px;border-radius:24px;color:var(--fg);transition:background .3s,color .3s,box-shadow .3s;
- background:var(--panel);backdrop-filter:blur(var(--blur)) saturate(1.5);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.5);
- border:1px solid var(--rim);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.panel{position:relative;width:300px;padding:14px;border-radius:24px;color:var(--fg);transition:background .35s,color .35s;background:var(--panel);backdrop-filter:blur(var(--blur)) saturate(1.5);-webkit-backdrop-filter:blur(var(--blur)) saturate(1.5);border:1px solid var(--rim);box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .panel.mirror::after{content:"";position:absolute;inset:0;border-radius:24px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.32),rgba(255,255,255,.04) 45%,rgba(255,255,255,.16))}
-.apps{display:flex;justify-content:space-between;padding:4px 6px 12px}
-.apps img{width:40px;height:40px;border-radius:10px}
+.apps{display:flex;justify-content:space-between;padding:4px 6px 12px}.apps img{width:40px;height:40px;border-radius:10px}
 .sep{height:1px;background:var(--fg);opacity:.12;margin:4px 2px 10px}
 .stat{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:12px}
 .ring{width:30px;height:30px;border-radius:50%;flex:none;background:conic-gradient(var(--accent) calc(var(--p)*1%),color-mix(in srgb,var(--fg) 14%,transparent) 0);display:grid;place-items:center}
 .ring i{width:22px;height:22px;border-radius:50%;background:var(--panel-solid)}
 .stat .r{flex:1}.stat b{font-weight:600}.stat .top{display:flex;justify-content:space-between;opacity:.85}
-.bar{height:6px;border-radius:4px;background:color-mix(in srgb,var(--fg) 14%,transparent);margin-top:4px;overflow:hidden}
-.bar u{display:block;height:100%;background:var(--accent);border-radius:4px;transition:width .6s}
+.pbar{height:6px;border-radius:4px;background:color-mix(in srgb,var(--fg) 14%,transparent);margin-top:4px;overflow:hidden}
+.pbar u{display:block;height:100%;background:var(--accent);border-radius:4px;transition:width .6s}
 .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:12px 0}
-.grid button{border:0;background:none;padding:0;cursor:pointer;border-radius:11px;transition:transform .12s}
-.grid button:hover{transform:translateY(-2px) scale(1.06)}
-.grid button.on{box-shadow:0 0 0 2px var(--accent)}
+.grid button{border:0;background:none;padding:0;cursor:pointer;border-radius:11px;transition:transform .15s}
+.grid button:hover{transform:translateY(-3px) scale(1.08)}.grid button.on{box-shadow:0 0 0 2px var(--accent)}
 .grid img{display:block;width:100%;height:auto;border-radius:10px}
 .acts{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
 .acts button{width:36px;height:32px;border:0;border-radius:9px;background:color-mix(in srgb,var(--fg) 8%,transparent);color:var(--fg);cursor:pointer;font-size:16px;display:grid;place-items:center}
-.acts button:hover{background:color-mix(in srgb,var(--accent) 22%,transparent)}
-.acts .mid{display:flex;gap:6px}
-.hint{text-align:center;font-size:11.5px;opacity:.7;margin-top:10px;min-height:16px}
-.ctrl{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-.ctrl h3{font-size:14px;margin:0 0 10px;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.acts button:hover{background:color-mix(in srgb,var(--accent) 22%,transparent)}.acts .mid{display:flex;gap:6px}
+.hint{text-align:center;font-size:11.5px;opacity:.75;margin-top:10px;min-height:16px}
+.ctrl{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+.ctrl h3{font-size:12.5px;margin:0 0 10px;color:var(--muted);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .ctrl .row{margin-bottom:20px}
 .sw{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
 .sw button{border:0;background:none;cursor:pointer;text-align:center;color:var(--muted);font-size:9.5px;padding:0;min-width:0;overflow:hidden;text-overflow:ellipsis}
-.sw button i{display:block;width:30px;height:30px;border-radius:50%;margin:0 auto 5px;box-shadow:0 0 0 1px #ffffff22}
-.sw button.on{color:var(--text)}.sw button.on i{box-shadow:0 0 0 2px var(--text)}
-.seg{display:flex;background:#0d0d10;border:1px solid var(--line);border-radius:10px;padding:3px;gap:3px}
-.seg button{flex:1;border:0;background:none;color:var(--muted);padding:7px;border-radius:8px;cursor:pointer;font:inherit;font-size:13px}
-.seg button.on{background:#25252b;color:var(--text)}
-.wps{display:flex;gap:8px}.wps button{flex:1;height:38px;border-radius:9px;border:1px solid var(--line);cursor:pointer}
-.wps button.on{outline:2px solid var(--text)}
-/* explainers */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;min-height:250px;display:flex;flex-direction:column}
-.card h3{font-size:18px;margin:14px 0 4px}.card p{color:var(--muted);font-size:14px}
-.demo{height:112px;border-radius:14px;background:#0c0c0f;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;position:relative;font-family:ui-monospace,Menlo,monospace;font-size:13px}
-.dtype span{color:var(--orange)}
-.caret{display:inline-block;width:7px;height:15px;background:var(--orange);vertical-align:-2px;animation:bl 1s steps(2) infinite}
-@keyframes bl{50%{opacity:0}}
-.kill{color:#9be18b;opacity:0;animation:kl 6s infinite}
-@keyframes kl{0%,55%{opacity:0}62%,90%{opacity:1}100%{opacity:0}}
-.ocr{position:relative;width:78%;font-family:-apple-system,sans-serif;font-size:14px;color:#ddd}
-.ocr .frame{position:absolute;inset:-8px;border:2px solid var(--orange);border-radius:8px;animation:fr 5s infinite;opacity:0}
-@keyframes fr{0%,15%{opacity:0;transform:scale(1.15)}30%,70%{opacity:1;transform:scale(1)}100%{opacity:0}}
-.ocr .toast{position:absolute;right:-6px;bottom:-40px;background:#1f1f24;border:1px solid var(--line);border-radius:8px;padding:4px 9px;font-size:11px;animation:ts 5s infinite;opacity:0}
-@keyframes ts{0%,50%{opacity:0;transform:translateY(6px)}65%,90%{opacity:1;transform:none}100%{opacity:0}}
-.clip{width:80%;display:grid;gap:6px}.clip div{background:#1a1a1f;border:1px solid var(--line);border-radius:8px;padding:6px 10px;animation:cl 6s infinite;opacity:0;transform:translateY(-8px)}
-.clip div:nth-child(2){animation-delay:.6s}.clip div:nth-child(3){animation-delay:1.2s}
-@keyframes cl{0%{opacity:0;transform:translateY(-8px)}12%,88%{opacity:1;transform:none}100%{opacity:0}}
-.ring2{width:74px;height:74px;border-radius:50%;background:conic-gradient(var(--orange) var(--v,0%),#26262b 0);display:grid;place-items:center;animation:tm 8s linear infinite}
-.ring2 i{width:60px;height:60px;border-radius:50%;background:#0c0c0f;display:grid;place-items:center;font-style:normal;font-size:16px}
-@property --v{syntax:"<percentage>";inherits:false;initial-value:0%}
-@keyframes tm{from{--v:100%}to{--v:0%}}
-.np{width:82%;display:grid;gap:8px;font-family:-apple-system,sans-serif}
-.np .t{display:flex;gap:10px;align-items:center}.np .t i{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#f26b35,#8a3aa8)}
-.np .pb{height:5px;border-radius:3px;background:#2a2a30;overflow:hidden}.np .pb u{display:block;height:100%;width:0;background:var(--orange);animation:pb 8s linear infinite}
-@keyframes pb{to{width:100%}}
-.rs{display:flex;align-items:center;gap:14px;font-family:-apple-system,sans-serif}
-.rs .img{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#5b8cff,#f26b35)}
-.rs b{color:#9be18b;animation:sz 4s infinite}
-@keyframes sz{0%,30%{opacity:.25}50%,100%{opacity:1}}
+.sw button i{display:block;width:30px;height:30px;border-radius:50%;margin:0 auto 5px;box-shadow:0 0 0 1px #8883;transition:transform .2s}
+.sw button:hover i{transform:scale(1.12)}.sw button.on{color:var(--text)}.sw button.on i{box-shadow:0 0 0 2px var(--text)}
+.seg{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:3px;gap:3px}
+.seg button{flex:1;border:0;background:none;color:var(--muted);padding:7px;border-radius:8px;cursor:pointer;font-size:13px}
+.seg button.on{background:var(--card2);color:var(--text);box-shadow:0 1px 0 var(--line)}
+.wps{display:flex;gap:8px}.wps button{flex:1;height:38px;border-radius:10px;border:1px solid var(--line);cursor:pointer}.wps button.on{outline:2px solid var(--text);outline-offset:2px}
+/* mini tools */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.tab{padding:10px 18px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-weight:600;font-size:14px;transition:.2s}
+.tab:hover{border-color:var(--orange)}.tab.on{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;border-color:transparent}
+.tool{display:none;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;min-height:280px}
+.tool.on{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;animation:fade .4s}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.tool h3{font-size:22px;margin-bottom:6px}.tool p{color:var(--muted)}
+.field{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input,select{background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:11px;padding:11px 14px;font:inherit;font-size:15px;outline:none;transition:border-color .2s}
+input:focus,select:focus{border-color:var(--orange)}
+.out{margin-top:16px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px;font:15px ui-monospace,Menlo,monospace;min-height:74px;display:flex;align-items:center;gap:12px}
+.out .big{font-size:34px;font-weight:800;letter-spacing:-.02em}
+.dice{font-size:44px;display:inline-block}.dice.roll{animation:roll .6s}
+@keyframes roll{to{transform:rotate(360deg) scale(1.2)}}
+.timer{position:relative;width:170px;height:170px;margin:auto}
+.timer svg{width:100%;height:100%;transform:rotate(-90deg)}.timer circle{fill:none;stroke-width:10;stroke-linecap:round}
+.timer .bg{stroke:var(--line)}.timer .fg{stroke:var(--orange);transition:stroke-dashoffset .25s linear}
+.timer b{position:absolute;inset:0;display:grid;place-items:center;font:700 30px ui-monospace,Menlo,monospace}
+.term2{background:#010409;border:1px solid #30363d;border-radius:14px;padding:18px;font:14px/1.7 ui-monospace,Menlo,monospace;color:#e6edf3;min-height:120px}
+.term2 .g{color:#3fb950}.term2 .r{color:#ff7b72}
+.scr{position:relative;aspect-ratio:16/10;border-radius:16px;background:linear-gradient(135deg,#f6a05f,#c4475d 45%,#3a2a6b);overflow:hidden}
+.scr .w{position:absolute;border-radius:10px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(8px);transition:all .6s cubic-bezier(.3,1.2,.4,1);display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px}
+.lay{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 /* videos */
-.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.vids video{width:100%;border-radius:16px;border:1px solid var(--line);display:block;background:#000;aspect-ratio:16/9;object-fit:cover}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vids video{width:100%;border-radius:18px;border:1px solid var(--line);display:block;background:#000;aspect-ratio:16/9;object-fit:cover;transition:transform .3s}
+.vids video:hover{transform:scale(1.03)}
+.term{margin-top:24px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#010409}.term img{display:block;width:100%}
+/* compare */
+.cmp{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;font-size:15px}
+.cmp th,.cmp td{padding:15px 20px;text-align:left;border-bottom:1px solid var(--line)}
+.cmp th{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.cmp td:nth-child(3){color:var(--orange);font-weight:700}
+.cmp tr:last-child td{border-bottom:0}.cmp tr:hover td{background:var(--card2)}
 /* price */
-.price{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;align-items:center}
-.pcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
-.big{font-size:56px;font-weight:800;letter-spacing:-.03em}.big small{font-size:16px;color:var(--muted);font-weight:500}
-.cmp{margin:14px 0;font-size:14px}.cmp .bar{height:12px;margin-top:6px}
-.cmp .bar u{background:#55555f}.cmp .bar.o u{background:var(--orange)}
-input[type=range]{width:100%;accent-color:var(--orange)}
-.pcard ul{list-style:none;padding:0;margin:16px 0 22px;display:grid;gap:8px;font-size:15px}.pcard li::before{content:"✓ ";color:var(--orange);font-weight:700}
-footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:14px;text-align:center}
-@media(max-width:900px){.play{grid-template-columns:1fr}.cards,.vids{grid-template-columns:1fr}.price{grid-template-columns:1fr}nav .links{display:none}.float{display:none}}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
+.pcard{position:relative;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:32px}
+.pcard.hot{border-color:transparent;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,var(--orange),#c4475d,#6a4bd6,var(--orange2)) border-box;border:1.5px solid transparent}
+.big{font-size:64px;font-weight:800;letter-spacing:-.04em}.big small{font-size:16px;color:var(--muted);font-weight:500;letter-spacing:0}
+.pcard ul{list-style:none;padding:0;margin:18px 0 26px;display:grid;gap:10px}.pcard li::before{content:"✓ ";color:var(--orange);font-weight:800}
+.cm{margin:16px 0;font-size:14px}.cm .pbar{height:12px;margin-top:6px;background:var(--line)}.cm .pbar u{background:#6b6b74}.cm .pbar.o u{background:linear-gradient(90deg,var(--orange),var(--orange2))}
+input[type=range]{width:100%;accent-color:var(--orange);padding:0}
+/* faq */
+.faq{max-width:780px;margin:auto}
+.faq details{border-bottom:1px solid var(--line);padding:20px 4px}
+.faq summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:26px;color:var(--orange);transition:transform .3s;font-weight:400}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);margin-top:12px;animation:fade .35s}
+/* final cta */
+.final{text-align:center;padding:110px 0;position:relative;overflow:hidden;isolation:isolate}
+.final .aurora{opacity:.55}
+.final h2{font-size:clamp(34px,5.6vw,68px)}
+footer{border-top:1px solid var(--line);padding:38px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer a:hover{color:var(--text)}
+/* palette */
+#pal{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;padding-top:14vh}
+#pal.on{display:flex;animation:fade .2s}
+.pbox{width:min(600px,92vw);background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 40px 100px rgba(0,0,0,.5);overflow:hidden}
+.pbox input{width:100%;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:20px 22px;font-size:18px;background:transparent}
+.plist{max-height:50vh;overflow:auto;padding:8px}
+.pi{display:flex;gap:14px;align-items:center;padding:10px 12px;border-radius:12px;cursor:pointer}
+.pi img{width:38px;height:38px;border-radius:10px}.pi b{display:block;font-size:15px}.pi span{font-size:13px;color:var(--muted)}
+.pi.sel,.pi:hover{background:var(--card2)}
+/* sticky cta */
+#sticky{position:fixed;left:50%;bottom:20px;transform:translate(-50%,120px);z-index:70;display:flex;align-items:center;gap:14px;padding:10px 12px 10px 20px;border-radius:99px;background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(16px);border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.4);transition:transform .5s cubic-bezier(.2,1.2,.4,1);font-weight:600;font-size:14px}
+#sticky.on{transform:translate(-50%,0)}
+.confetti{position:fixed;pointer-events:none;z-index:300;width:9px;height:14px;animation:cf 1.4s ease-out forwards}
+@keyframes cf{to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}
+@media(max-width:940px){.play,.tool.on,.price{grid-template-columns:1fr}.bento{grid-template-columns:1fr 1fr}.bc.s2,.bc.s3,.bc.s4{grid-column:span 2}.vids{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}nav .links{display:none}.float{display:none}.dropdown{right:14px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<div id="prog"></div><div id="cursor"></div>
+
 <nav><div class="wrap">
-  <a class="brand" href="#"><img src="assets/app-icon.png" alt="">CodeMerge</a>
-  <div class="links"><a href="#try">Try it</a><a href="#tools">Tools</a><a href="#watch">Watch</a><a href="#price">Price</a><a href="cards.html">Share cards</a></div>
-  <a class="btn primary" href="https://harelyaish.gumroad.com/l/codemerge">Buy — $5</a>
+  <a class="brand" href="#top"><img src="assets/app-icon.png" alt="">CodeMerge</a>
+  <div class="links"><a href="#features">Features</a><a href="#try">Try it</a><a href="#tools">Mini tools</a><a href="#watch">Watch</a><a href="#price">Price</a><a href="#faq">FAQ</a></div>
+  <div class="navr">
+    <button class="iconbtn" id="palBtn" title="Search tools (⌘K)">⌕</button>
+    <button class="iconbtn" id="themeBtn" title="Light / dark site">☾</button>
+    <a class="btn primary sm" href="https://harelyaish.gumroad.com/l/codemerge" data-mag>Buy — $5</a>
+  </div>
 </div></nav>
 
-<header class="hero">
+<header class="hero" id="top">
+  <div class="aurora"><i></i><i></i><i></i></div><div class="grain"></div>
   <div class="float" id="float"></div>
+  <div class="pill rv" style="margin-bottom:22px"><span class="dot"></span> <b id="ver">v1.1.1</b> · <span id="dls">macOS 13+</span> · 30-day free trial</div>
   <img class="icon" src="assets/app-icon.png" alt="CodeMerge">
-  <h1>One menu bar.<br><span>A dozen tools.</span></h1>
-  <p>Screenshots, clipboard history, window layouts, Now Playing, timers and more — behind a single icon in your Mac's menu bar.</p>
-  <div class="cta">
-    <a class="btn primary" href="https://harelyaish.gumroad.com/l/codemerge">Get CodeMerge — $5 once</a>
-    <a class="btn ghost" href="https://github.com/harelyaish/CodeMerge/releases/latest">Download free trial</a>
+  <h1 class="rv" style="--d:.05s">One menu bar.<br><span class="o">A dozen <span class="type" id="type"></span></span></h1>
+  <p class="lead rv" style="--d:.12s">Screenshots, clipboard history, window layouts, Now Playing, timers, OCR and more — behind a single icon in your Mac's menu bar.</p>
+  <div class="cta rv" style="--d:.2s">
+    <a class="btn primary" href="https://harelyaish.gumroad.com/l/codemerge" data-mag>Get CodeMerge — $5 once</a>
+    <a class="btn ghost" href="https://github.com/harelyaish/CodeMerge/releases/latest" data-mag>Free 30-day trial</a>
   </div>
-  <small>macOS 13+ · Apple Silicon &amp; Intel · 30-day full trial · no subscription</small>
+  <small class="rv" style="--d:.26s">Apple Silicon &amp; Intel · no account · no subscription · press <kbd>⌘</kbd> <kbd>K</kbd> to search the tools</small>
+
+  <div class="wrap"><div class="desk rv" id="desk" style="--d:.3s">
+    <div class="mb"><span> Finder &nbsp; File &nbsp; Edit &nbsp; View</span><div class="r"><span>Fri 18 Sep</span><i class="ci" id="ci"></i><span>22:46</span></div></div>
+    <div class="win" id="w1"></div><div class="win" id="w2"></div><div class="win" id="w3"></div>
+    <div class="dropdown" id="dd">
+      <div class="g" id="ddg" style="margin-bottom:8px"></div>
+      <div class="row">CPU <i><u style="--w:8%"></u></i></div>
+      <div class="row">RAM <i><u style="--w:62%"></u></i></div>
+      <div class="row">Disk <i><u style="--w:41%"></u></i></div>
+    </div>
+    <div class="caption" id="cap">Click the menu-bar icon</div>
+  </div></div>
 </header>
 
-<section id="try"><div class="wrap">
-  <div class="eyebrow">Try it</div>
-  <h2>The real dropdown — play with it.</h2>
-  <p class="lead">Hover the icons, flip Light / Dark with the sun button, pick a theme, change the wallpaper behind the frosted glass.</p>
-  <div class="play">
+<div class="marq" aria-hidden="true"><div class="track" id="m1"></div><div class="track rev" id="m2"></div></div>
+
+<section style="padding-block:70px"><div class="wrap">
+  <div class="stats rv">
+    <div><b data-n="23">0</b><span>tools in one dropdown</span></div>
+    <div><b data-n="12">0</b><span>light &amp; dark themes</span></div>
+    <div><b data-n="200">0</b><span>clipboard items kept</span></div>
+    <div><b>$<em data-n="5" style="font-style:normal">0</em></b><span>once, forever</span></div>
+  </div>
+</div></section>
+
+<section id="features" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Features</div><h2 class="rv">Small tools, done properly.</h2><p class="lead rv">Everything you reach for ten times a day — no separate apps, no separate Dock icons.</p></div>
+  <div class="bento">
+    <div class="bc s2 rv"><div class="demo"><div>lsof -ti :<span class="o">3000</span><span class="caret2"></span><br><span class="kill">✓ killed process 48213</span></div></div><h3>Kill port</h3><p>Type a port, end whatever is blocking it.</p></div>
+    <div class="bc s2 rv" style="--d:.06s"><div class="demo"><div class="ocr"><div class="frame"></div>Order #4821 — total $128.40<div class="toast">Text copied</div></div></div><h3>Text Grab</h3><p>Drag over any text on screen — it's on your clipboard.</p></div>
+    <div class="bc s2 rv" style="--d:.12s"><div class="demo"><div class="clip"><div>npm run build</div><div>#F26B35</div><div>meeting-notes.md</div></div></div><h3>Clipboard history</h3><p>Last 200 copies, searchable, with pinned snippets.</p></div>
+    <div class="bc s3 rv"><div class="demo tall"><div class="np"><div class="t"><i></i><div style="flex:1"><b>Lovesong</b><br><span style="color:var(--muted);font-size:12px">Adele</span></div><div class="eq"><i></i><i></i><i></i><i></i></div></div><div class="pb"><u></u></div></div></div><h3>Now Playing</h3><p>Music &amp; Spotify: cover art, a live seekable progress bar, volume, playlists and shuffle — without opening the app.</p></div>
+    <div class="bc s3 rv" style="--d:.06s"><div class="demo tall"><div class="wgrid"><i></i><i></i><i></i><i></i></div></div><h3>Window layouts</h3><p>Halves, quarters, or a custom grid you design. Drag windows between cells.</p></div>
+    <div class="bc s2 rv"><div class="demo"><div class="ring2"><i>25:00</i></div></div><h3>Timers</h3><p>Run several; the nearest counts down in the menu bar.</p></div>
+    <div class="bc s2 rv" style="--d:.06s"><div class="demo"><div class="rs"><div class="img"></div><div>4.2 MB → <b>0.9 MB</b><br><span style="color:var(--muted);font-size:12px">same dimensions</span></div></div></div><h3>Image Resizer</h3><p>Drop a picture, pick a strength, get a smaller file.</p></div>
+    <div class="bc s2 rv" style="--d:.12s"><div class="demo"><div class="swatches"><i style="--k:0;background:#ED615E"></i><i style="--k:1;background:#406BD9"></i><i style="--k:2;background:#388C5C"></i><i style="--k:3;background:#D97340"></i><i style="--k:4;background:#8a8a8a"></i></div></div><h3>12 themes</h3><p>Light, dark and frosted glass. One click to switch.</p></div>
+  </div>
+</div></section>
+
+<section id="try" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Try it</div><h2 class="rv">The real dropdown — play with it.</h2><p class="lead rv">Hover the icons, flip Light / Dark with the sun button, pick a theme, change the wallpaper behind the glass.</p></div>
+  <div class="play rv">
     <div class="stage wp0" id="stage">
       <div class="panel" id="panel">
-        <div class="apps" id="apps"></div>
-        <div class="sep"></div>
-        <div id="stats"></div>
-        <div class="sep"></div>
-        <div class="grid" id="grid"></div>
-        <div class="sep"></div>
-        <div class="acts">
-          <button title="Settings">⚙︎</button>
-          <div class="mid"><button id="modeBtn" title="Light / Dark">☀︎</button><button id="eyeBtn" title="Hide desktop icons">◌</button></div>
-          <button title="Quit">⏻</button>
-        </div>
+        <div class="apps" id="apps"></div><div class="sep"></div>
+        <div id="stats2"></div><div class="sep"></div>
+        <div class="grid" id="grid"></div><div class="sep"></div>
+        <div class="acts"><button title="Settings">⚙︎</button><div class="mid"><button id="modeBtn" title="Light / Dark">☀︎</button><button title="Hide desktop icons">◌</button></div><button title="Quit">⏻</button></div>
         <div class="hint" id="hint">Hover an icon</div>
       </div>
     </div>
     <div class="ctrl">
-      <div class="row"><h3>Appearance</h3>
-        <div class="seg" id="seg"><button data-m="light" class="on">Light</button><button data-m="dark">Dark</button></div></div>
+      <div class="row"><h3>Appearance</h3><div class="seg" id="seg"><button data-m="light" class="on">Light</button><button data-m="dark">Dark</button></div></div>
       <div class="row"><h3>Theme</h3><div class="sw" id="sw"></div></div>
-      <div class="row"><h3>Wallpaper behind</h3>
-        <div class="wps" id="wps"><button class="wp0 on" data-w="wp0"></button><button class="wp1" data-w="wp1"></button><button class="wp2" data-w="wp2"></button></div></div>
+      <div class="row"><h3>Wallpaper behind</h3><div class="wps" id="wps"><button class="wp0 on" data-w="wp0"></button><button class="wp1" data-w="wp1"></button><button class="wp2" data-w="wp2"></button></div></div>
       <p style="color:var(--muted);font-size:13px">Pick one Light and one Dark theme in Settings; the sun/moon button next to hide-desktop-icons switches between them.</p>
     </div>
   </div>
 </div></section>
 
-<section id="tools" style="padding-top:0"><div class="wrap">
-  <div class="eyebrow">In action</div>
-  <h2>Small tools, done properly.</h2>
-  <p class="lead">A few of the 23 tools, running.</p>
-  <div class="cards">
-    <div class="card"><div class="demo dtype"><div>lsof -ti :<span>3000</span><span class="caret"></span><br><span class="kill">✓ killed process 48213</span></div></div><h3>Kill port</h3><p>Type a port, terminate whatever is blocking it. No more <code>lsof</code> and <code>kill -9</code>.</p></div>
-    <div class="card"><div class="demo"><div class="ocr"><div class="frame"></div>Order #4821 — total $128.40<div class="toast">Text copied</div></div></div><h3>Text Grab</h3><p>Drag over any text on screen; it's on your clipboard, OCR by Apple Vision.</p></div>
-    <div class="card"><div class="demo"><div class="clip"><div>npm run build</div><div>#F26B35</div><div>meeting notes.md</div></div></div><h3>Clipboard history</h3><p>Your last 200 copies, searchable, with pinned snippets.</p></div>
-    <div class="card"><div class="demo"><div class="ring2"><i>25:00</i></div></div><h3>Timers</h3><p>Run as many as you like — the nearest counts down right in the menu bar.</p></div>
-    <div class="card"><div class="demo"><div class="np"><div class="t"><i></i><div><b>Lovesong</b><br><span style="color:#999;font-size:12px">Adele</span></div></div><div class="pb"><u></u></div></div></div><h3>Now Playing</h3><p>Music and Spotify: seekable progress, volume, playlists, shuffle — without opening the app.</p></div>
-    <div class="card"><div class="demo"><div class="rs"><div class="img"></div><div>4.2 MB → <b>0.9 MB</b><br><span style="color:#999;font-size:12px">same dimensions</span></div></div></div><h3>Image Resizer</h3><p>Drop a picture, pick a strength, get a smaller file. Real size shown after.</p></div>
+<section id="tools" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Mini tools</div><h2 class="rv">Working demos. Go on, use them.</h2><p class="lead rv">These aren't screenshots — they run in your browser, just like the real thing runs on your Mac.</p></div>
+  <div class="tabs rv" id="tabs"><button class="tab on" data-t="t1">Converter</button><button class="tab" data-t="t2">Random</button><button class="tab" data-t="t3">Timer</button><button class="tab" data-t="t4">Kill port</button><button class="tab" data-t="t5">Window layouts</button></div>
+
+  <div class="tool on rv" id="t1"><div><h3>Converter</h3><p>Length, weight and temperature work fully offline in the app; currency uses live rates.</p></div>
+    <div><div class="field"><input id="cv" type="number" value="10" style="width:120px"><select id="cf"><option value="km">kilometers</option><option value="mi">miles</option><option value="kg">kilograms</option><option value="lb">pounds</option><option value="c">°C</option><option value="f">°F</option></select><span>→</span><select id="ct"><option value="mi">miles</option><option value="km">kilometers</option><option value="lb">pounds</option><option value="kg">kilograms</option><option value="f">°F</option><option value="c">°C</option></select></div><div class="out"><span class="big o" id="cout">6.21</span><span id="cunit">miles</span></div></div></div>
+
+  <div class="tool" id="t2"><div><h3>Random generator</h3><p>Numbers, dice, coin flips and a Yes / No answer — one click each.</p><div class="lay"><button class="btn sm" data-r="num">Number 1–100</button><button class="btn sm" data-r="dice">Dice</button><button class="btn sm" data-r="coin">Coin</button><button class="btn sm primary" data-r="yn">Yes / No</button></div></div>
+    <div class="out" style="min-height:130px;justify-content:center"><span class="big" id="rout">?</span></div></div>
+
+  <div class="tool" id="t3"><div><h3>Timers</h3><p>Start a countdown. In the app the nearest timer ticks live in your menu bar.</p><div class="lay"><button class="btn sm" data-tm="10">10 s</button><button class="btn sm" data-tm="30">30 s</button><button class="btn sm primary" data-tm="60">1 min</button></div></div>
+    <div class="timer"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"/><circle class="fg" id="tfg" cx="50" cy="50" r="44" stroke-dasharray="276.46" stroke-dashoffset="0"/></svg><b id="ttxt">0:00</b></div></div>
+
+  <div class="tool" id="t4"><div><h3>Kill process on port</h3><p>Type a port (3000, 8080, 5173…) and end whatever holds it. In the app it runs <code>lsof</code> + <code>kill</code> for you.</p><div class="field"><input id="kp" type="number" value="3000" style="width:130px"><button class="btn sm primary" id="kb">Kill it</button></div></div>
+    <div class="term2" id="kt">$ <span style="color:var(--muted)">waiting for a port…</span></div></div>
+
+  <div class="tool" id="t5"><div><h3>Window layouts</h3><p>Cycle the front window through halves, quarters or a custom grid — with one shortcut.</p><div class="lay" id="lay"><button class="btn sm primary" data-l="full">Full</button><button class="btn sm" data-l="halves">Halves</button><button class="btn sm" data-l="thirds">Thirds</button><button class="btn sm" data-l="quarters">Quarters</button><button class="btn sm" data-l="focus">Focus + side</button></div></div>
+    <div class="scr" id="scr"></div></div>
+</div></section>
+
+<section id="watch" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Watch</div><h2 class="rv">Ten seconds each.</h2></div>
+  <div class="vids rv">
+    <video src="assets/codemerge-3-features.mp4" poster="assets/codemerge-3-features.jpg" autoplay muted loop playsinline preload="metadata"></video>
+    <video src="assets/codemerge-1-tagline.mp4" poster="assets/codemerge-1-tagline.jpg" autoplay muted loop playsinline preload="metadata"></video>
+    <video src="assets/codemerge-2-intro.mp4" poster="assets/codemerge-2-intro.jpg" autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="term rv"><img src="assets/terminal-hero.svg" alt="CodeMerge in a terminal" loading="lazy"></div>
+</div></section>
+
+<section style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Replace a folder of apps</div><h2 class="rv">One install instead of seven.</h2></div>
+  <table class="cmp rv"><tr><th>You'd normally install</th><th>Job</th><th>In CodeMerge</th></tr>
+    <tr><td>A window manager</td><td>Halves, quarters, custom grids</td><td>✓ Window layouts</td></tr>
+    <tr><td>A clipboard manager</td><td>History, search, pinned snippets</td><td>✓ Clipboard history</td></tr>
+    <tr><td>A screenshot tool</td><td>Full screen, area, recent captures</td><td>✓ Screenshots</td></tr>
+    <tr><td>An OCR app</td><td>Copy text out of anything on screen</td><td>✓ Text Grab</td></tr>
+    <tr><td>A timer app</td><td>Several countdowns, live in the menu bar</td><td>✓ Timers</td></tr>
+    <tr><td>A media widget</td><td>Music &amp; Spotify controls</td><td>✓ Now Playing</td></tr>
+    <tr><td>A converter, a resizer, a dev-utility</td><td>Units, images, freeing ports</td><td>✓ Converter · Resizer · Kill port</td></tr></table>
+</div></section>
+
+<section id="price" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">Price</div><h2 class="rv">$5. Once. That's it.</h2></div>
+  <div class="price rv">
+    <div class="pcard hot"><div class="big">$5 <small>one time</small></div>
+      <ul><li>All 23 tools, every future update</li><li>30-day full free trial</li><li>No account, no subscription</li><li>Use it on all your own Macs</li></ul>
+      <a class="btn primary" href="https://harelyaish.gumroad.com/l/codemerge" id="buy" data-mag>Buy CodeMerge</a></div>
+    <div class="pcard"><h3 style="margin-bottom:8px">Over <b id="yrs" class="o">3</b> years…</h3><input id="yr" type="range" min="1" max="10" value="3">
+      <div class="cm">CodeMerge — <b>$5</b><div class="pbar o"><u id="b0" style="width:2%"></u></div></div>
+      <div class="cm">A $2.99/mo utility — <b id="v1"></b><div class="pbar"><u id="b1"></u></div></div>
+      <div class="cm">A $9.99/mo utility bundle — <b id="v2"></b><div class="pbar"><u id="b2"></u></div></div></div>
   </div>
 </div></section>
 
-<section id="watch" style="padding-top:0"><div class="wrap">
-  <div class="eyebrow">Watch</div>
-  <h2>Ten seconds each.</h2>
-  <div class="vids">
-    <video src="assets/codemerge-3-features.mp4" poster="assets/codemerge-3-features.jpg" autoplay muted loop playsinline></video>
-    <video src="assets/codemerge-1-tagline.mp4" poster="assets/codemerge-1-tagline.jpg" autoplay muted loop playsinline></video>
-    <video src="assets/codemerge-2-intro.mp4" poster="assets/codemerge-2-intro.jpg" autoplay muted loop playsinline></video>
-  </div>
-  <div class="term"><img src="assets/terminal-hero.svg" alt="CodeMerge in a terminal"></div>
-</div></section>
-
-<section id="price" style="padding-top:0"><div class="wrap">
-  <div class="eyebrow">Price</div>
-  <h2>$5. Once. That's it.</h2>
-  <div class="price">
-    <div class="pcard">
-      <div class="big">$5 <small>one time</small></div>
-      <ul><li>Every tool, every future update</li><li>30-day full free trial</li><li>No account, no subscription</li><li>Works on all your own Macs</li></ul>
-      <a class="btn primary" href="https://harelyaish.gumroad.com/l/codemerge">Buy CodeMerge</a>
-    </div>
-    <div class="pcard">
-      <h3 style="margin-bottom:6px">Over <b id="yrs">3</b> years…</h3>
-      <input id="yr" type="range" min="1" max="10" value="3">
-      <div class="cmp">CodeMerge — <b>$5</b><div class="bar o"><u id="b0" style="width:2%"></u></div></div>
-      <div class="cmp">A typical $2.99/mo utility — <b id="v1"></b><div class="bar"><u id="b1"></u></div></div>
-      <div class="cmp">A $9.99/mo utility bundle — <b id="v2"></b><div class="bar"><u id="b2"></u></div></div>
-    </div>
+<section id="faq" style="padding-top:20px"><div class="wrap">
+  <div class="head" style="text-align:center"><div class="eyebrow rv">FAQ</div><h2 class="rv">Questions, answered.</h2></div>
+  <div class="faq rv">
+    <details open><summary>Does it work on Apple Silicon and Intel?</summary><p>Yes — one universal build covers both, on macOS 13 (Ventura) or later.</p></details>
+    <details><summary>Why does macOS say it's from an "unidentified developer"?</summary><p>CodeMerge isn't distributed through the App Store or Apple's notarization, so a browser download gets flagged like any indie app. The Terminal install command skips that entirely, or right-click the app → Open once.</p></details>
+    <details><summary>Is my data sent anywhere?</summary><p>No. Only Weather and the currency converter make plain HTTPS calls, with no account or key. Clipboard history, screenshots, notes and settings stay on your Mac.</p></details>
+    <details><summary>Can I use my license on more than one Mac?</summary><p>The license is personal and non-transferable, but nothing technical stops you using it on your own Macs — it isn't hardware-locked.</p></details>
+    <details><summary>What if I want a refund?</summary><p>Refunds are handled by Gumroad from your purchase receipt email.</p></details>
+    <details><summary>How do updates work?</summary><p>Settings → General → Check for Updates. Updates are signed, so a download is verified before it replaces the app.</p></details>
   </div>
 </div></section>
 
-<footer><div class="wrap">© CodeMerge · <a href="https://github.com/harelyaish/CodeMerge" style="text-decoration:underline">GitHub</a> · <a href="cards.html" style="text-decoration:underline">Share cards</a></div></footer>
+<section class="final"><div class="aurora"><i></i><i></i><i></i></div>
+  <div class="wrap"><img src="assets/app-icon.png" alt="" style="width:84px;border-radius:19px;margin-bottom:22px;box-shadow:0 20px 60px rgba(242,107,53,.4)" class="rv">
+  <h2 class="rv">Get your menu bar working<br>as hard as you do.</h2>
+  <p class="lead rv" style="margin:0 auto 30px">30 days free. Then $5, once.</p>
+  <div class="cta rv"><a class="btn primary" href="https://harelyaish.gumroad.com/l/codemerge" data-mag>Get CodeMerge — $5</a><a class="btn ghost" href="https://github.com/harelyaish/CodeMerge" data-mag>View on GitHub</a></div></div></section>
+
+<footer><div class="wrap"><span>© CodeMerge · macOS menu-bar utility</span><span><a href="https://github.com/harelyaish/CodeMerge">GitHub</a> · <a href="cards.html">Share cards</a> · <a href="https://www.paypal.com/paypalme/HarelYaish">Tip</a></span></div></footer>
+
+<div id="sticky"><span>CodeMerge · $5 once</span><a class="btn primary sm" href="https://harelyaish.gumroad.com/l/codemerge">Buy</a></div>
+
+<div id="pal"><div class="pbox"><input id="pq" placeholder="Search the 23 tools…  (Esc to close)" autocomplete="off"><div class="plist" id="pl"></div></div></div>
 
 <script>
-const ICONS=[["screenshot-full","Screenshot — full screen"],["screenshot-area","Screenshot — select area"],["eject","Eject all disks"],["clean-keyboard","Clean keyboard"],["quit-all","Quit all apps"],["clipboard","Clipboard history"],["file-shelf","File shelf"],["prevent-sleep","Prevent sleep"],["window-split","Window layouts"],["now-playing","Now Playing"],["timer","Timers"],["color-picker","Color picker"],["command-palette","Command palette"],["screen-recording","Screen recording"],["weather","Weather"],["quick-note","Quick note"],["lock-screen","Lock screen"],["converter","Converter"],["image-resizer","Image Resizer"],["random-generator","Random generator"],["audio-output","Audio output"],["text-grab","Text Grab (OCR)"],["kill-port","Kill process on port"]];
-const THEMES={
- light:[["Default","#f7f7f8","#ED615E"],["Midnight","#f0f2fa","#406BD9"],["Forest","#f0f5f0","#388C5C"],["Sunset","#faf2ed","#D97340"],["Monochrome","#f2f2f2","#595959"],["Mirror","#ffffff","#4D5C7A"]],
- dark:[["Default","#1c1c1f","#ED615E"],["Midnight","#171c2b","#6B94EB"],["Forest","#17211c","#66AD85"],["Sunset","#291c1a","#E6946B"],["Monochrome","#212121","#CCCCCC"],["Mirror","#0f0f11","#C7D1E6"]]};
-let mode="light",idx={light:0,dark:0};
+const T=[["screenshot-full","Screenshot — full screen","Whole screen to your clipboard, kept in Recent Captures."],["screenshot-area","Screenshot — select area","Drag to select a region, using macOS's own tool."],["eject","Eject disks","Unmounts every external volume at once."],["clean-keyboard","Clean keyboard","Blocks every keystroke so you can wipe your keyboard."],["quit-all","Quit all apps","Quits every other running app in one click."],["clipboard","Clipboard history","Last 200 copies, search, pinned snippets."],["file-shelf","File shelf","A temporary tray for files — AirDrop or drag back out."],["prevent-sleep","Prevent sleep","Keeps your Mac awake, like caffeinate."],["window-split","Window layouts","Halves, quarters or a custom grid."],["now-playing","Now Playing","Music and Spotify controls, cover art, live progress."],["timer","Timers","Several countdowns; the nearest lives in the menu bar."],["color-picker","Color picker","Click any pixel; its hex is copied."],["command-palette","Command palette","Your own shell, AppleScript, URL or text commands."],["screen-recording","Screen recording","Record with a floating pause/stop control."],["weather","Weather","Current conditions for your location."],["quick-note","Quick note","One scratch note that stays put."],["lock-screen","Lock screen","Straight to the login screen."],["converter","Converter","Length, weight, temperature and live currency."],["image-resizer","Image Resizer","Make an image's file size smaller."],["random-generator","Random generator","Numbers, dice, coin, Yes / No."],["audio-output","Audio output","Switch speakers and headphones in one click."],["text-grab","Text Grab (OCR)","Copy the text out of anything on screen."],["kill-port","Kill process on port","Free a blocked port like 3000 or 8080."]];
 const $=id=>document.getElementById(id);
-// build panel
+/* reveal + counters + progress + sticky */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;co.unobserve(e.target);const el=e.target,n=+el.dataset.n,t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/1400);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+document.querySelectorAll("[data-n]").forEach(el=>co.observe(el));
+addEventListener("scroll",()=>{const h=document.documentElement;$("prog").style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+"%";$("sticky").classList.toggle("on",scrollY>innerHeight*.9&&scrollY<h.scrollHeight-innerHeight*1.7)},{passive:true});
+/* cursor glow + bento spotlight + magnetic */
+addEventListener("mousemove",e=>{const c=$("cursor");c.style.opacity=1;c.style.transform=`translate(${e.clientX}px,${e.clientY}px)`});
+document.querySelectorAll(".bc").forEach(b=>b.addEventListener("mousemove",e=>{const r=b.getBoundingClientRect();b.style.setProperty("--mx",(e.clientX-r.left)+"px");b.style.setProperty("--my",(e.clientY-r.top)+"px");const rx=((e.clientY-r.top)/r.height-.5)*-5,ry=((e.clientX-r.left)/r.width-.5)*5;b.style.transform=`perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`}),document.querySelectorAll(".bc").forEach(b=>b.addEventListener("mouseleave",()=>b.style.transform="")));
+document.querySelectorAll("[data-mag]").forEach(b=>{b.addEventListener("mousemove",e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.28}px)`});b.addEventListener("mouseleave",()=>b.style.transform="")});
+/* typewriter */
+const words=["tools.","shortcuts.","time-savers.","superpowers.","helpers."];let wi=0,ci=0,del=false;
+(function ty(){const w=words[wi];$("type").textContent=w.slice(0,ci);if(!del&&ci===w.length){del=true;return setTimeout(ty,1500)}if(del&&ci===0){del=false;wi=(wi+1)%words.length}ci+=del?-1:1;setTimeout(ty,del?45:90)})();
+/* site theme */
+$("themeBtn").onclick=()=>{const l=document.documentElement.dataset.theme==="dark";document.documentElement.dataset.theme=l?"light":"dark";$("themeBtn").textContent=l?"☀︎":"☾";try{localStorage.setItem("cmt",l?"light":"dark")}catch(e){}};
+try{const s=localStorage.getItem("cmt");if(s){document.documentElement.dataset.theme=s;$("themeBtn").textContent=s==="light"?"☀︎":"☾"}}catch(e){}
+/* github stats */
+fetch("https://api.github.com/repos/harelyaish/CodeMerge/releases").then(r=>r.json()).then(rs=>{if(!Array.isArray(rs)||!rs.length)return;$("ver").textContent=rs[0].tag_name;const n=rs.reduce((a,r)=>a+r.assets.reduce((b,x)=>b+x.download_count,0),0);if(n>0)$("dls").textContent=n.toLocaleString()+" downloads"}).catch(()=>{});
+/* floating icons */
+const fl=$("float"),fi=[];T.forEach(([n],i)=>{const a=i/T.length*Math.PI*2,px=50+Math.cos(a)*47,py=50+Math.sin(a)*52;if(Math.abs(px-50)<28&&py>30&&py<76)return;const im=document.createElement("img");im.src=`assets/icons/${n}.png`;im.style.left=px+"%";im.style.top=py+"%";im.style.transform="translate(-50%,-50%)";im.style.setProperty("--bd",(-i*.5)+"s");fl.appendChild(im);fi.push([im,(i%5+1)*4])});
+addEventListener("mousemove",e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;fi.forEach(([im,d])=>im.style.transform=`translate(calc(-50% + ${x*d*3}px),calc(-50% + ${y*d*3}px))`)});
+/* marquee */
+const chips=T.map(([n,t])=>`<div class="chip"><img src="assets/icons/${n}.png" alt="">${t.replace(" — "," ")}</div>`).join("");$("m1").innerHTML=chips+chips;$("m2").innerHTML=[...T].reverse().map(([n,t])=>`<div class="chip"><img src="assets/icons/${n}.png" alt="">${t.replace(" — "," ")}</div>`).join("").repeat(2);
+/* desktop demo */
+$("ddg").innerHTML=T.slice(0,18).map(([n],i)=>`<img style="--i:${i}" src="assets/icons/${n}.png" alt="">`).join("");
+const lay={free:[[6,12,44,60],[40,20,50,62],[24,40,42,50]],halves:[[1,7,48,90],[51,7,48,90],null],quart:[[1,7,48,44],[51,7,48,44],[26,53,48,44]]};
+function place(k){const L=lay[k];["w1","w2","w3"].forEach((id,i)=>{const w=$(id),p=L[i];if(!p){w.style.opacity=0;return}w.style.opacity=1;w.style.left=p[0]+"%";w.style.top=p[1]+"%";w.style.width=p[2]+"%";w.style.height=p[3]+"%"})}
+place("free");
+const steps=[["Click the menu-bar icon",()=>{$("ci").classList.add("on");$("dd").classList.add("open")}],["23 tools, one dropdown",()=>{}],["Window layouts: halves",()=>{place("halves")}],["…quarters",()=>{place("quart")}],["Close it — back to work",()=>{$("dd").classList.remove("open");$("ci").classList.remove("on");place("free")}]];
+let si=0;function tick(){const [c,f]=steps[si];$("cap").textContent=c;f();si=(si+1)%steps.length;setTimeout(tick,si===2?2600:2200)}setTimeout(tick,1600);
+/* playground */
+const TH={light:[["Default","#f7f7f8","#ED615E"],["Midnight","#f0f2fa","#406BD9"],["Forest","#f0f5f0","#388C5C"],["Sunset","#faf2ed","#D97340"],["Monochrome","#f2f2f2","#595959"],["Mirror","#ffffff","#4D5C7A"]],dark:[["Default","#1c1c1f","#ED615E"],["Midnight","#171c2b","#6B94EB"],["Forest","#17211c","#66AD85"],["Sunset","#291c1a","#E6946B"],["Monochrome","#212121","#CCCCCC"],["Mirror","#0f0f11","#C7D1E6"]]};
+let mode="light",idx={light:0,dark:0};
 $("apps").innerHTML=["timer","weather","file-shelf","now-playing","converter"].map(n=>`<img src="assets/icons/${n}.png" alt="">`).join("");
-$("stats").innerHTML=[["CPU","3%",3],["Memory","9.4 / 24 GB",39],["Disk","376 / 926 GB",41],["Battery","74%",74]].map(([l,v,p])=>`<div class="stat"><div class="ring" style="--p:${p}"><i></i></div><div class="r"><div class="top"><b>${l}</b><span>${v}</span></div><div class="bar"><u style="width:${p}%"></u></div></div></div>`).join("");
-$("grid").innerHTML=ICONS.map(([n,h],i)=>`<button data-h="${h}" data-i="${i}"><img src="assets/icons/${n}.png" alt="${h}"></button>`).join("");
+$("stats2").innerHTML=[["CPU","3%",3],["Memory","9.4 / 24 GB",39],["Disk","376 / 926 GB",41],["Battery","74%",74]].map(([l,v,p])=>`<div class="stat"><div class="ring" style="--p:${p}"><i></i></div><div class="r"><div class="top"><b>${l}</b><span>${v}</span></div><div class="pbar"><u style="width:${p}%"></u></div></div></div>`).join("");
+$("grid").innerHTML=T.map(([n,h],i)=>`<button data-h="${h}"><img src="assets/icons/${n}.png" alt="${h}"></button>`).join("");
 $("grid").addEventListener("mouseover",e=>{const b=e.target.closest("button");if(b)$("hint").textContent=b.dataset.h});
 $("grid").addEventListener("mouseleave",()=>$("hint").textContent="Hover an icon");
-$("grid").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;b.classList.toggle("on")});
-function hex2rgb(h){const n=parseInt(h.slice(1),16);return[n>>16&255,n>>8&255,n&255]}
-function apply(){
- const [name,bg,acc]=THEMES[mode][idx[mode]],dark=mode==="dark",mirror=name==="Mirror",[r,g,b]=hex2rgb(bg);
- const p=$("panel");
- p.style.setProperty("--fg",dark?"#f0f0f2":"#1d1d1f");
- p.style.setProperty("--accent",acc);
- p.style.setProperty("--panel-solid",bg);
- p.style.setProperty("--panel",`rgba(${r},${g},${b},${mirror?.34:.62})`);
- p.style.setProperty("--blur",mirror?"44px":"22px");
- p.style.setProperty("--rim",mirror?"rgba(255,255,255,.65)":dark?"rgba(255,255,255,.12)":"rgba(0,0,0,.08)");
- p.style.setProperty("--icon-filter",dark?"none":"brightness(.35) saturate(1.2)");
- p.classList.toggle("mirror",mirror);
- $("modeBtn").textContent=dark?"☾":"☀︎";
- document.querySelectorAll("#seg button").forEach(x=>x.classList.toggle("on",x.dataset.m===mode));
- $("sw").innerHTML=THEMES[mode].map(([n,bg2,a],i)=>`<button data-i="${i}" class="${i===idx[mode]?"on":""}"><i style="background:linear-gradient(135deg,${bg2} 50%,${a} 50%)"></i>${n}</button>`).join("");
-}
+$("grid").addEventListener("click",e=>{const b=e.target.closest("button");if(b)b.classList.toggle("on")});
+const h2r=h=>{const n=parseInt(h.slice(1),16);return[n>>16&255,n>>8&255,n&255]};
+function apply(){const [nm,bg,ac]=TH[mode][idx[mode]],dk=mode==="dark",mi=nm==="Mirror",[r,g,b]=h2r(bg),p=$("panel");
+ p.style.setProperty("--fg",dk?"#f0f0f2":"#1d1d1f");p.style.setProperty("--accent",ac);p.style.setProperty("--panel-solid",bg);p.style.setProperty("--panel",`rgba(${r},${g},${b},${mi?.34:.62})`);p.style.setProperty("--blur",mi?"44px":"22px");p.style.setProperty("--rim",mi?"rgba(255,255,255,.65)":dk?"rgba(255,255,255,.12)":"rgba(0,0,0,.08)");p.classList.toggle("mirror",mi);
+ $("modeBtn").textContent=dk?"☾":"☀︎";document.querySelectorAll("#seg button").forEach(x=>x.classList.toggle("on",x.dataset.m===mode));
+ $("sw").innerHTML=TH[mode].map(([n,b2,a],i)=>`<button data-i="${i}" class="${i===idx[mode]?"on":""}"><i style="background:linear-gradient(135deg,${b2} 50%,${a} 50%)"></i>${n}</button>`).join("")}
 $("sw").addEventListener("click",e=>{const b=e.target.closest("button");if(b){idx[mode]=+b.dataset.i;apply()}});
 $("seg").addEventListener("click",e=>{const b=e.target.closest("button");if(b){mode=b.dataset.m;apply()}});
 $("modeBtn").onclick=()=>{mode=mode==="dark"?"light":"dark";apply()};
 $("wps").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;document.querySelectorAll("#wps button").forEach(x=>x.classList.remove("on"));b.classList.add("on");$("stage").className="stage "+b.dataset.w});
 apply();
-// floating icons
-const fl=$("float"),fi=[];
-ICONS.forEach(([n],i)=>{const a=i/ICONS.length*Math.PI*2,px=50+Math.cos(a)*47,py=48+Math.sin(a)*50;
- if(Math.abs(px-50)<27&&py>36&&py<80)return; // keep the headline, text and buttons clear
- const im=document.createElement("img");im.src=`assets/icons/${n}.png`;im.style.left=px+"%";im.style.top=py+"%";im.style.transform="translate(-50%,-50%)";fl.appendChild(im);fi.push([im,(i%5+1)*4])});
-addEventListener("mousemove",e=>{const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);fi.forEach(([im,d])=>im.style.transform=`translate(calc(-50% + ${x*d*3}px),calc(-50% + ${y*d*3}px))`)});
-// price
-function pr(){const y=+$("yr").value;$("yrs").textContent=y;const a=2.99*12*y,b=9.99*12*y;$("v1").textContent="$"+a.toFixed(0);$("v2").textContent="$"+b.toFixed(0);$("b1").style.width=Math.min(100,a/12)+"%";$("b2").style.width=Math.min(100,b/12)+"%";$("b0").style.width=Math.max(2,5/12)+"%"}
+/* mini tools */
+$("tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===b));document.querySelectorAll(".tool").forEach(x=>x.classList.toggle("on",x.id===b.dataset.t));if(b.dataset.t==="t5")layout("full")});
+const U={km:["len",1000],mi:["len",1609.344],kg:["mass",1],lb:["mass",.45359237],c:["temp"],f:["temp"]};
+function conv(){const v=parseFloat($("cv").value),f=$("cf").value,t=$("ct").value;let r;if(isNaN(v)){$("cout").textContent="—";return}
+ if(U[f][0]!==U[t][0]){$("cout").textContent="n/a";$("cunit").textContent="pick the same kind of unit";return}
+ if(U[f][0]==="temp")r=f===t?v:f==="c"?v*9/5+32:(v-32)*5/9;else r=v*U[f][1]/U[t][1];
+ $("cout").textContent=(Math.round(r*100)/100).toLocaleString();$("cunit").textContent=$("ct").selectedOptions[0].text}
+["cv","cf","ct"].forEach(i=>$(i).addEventListener("input",conv));conv();
+document.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{const k=b.dataset.r,o=$("rout");let h;if(k==="num")h=`<span class="big">${1+Math.floor(Math.random()*100)}</span>`;else if(k==="dice"){const d=1+Math.floor(Math.random()*6);h=`<span class="dice roll">${"⚀⚁⚂⚃⚄⚅"[d-1]}</span>`}else if(k==="coin")h=`<span class="big">${Math.random()<.5?"Heads":"Tails"}</span>`;else h=`<span class="big o">${Math.random()<.5?"Yes":"No"}</span>`;o.innerHTML=h});
+let tint;document.querySelectorAll("[data-tm]").forEach(b=>b.onclick=()=>{clearInterval(tint);const tot=+b.dataset.tm,t0=Date.now();tint=setInterval(()=>{const l=Math.max(0,tot-(Date.now()-t0)/1000);$("ttxt").textContent=Math.floor(l/60)+":"+String(Math.ceil(l)%60).padStart(2,"0");$("tfg").style.strokeDashoffset=276.46*(1-l/tot);if(l<=0){clearInterval(tint);$("ttxt").textContent="Done ✓";burst($("ttxt"))}},100)});
+$("kb").onclick=()=>{const p=+$("kp").value,t=$("kt");if(!(p>=1&&p<=65535)){t.innerHTML=`$ <span class="r">✗ enter a port between 1 and 65535</span>`;return}const pid=Math.floor(10000+Math.random()*50000);t.innerHTML=`$ lsof -ti :${p}`;setTimeout(()=>t.innerHTML+=`<br>${pid}`,450);setTimeout(()=>t.innerHTML+=`<br>$ kill -9 ${pid}`,950);setTimeout(()=>t.innerHTML+=`<br><span class="g">✓ port ${p} is free</span>`,1500)};
+const LAY={full:[[2,2,96,96]],halves:[[1,2,48.5,96],[50.5,2,48.5,96]],thirds:[[1,2,32,96],[34,2,32,96],[67,2,32,96]],quarters:[[1,2,48.5,47],[50.5,2,48.5,47],[1,51,48.5,47],[50.5,51,48.5,47]],focus:[[1,2,64,96],[66,2,33,47],[66,51,33,47]]};
+let ws=[];function layout(k){const s=$("scr"),L=LAY[k];while(ws.length<4){const w=document.createElement("div");w.className="w";w.textContent=ws.length+1;s.appendChild(w);ws.push(w)}ws.forEach((w,i)=>{const p=L[i];if(!p){w.style.opacity=0;w.style.transform="scale(.5)";return}w.style.opacity=1;w.style.transform="none";w.style.left=p[0]+"%";w.style.top=p[1]+"%";w.style.width=p[2]+"%";w.style.height=p[3]+"%"})}
+$("lay").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;document.querySelectorAll("#lay button").forEach(x=>{x.classList.toggle("primary",x===b)});layout(b.dataset.l)});layout("full");
+/* price */
+function pr(){const y=+$("yr").value;$("yrs").textContent=y;const a=2.99*12*y,b=9.99*12*y;$("v1").textContent="$"+a.toFixed(0);$("v2").textContent="$"+b.toFixed(0);$("b1").style.width=Math.min(100,a/12)+"%";$("b2").style.width=Math.min(100,b/12)+"%";$("b0").style.width="4%"}
 $("yr").oninput=pr;pr();
+/* confetti */
+function burst(el){const r=el.getBoundingClientRect(),cs=["#f26b35","#ff9a5c","#ffd0a8","#6a4bd6","#c4475d","#3fb950"];for(let i=0;i<26;i++){const c=document.createElement("i");c.className="confetti";c.style.left=(r.left+r.width/2)+"px";c.style.top=(r.top+r.height/2)+"px";c.style.background=cs[i%cs.length];c.style.setProperty("--x",(Math.random()-.5)*360+"px");c.style.setProperty("--y",(Math.random()*-220-40)+"px");c.style.setProperty("--r",(Math.random()*720)+"deg");document.body.appendChild(c);setTimeout(()=>c.remove(),1500)}}
+$("buy").addEventListener("mouseenter",()=>burst($("buy")));
+/* command palette */
+let ps=0,pl=[];function rp(q=""){q=q.toLowerCase();pl=T.filter(([n,t,d])=>(t+d).toLowerCase().includes(q));ps=Math.min(ps,Math.max(0,pl.length-1));$("pl").innerHTML=pl.map(([n,t,d],i)=>`<div class="pi ${i===ps?"sel":""}" data-i="${i}"><img src="assets/icons/${n}.png" alt=""><div><b>${t}</b><span>${d}</span></div></div>`).join("")||`<div class="pi"><span>Nothing matches “${q}”</span></div>`}
+function po(o){$("pal").classList.toggle("on",o);if(o){$("pq").value="";ps=0;rp();setTimeout(()=>$("pq").focus(),20)}}
+$("palBtn").onclick=()=>po(true);$("pal").addEventListener("click",e=>{if(e.target.id==="pal")po(false)});
+$("pq").addEventListener("input",e=>{ps=0;rp(e.target.value)});
+$("pl").addEventListener("click",e=>{const p=e.target.closest(".pi");if(p&&pl[p.dataset.i])pick(pl[p.dataset.i])});
+function pick(t){po(false);document.getElementById("try").scrollIntoView();setTimeout(()=>{document.querySelectorAll("#grid button").forEach(b=>b.classList.toggle("on",b.dataset.h===t[1]));$("hint").textContent=t[1]+" — "+t[2]},500)}
+addEventListener("keydown",e=>{if((e.metaKey||e.ctrlKey)&&e.key==="k"){e.preventDefault();po(!$("pal").classList.contains("on"))}
+ if(!$("pal").classList.contains("on"))return;if(e.key==="Escape")po(false);if(e.key==="ArrowDown"){ps=Math.min(ps+1,pl.length-1);rp($("pq").value);e.preventDefault()}if(e.key==="ArrowUp"){ps=Math.max(ps-1,0);rp($("pq").value);e.preventDefault()}if(e.key==="Enter"&&pl[ps])pick(pl[ps])});
 </script>
 </body>
 </html>
