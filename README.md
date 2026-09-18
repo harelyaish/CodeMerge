@@ -1,4 +1,8 @@
 <p align="center">
+  <a href="https://harelyaish.github.io/CodeMerge/"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/site-banner.svg" alt="Try CodeMerge live in your browser — harelyaish.github.io/CodeMerge" width="100%"></a>
+</p>
+
+<p align="center">
   <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/banner.png" alt="CodeMerge — the menu-bar utility for macOS" width="100%">
 </p>
 
