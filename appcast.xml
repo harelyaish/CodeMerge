@@ -6,6 +6,29 @@
         <description>Update feed for CodeMerge.</description>
         <language>en</language>
         <item>
+            <title>1.1.0</title>
+            <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>New: Audio Output Switcher — switch speakers/Bluetooth/monitor output right from the dropdown</li>
+                    <li>New: Kill Process on Port — type a port, kill whatever's listening on it, no Terminal needed</li>
+                    <li>New: Text Grab (OCR) — copy text straight out of a screenshot region</li>
+                    <li>Now Playing: click or right-click the Music/Spotify icons when nothing's playing to open them, shuffle, play favorites, playlists, or genres</li>
+                    <li>File Shelf: added an AirDrop button per item, and automatic PNG→JPEG compression on drop when it's actually smaller</li>
+                    <li>Clipboard History: raised the cap to 200 entries, added search and pinning</li>
+                    <li>Global keyboard shortcuts extended to cover this release's new features</li>
+                </ul>
+            ]]></description>
+            <enclosure
+                url="https://github.com/harelyaish/CodeMerge/releases/download/v1.1.0/CodeMerge.zip"
+                sparkle:edSignature="jCZPVKUrvO3xB60MEED+NkFHNIlHvMJilT/YXfZt8KMpJM6M76ZinP67p8R+wFVVbetN7lnWFY1y/EREzBNUDQ=="
+                length="3346831"
+                type="application/octet-stream" />
+        </item>
+        <item>
             <title>1.0.3</title>
             <pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate>
             <sparkle:version>4</sparkle:version>
