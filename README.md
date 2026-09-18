@@ -15,16 +15,21 @@
   <a href="https://www.paypal.com/paypalme/HarelYaish"><img src="https://img.shields.io/badge/tip-PayPal-00457C?style=flat-square&logo=paypal&logoColor=white"></a>
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/terminal-hero.svg" alt="CodeMerge in a terminal — the app logo, a dozen tools, $5 once" width="100%">
+</p>
+
 **CodeMerge** is a macOS menu-bar utility that bundles a dozen small daily-use tools into one dropdown, so you stop juggling separate apps (and their separate Dock icons, keyboard shortcuts, and menu bars) for things you do constantly. Everything lives behind a single icon in your menu bar — click it, or use a global keyboard shortcut, and it's there.
 
 Free to try for 30 days, full features. $5 once, for life — no subscription, no recurring charge.
 
 [![Buy CodeMerge — $5](https://img.shields.io/badge/Buy_CodeMerge-%245_lifetime-FF6B35?style=for-the-badge)](https://harelyaish.gumroad.com/l/codemerge)
 [![Download latest release](https://img.shields.io/badge/Download-latest_release-black?style=for-the-badge&logo=apple)](https://github.com/harelyaish/CodeMerge/releases/latest)
+[![Website](https://img.shields.io/badge/Website-try_it_live-FF6B35?style=for-the-badge&logo=safari&logoColor=white)](https://harelyaish.github.io/CodeMerge/)
 
 ## Contents
 
-[Gallery](#gallery) · [Videos](#videos) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
+[Gallery](#gallery) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
 
 ## Gallery
 
@@ -36,23 +41,6 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-icon-wall.png" alt="One menu bar, a dozen tools" width="100%">
-</p>
-
-## Videos
-
-<p align="center">
-  <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-3-features.mp4"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-3-features.gif" alt="Features and price" width="75%"></a>
-  <br><sub>Features and price — <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-3-features.mp4">watch in full 1080p</a></sub>
-</p>
-
-<p align="center">
-  <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-1-tagline.mp4"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-1-tagline.gif" alt="One menu bar. A dozen tools." width="75%"></a>
-  <br><sub>One menu bar. A dozen tools. — <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-1-tagline.mp4">watch in full 1080p</a></sub>
-</p>
-
-<p align="center">
-  <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-2-intro.mp4"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/videos/codemerge-2-intro.gif" alt="CodeMerge intro" width="75%"></a>
-  <br><sub>CodeMerge intro — <a href="https://github.com/harelyaish/CodeMerge/blob/main/videos/codemerge-2-intro.mp4">watch in full 1080p</a></sub>
 </p>
 
 ## Install
