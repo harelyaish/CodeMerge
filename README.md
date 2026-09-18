@@ -85,11 +85,11 @@ The grid in the middle of the dropdown holds these tools — Settings → Main W
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/eject.png" width="28"> | Eject disks | Unmounts every ejectable external volume at once. If any refuse (e.g. a file is still open on them), it tells you which ones and why. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clean-keyboard.png" width="28"> | Clean keyboard | Puts up a full-screen overlay that blocks every keystroke, so you can wipe your keyboard without triggering anything — your trackpad or mouse still work, so you can click to end it (or use the shortcut you assigned it). |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quit-all.png" width="28"> | Quit all apps | Quits every other running app in one click. Never quits CodeMerge itself. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clipboard.png" width="28"> | Clipboard history | Keeps your last 10 copied items — click any one to copy it again. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/file-shelf.png" width="28"> | File shelf | A temporary drag-and-drop holding tray for files, images, or videos — drag something in, it stays for 5 minutes or until it hits 100 MB (whichever comes first), and you can preview it (Quick Look) or drag it back out into any other app or folder. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clipboard.png" width="28"> | Clipboard history | Keeps your last 200 copied items with search, and lets you pin snippets you reuse. Click any one to copy it again. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/file-shelf.png" width="28"> | File shelf | A temporary drag-and-drop holding tray for files, images, or videos — drag something in, it stays for 5 minutes or until it hits 100 MB (whichever comes first), and you can preview it (Quick Look), send it by AirDrop, or drag it back out into any other app or folder. Large PNGs are compressed automatically when that makes them smaller. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/prevent-sleep.png" width="28"> | Prevent sleep | Toggles keeping your Mac awake on/off, the same idea as `caffeinate` — the icon fills in solid while it's active. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/window-split.png" width="28"> | Window split / Custom layouts | Cycles the frontmost window through split layouts (half-screen, quarters, or a full custom grid you design), or full-screen. In Custom Layout mode you can drag windows between grid cells in a live preview; windows that don't fit the current grid wait in a small overflow tray until you assign them a spot. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/now-playing.png" width="28"> | Now Playing | Shows what's currently playing in Music or Spotify, with play/pause/skip controls right from the dropdown. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/now-playing.png" width="28"> | Now Playing | Shows what's currently playing in Music or Spotify, with cover art, a live seekable progress bar, and play/pause/skip and volume controls (Music and Spotify volume, not your system volume). For Music you can also add to Library or a playlist, and when nothing is playing, click the Music icon for Shuffle All, Favorites, Playlists and Genres. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/timer.png" width="28"> | Timer | Start as many simultaneous countdowns as you want, each with its own label — the nearest one counts down live on the menu-bar icon itself, so you don't need the dropdown open to track it. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/color-picker.png" width="28"> | Color picker | Turns your cursor into an eyedropper — click any pixel on your screen and its hex color code is copied to your clipboard. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/command-palette.png" width="28"> | Command palette | Search and run commands you've saved yourself — a shell command, an AppleScript, a URL to open, or **Plain Text** to just copy something to your clipboard (handy for canned replies or text you paste often). Add and edit these in Settings → Command Palette. |
@@ -98,6 +98,11 @@ The grid in the middle of the dropdown holds these tools — Settings → Main W
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quick-note.png" width="28"> | Quick Note | One scratch note that's still exactly as you left it the next time you open the dropdown — good for something you need to jot down for a minute, not a full notes app. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/lock-screen.png" width="28"> | Lock Screen | Locks your Mac straight to the login screen, one click. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/converter.png" width="28"> | Converter | Converts length, weight, and temperature entirely offline, plus currency using live exchange rates that refresh periodically and are cached so it still works if you're briefly offline. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/image-resizer.png" width="28"> | Image Resizer | Drop in a picture and make the file smaller — pick Light, Medium or Max compression and it re-saves it as a JPEG at the same dimensions, then tells you the real size before and after. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/random-generator.png" width="28"> | Random Generator | Numbers, dice, coin flip, a Yes/No answer, and more — one click each. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/audio-output.png" width="28"> | Audio Output | See every speaker, headphone and AirPlay output your Mac knows about and switch between them with one click. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/text-grab.png" width="28"> | Text Grab | Select any area of the screen and the text in it (OCR) is copied to your clipboard. Needs Screen Recording permission. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/kill-port.png" width="28"> | Kill Process on Port | Type a port number (3000, 8080, 5173…) and whatever is blocking it is terminated instantly. |
 
 ### The action row (bottom of the dropdown)
 
@@ -128,7 +133,8 @@ Nothing is requested up front. Each permission below is only asked for the first
 |---|---|---|
 | Screenshots, screen recording | Screen Recording | System Settings → Privacy & Security → Screen & System Audio Recording |
 | Clean Keyboard, global keyboard shortcuts, Lock Screen | Accessibility | System Settings → Privacy & Security → Accessibility |
-| Now Playing controls | Automation (Music) | Prompted automatically the first time you use it |
+| Text Grab | Screen Recording | System Settings → Privacy & Security → Screen & System Audio Recording |
+| Now Playing controls | Automation (Music, Spotify) | Prompted automatically the first time you use it |
 | Window split / Custom Layouts | Accessibility | System Settings → Privacy & Security → Accessibility |
 
 CPU temperature and the desktop/Dock declutter feature need **no permission at all**.
@@ -184,4 +190,12 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 
 ## Changelog
 
-See the [Releases page](https://github.com/harelyaish/CodeMerge/releases) for what changed in each version.
+### 1.1.0
+
+- New tools: Image Resizer, Random Generator, Audio Output, Text Grab and Kill Process on Port.
+- Clipboard history: 200 items, search, pinned snippets.
+- File shelf: AirDrop button and automatic compression of large PNGs.
+- Now Playing: cover art, seekable real-time progress bar, Music and Spotify volume, Music library/playlist actions, and Music/Spotify launchers when nothing is playing.
+- Global shortcuts for the new tools.
+
+See the [Releases page](https://github.com/harelyaish/CodeMerge/releases) for every version.
