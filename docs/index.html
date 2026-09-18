@@ -375,13 +375,6 @@ footer a:hover{color:var(--text)}
       <div class="row"><h3>Appearance</h3><div class="seg" id="seg"><button data-m="light" class="on">Light</button><button data-m="dark">Dark</button></div></div>
       <div class="row"><h3>Theme</h3><div class="sw" id="sw"></div></div>
       <div class="row"><h3>Wallpaper behind</h3><div class="wps" id="wps"><button class="wp0 on" data-w="wp0"></button><button class="wp1" data-w="wp1"></button><button class="wp2" data-w="wp2"></button></div></div>
-      <div class="row"><h3>Apps in the top row <button class="sm2" id="appsReset">reset</button></h3><div class="chips2" id="appChips"></div></div>
-      <div class="row"><h3>System stats</h3><div class="chips2" id="statChips"></div></div>
-      <div class="row"><h3>Tools shown <button class="sm2" id="toolsAll">all</button></h3><div class="chips2" id="toolChips"></div></div>
-      <div class="row"><h3>Look</h3>
-        <label>Accent color <span><input type="color" id="acc" value="#ed615e"> <button class="sm2" id="accReset">theme</button></span></label>
-        <label style="margin-top:10px">Frost <input type="range" id="frost" min="0" max="100" value="50" style="width:150px;accent-color:var(--orange)"></label>
-        <label style="margin-top:10px">Compact <span class="chips2"><button id="dens">off</button></span></label></div>
       <p style="color:var(--muted);font-size:13px">Pick one Light and one Dark theme in Settings; the sun/moon button next to hide-desktop-icons switches between them.</p>
     </div>
   </div>
@@ -510,18 +503,6 @@ function renderApps(){const el=$("apps");el.classList.toggle("empty",!apps.lengt
 $("apps").addEventListener("click",e=>{const a=e.target.closest(".app");if(!a)return;a.classList.remove("bounce");void a.offsetWidth;a.classList.add("bounce");say("Opening "+G[a.dataset.k][3]+"…")});
 function renderStats(){$("stats2").innerHTML=Object.keys(STATS).filter(k=>statOn[k]).map(k=>{const [l,v,p]=STATS[k];return `<div class="stat"><div class="ring" style="--p:${p}"><i></i></div><div class="r"><div class="top"><b>${l}</b><span>${v}</span></div><div class="pbar"><u style="width:${p}%"></u></div></div></div>`}).join("");$("stats2").previousElementSibling.style.display=$("stats2").innerHTML?"":"none"}
 function renderGrid(){$("grid").innerHTML=T.map(([n,h],i)=>({n,h,i})).filter(x=>!hidden.has(x.n)).map(x=>`<button data-n="${x.n}" data-h="${x.h}" class="${openTool===x.n?"on":""}"><img src="assets/icons/${x.n}.png" alt="${x.h}"></button>`).join("")}
-function renderChips(){
- $("appChips").innerHTML=Object.keys(G).map(k=>`<button data-k="${k}" class="${apps.includes(k)?"on":""}">${G[k][3]}</button>`).join("");
- $("statChips").innerHTML=Object.keys(STATS).map(k=>`<button data-k="${k}" class="${statOn[k]?"on":""}">${STATS[k][0]}</button>`).join("");
- $("toolChips").innerHTML=T.map(([n,h])=>`<button data-n="${n}" class="${hidden.has(n)?"":"on"}">${h.replace(/ — .*/,"")}</button>`).join("");$("dens").textContent=compact?"on":"off";$("dens").classList.toggle("on",compact)}
-$("appChips").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;if(apps.includes(k))apps=apps.filter(x=>x!==k);else{apps.push(k);if(apps.length>5)apps.shift()}renderApps();renderChips()});
-$("appsReset").onclick=()=>{apps=[...APPS0];renderApps();renderChips()};
-$("statChips").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;statOn[b.dataset.k]=!statOn[b.dataset.k];renderStats();renderChips()});
-$("toolChips").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const n=b.dataset.n;hidden.has(n)?hidden.delete(n):hidden.add(n);if(hidden.has(openTool)){openTool=null;renderExpand()}renderGrid();renderChips()});
-$("toolsAll").onclick=()=>{hidden.clear();renderGrid();renderChips()};
-$("acc").addEventListener("input",e=>{accOv=e.target.value;apply()});$("accReset").onclick=()=>{accOv=null;apply()};
-$("frost").addEventListener("input",apply);
-$("dens").onclick=()=>{compact=!compact;$("panel").classList.toggle("compact",compact);renderChips()};
 /* expandable tools */
 const CB=["npm run build","#F26B35","meeting-notes.md","https://harelyaish.github.io/CodeMerge","git commit -m \"ship it\""];let noteTxt="Ship the site ✨",awake=false,dev=1,np={playing:true,pos:.34,vol:.7},tmr=null;
 function renderExpand(){const el=$("expand"),t=openTool;if(!t){el.innerHTML="";return}
@@ -558,14 +539,14 @@ $("grid").addEventListener("mouseover",e=>{const b=e.target.closest("button");if
 $("grid").addEventListener("mouseleave",()=>$("hint").textContent="Hover an icon");
 const h2r=h=>{const n=parseInt(h.slice(1),16);return[n>>16&255,n>>8&255,n&255]};
 function apply(){const [nm,bg,ac]=TH[mode][idx[mode]],dk=mode==="dark",mi=nm==="Mirror",[r,g,b]=h2r(bg),p=$("panel");
- p.style.setProperty("--fg",dk?"#f0f0f2":"#1d1d1f");const A=accOv||ac,fr=(+$("frost").value)/100;p.style.setProperty("--accent",A);p.style.setProperty("--panel-solid",bg);p.style.setProperty("--panel",`rgba(${r},${g},${b},${(mi?.34:.62)+(.5-fr)*.5})`);p.style.setProperty("--blur",(mi?44:22)*(0.4+fr*1.2)+"px");p.style.setProperty("--rim",mi?"rgba(255,255,255,.65)":dk?"rgba(255,255,255,.12)":"rgba(0,0,0,.08)");p.classList.toggle("mirror",mi);
+ p.style.setProperty("--fg",dk?"#f0f0f2":"#1d1d1f");const A=ac,fr=.5;p.style.setProperty("--accent",A);p.style.setProperty("--panel-solid",bg);p.style.setProperty("--panel",`rgba(${r},${g},${b},${(mi?.34:.62)+(.5-fr)*.5})`);p.style.setProperty("--blur",(mi?44:22)*(0.4+fr*1.2)+"px");p.style.setProperty("--rim",mi?"rgba(255,255,255,.65)":dk?"rgba(255,255,255,.12)":"rgba(0,0,0,.08)");p.classList.toggle("mirror",mi);
  $("modeBtn").textContent=dk?"☾":"☀︎";document.querySelectorAll("#seg button").forEach(x=>x.classList.toggle("on",x.dataset.m===mode));
  $("sw").innerHTML=TH[mode].map(([n,b2,a],i)=>`<button data-i="${i}" class="${i===idx[mode]?"on":""}"><i style="background:linear-gradient(135deg,${b2} 50%,${a} 50%)"></i>${n}</button>`).join("")}
 $("sw").addEventListener("click",e=>{const b=e.target.closest("button");if(b){idx[mode]=+b.dataset.i;apply()}});
 $("seg").addEventListener("click",e=>{const b=e.target.closest("button");if(b){mode=b.dataset.m;apply()}});
 $("modeBtn").onclick=()=>{mode=mode==="dark"?"light":"dark";apply()};
 $("wps").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;document.querySelectorAll("#wps button").forEach(x=>x.classList.remove("on"));b.classList.add("on");$("stage").className="stage "+b.dataset.w});
-renderApps();renderStats();renderGrid();renderChips();renderExpand();apply();
+renderApps();renderStats();renderGrid();renderExpand();apply();
 /* mini tools */
 $("tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===b));document.querySelectorAll(".tool").forEach(x=>x.classList.toggle("on",x.id===b.dataset.t));if(b.dataset.t==="t5")layout("full")});
 const U={km:["len",1000],mi:["len",1609.344],kg:["mass",1],lb:["mass",.45359237],c:["temp"],f:["temp"]};
