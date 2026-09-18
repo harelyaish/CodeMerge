@@ -24,15 +24,7 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 
 ## Contents
 
-[Screenshots](#screenshots) · [Gallery](#gallery) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
-
-## Screenshots
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/screenshots/hero.png" alt="The CodeMerge dropdown, open on a real desktop" width="100%">
-</p>
-
-<p align="center"><sub>The dropdown, open — straight from a real running copy of the app.</sub></p>
+[Gallery](#gallery) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
 
 ## Gallery
 
