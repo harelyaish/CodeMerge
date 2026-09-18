@@ -24,7 +24,7 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 
 ## Contents
 
-[Screenshots](#screenshots) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
+[Screenshots](#screenshots) · [Gallery](#gallery) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
 
 ## Screenshots
 
@@ -33,6 +33,19 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 </p>
 
 <p align="center"><sub>The dropdown, open — straight from a real running copy of the app.</sub></p>
+
+## Gallery
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-promo.png" alt="CodeMerge — $5 once, no subscription" width="100%">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-features.png" alt="Everything you reach for, in one click" width="49%">
+  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-themes.png" alt="Light and dark themes" width="49%">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/gallery/cm-icon-wall.png" alt="One menu bar, a dozen tools" width="100%">
+</p>
 
 ## Install
 
