@@ -109,6 +109,7 @@ The grid in the middle of the dropdown holds these tools — Settings → Main W
 | Icon | What it does |
 |---|---|
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/settings.png" width="28"> Settings | Opens the Settings window, right where you'd expect it, anchored to the menu-bar icon. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/theme-switch.png" width="28"> <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/theme-dark.png" width="28"> Light / Dark switch | Flips the whole dropdown between your chosen Light theme and your chosen Dark theme — the sun shows in light mode, the moon in dark. Pick one theme for each in Settings → Appearance (Default, Midnight, Forest, Sunset, Monochrome or the frosted Mirror). |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/hide-desktop.png" width="28"> Hide desktop icons & Dock | One click covers every icon and widget on your desktop and auto-hides the Dock, so you get a clean screen for a screenshot or screen share — click again (or use the same switch in Settings → General) to bring everything back. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/power.png" width="28"> Quit CodeMerge | Quits the app itself. |
 
@@ -117,7 +118,7 @@ The grid in the middle of the dropdown holds these tools — Settings → Main W
 Open Settings from the <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/settings.png" width="18" valign="middle"> icon or by right-clicking the menu-bar icon:
 
 - **Main Window** — choose exactly which icons/stats show in the dropdown, and drag to reorder them.
-- **Appearance** — pick an accent color/theme for the dropdown, previewed live rather than as a static swatch.
+- **Appearance** — choose one Light and one Dark theme (six each: Default, Midnight, Forest, Sunset, Monochrome, Mirror), previewed live; the sun/moon button in the dropdown switches between them.
 - **Keyboard Shortcuts** — assign a system-wide keyboard shortcut to almost any feature (opening the dropdown, screenshots, window split, lock screen, and more), so you never need to click the menu bar at all for the things you use most.
 - **Command Palette** — add, edit, and reorder your own saved commands (shell/AppleScript/URL/plain-text).
 - **License** — see your trial status, or enter the license key Gumroad emails you after purchase.
