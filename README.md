@@ -103,8 +103,12 @@ The grid in the middle of the dropdown holds these tools — Settings → Main W
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/random-generator.png" width="28"> | Random Generator | Numbers, dice, coin flip, a Yes/No answer, and more — one click each. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/audio-output.png" width="28"> | Audio Output | See every speaker, headphone and AirPlay output your Mac knows about and switch between them with one click. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/text-grab.png" width="28"> | Text Grab | Select any area of the screen and the text in it (OCR) is copied to your clipboard. Needs Screen Recording permission. |
-| ⚡ | Workflows | Combine tools into one command: hide desktop icons, keep the Mac awake, switch audio output, start a timer, open or quit apps, open URLs, arrange windows, eject disks, lock the screen, run a shell command or AppleScript, or wait. Build them in Settings → Workflows (templates: Presentation mode, End work, Dev mode, Focus session) and run them from the dropdown with live progress. A failing step never stops the rest. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/workflows.png" width="28"> | Workflows | Combine tools into one command: hide desktop icons, keep the Mac awake, switch audio output, start a timer, open or quit apps, open URLs, arrange windows, eject disks, lock the screen, run a shell command or AppleScript, or wait. Build them in Settings → Workflows (templates: Presentation mode, End work, Dev mode, Focus session) and run them from the dropdown with live progress. A failing step never stops the rest. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/kill-port.png" width="28"> | Kill Process on Port | Type a port number (3000, 8080, 5173…) and whatever is blocking it is terminated instantly. |
+
+### Annotating screenshots
+
+Tap **Annotate** on the capture toast (or turn on Settings → Screenshots → *Open the annotation editor after each screenshot*). Tools: Select, Arrow, Line, Rectangle, Ellipse, Highlighter, Pen, numbered Steps, Blur and Text, in seven colours and three thicknesses. With **Select** you can drag any shape to move it, drag its handles to resize, double-click text to edit it, recolour it, duplicate it (⌘D) or delete it (⌫). ⌘Z / ⇧⌘Z undo and redo, ⌘S saves to your Desktop, ⇧⌘C copies.
 
 ### The action row (bottom of the dropdown)
 
@@ -180,10 +184,6 @@ Already bought a license and want to support development further? [Leave a tip v
 ## License
 
 Buying a license key grants you a personal, non-transferable right to install and run the compiled app. It's closed-source and proprietary — the license doesn't grant any right to redistribute, resell, or reverse-engineer it.
-
-### Annotating screenshots
-
-Tap **Annotate** on the capture toast (or turn on Settings → Screenshots → *Open the annotation editor after each screenshot*). Tools: Select, Arrow, Line, Rectangle, Ellipse, Highlighter, Pen, numbered Steps, Blur and Text, in seven colours and three thicknesses. With **Select** you can drag any shape to move it, drag its handles to resize, double-click text to edit it, recolour it, duplicate it (⌘D) or delete it (⌫). ⌘Z / ⇧⌘Z undo and redo, ⌘S saves to your Desktop, ⇧⌘C copies.
 
 ## Uninstalling
 
