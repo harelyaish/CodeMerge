@@ -1,6 +1,6 @@
 cask "codemerge" do
-  version "1.1.2"
-  sha256 "cec83d6b1a5139486aac5b4cf987f2d32dcdccfd46206b56952da5eff1cdeb72"
+  version "1.1.3"
+  sha256 "68e334f797a6bd0ac059d54d152a396e1416b0f038bcc74b48c550460bf7da60"
 
   url "https://github.com/harelyaish/CodeMerge/releases/download/v#{version}/CodeMerge.zip"
   name "CodeMerge"

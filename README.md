@@ -94,7 +94,7 @@ The grid in the middle of the dropdown holds these tools — Settings → Main W
 | Icon | Feature | What it does |
 |---|---|---|
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screenshot-full.png" width="28"> | Screenshot (full screen) | Captures the whole screen straight to the clipboard, and keeps a copy in Recent Captures (unless you've turned that off in Settings → Screenshots). |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screenshot-area.png" width="28"> | Screenshot (select area) | Same as above, but you drag to select a region first, using macOS's own native selection tool. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screenshot-area.png" width="28"> | Screenshot (select area) | Same as above, but you drag to select a region first, using macOS's own native selection tool. After either, tap **Annotate** on the toast to mark it up (see below). |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/eject.png" width="28"> | Eject disks | Unmounts every ejectable external volume at once. If any refuse (e.g. a file is still open on them), it tells you which ones and why. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clean-keyboard.png" width="28"> | Clean keyboard | Puts up a full-screen overlay that blocks every keystroke, so you can wipe your keyboard without triggering anything — your trackpad or mouse still work, so you can click to end it (or use the shortcut you assigned it). |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quit-all.png" width="28"> | Quit all apps | Quits every other running app in one click. Never quits CodeMerge itself. |
@@ -110,11 +110,12 @@ The grid in the middle of the dropdown holds these tools — Settings → Main W
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/weather.png" width="28"> | Weather | Shows current conditions — temperature, feels-like, high/low, humidity, wind — for your location, worked out from your IP address (no location permission prompt, no GPS). |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quick-note.png" width="28"> | Quick Note | One scratch note that's still exactly as you left it the next time you open the dropdown — good for something you need to jot down for a minute, not a full notes app. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/lock-screen.png" width="28"> | Lock Screen | Locks your Mac straight to the login screen, one click. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/converter.png" width="28"> | Converter | Converts length, weight, and temperature entirely offline, plus currency using live exchange rates that refresh periodically and are cached so it still works if you're briefly offline. |
+| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/converter.png" width="28"> | Converter | Converts length, weight, and temperature entirely offline, plus currency using live exchange rates that refresh periodically and are cached so it still works if you're briefly offline. The **Clocks** tab shows live times for up to 5 cities you find with free-text search (city or country), with day/night, the offset from your time, and a slider that shifts every clock together to plan a meeting. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/image-resizer.png" width="28"> | Image Resizer | Drop in a picture and make the file smaller — pick Light, Medium or Max compression and it re-saves it as a JPEG at the same dimensions, then tells you the real size before and after. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/random-generator.png" width="28"> | Random Generator | Numbers, dice, coin flip, a Yes/No answer, and more — one click each. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/audio-output.png" width="28"> | Audio Output | See every speaker, headphone and AirPlay output your Mac knows about and switch between them with one click. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/text-grab.png" width="28"> | Text Grab | Select any area of the screen and the text in it (OCR) is copied to your clipboard. Needs Screen Recording permission. |
+| ⚡ | Workflows | Combine tools into one command: hide desktop icons, keep the Mac awake, switch audio output, start a timer, open or quit apps, open URLs, arrange windows, eject disks, lock the screen, run a shell command or AppleScript, or wait. Build them in Settings → Workflows (templates: Presentation mode, End work, Dev mode, Focus session) and run them from the dropdown with live progress. A failing step never stops the rest. |
 | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/kill-port.png" width="28"> | Kill Process on Port | Type a port number (3000, 8080, 5173…) and whatever is blocking it is terminated instantly. |
 
 ### The action row (bottom of the dropdown)
@@ -192,6 +193,10 @@ Already bought a license and want to support development further? [Leave a tip v
 
 Buying a license key grants you a personal, non-transferable right to install and run the compiled app. It's closed-source and proprietary — the license doesn't grant any right to redistribute, resell, or reverse-engineer it.
 
+### Annotating screenshots
+
+Tap **Annotate** on the capture toast (or turn on Settings → Screenshots → *Open the annotation editor after each screenshot*). Tools: Select, Arrow, Line, Rectangle, Ellipse, Highlighter, Pen, numbered Steps, Blur and Text, in seven colours and three thicknesses. With **Select** you can drag any shape to move it, drag its handles to resize, double-click text to edit it, recolour it, duplicate it (⌘D) or delete it (⌫). ⌘Z / ⇧⌘Z undo and redo, ⌘S saves to your Desktop, ⇧⌘C copies.
+
 ## Uninstalling
 
 Drag `CodeMerge.app` from `/Applications` to the Trash, then remove its saved settings:
@@ -203,6 +208,12 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 (Installed via Homebrew? `brew uninstall --cask codemerge` does both steps for you.)
 
 ## Changelog
+
+### 1.1.3
+
+- Workflows: combine tools into one command, built in Settings → Workflows and run from the dropdown.
+- Screenshot annotation editor: arrows, lines, shapes, highlighter, pen, numbered steps, blur and text — select, move, resize, restyle, duplicate and delete; copy or save.
+- Converter: new Clocks tab — up to 5 world clocks with city/country search, day/night, offsets and a meeting-planner slider.
 
 ### 1.1.2
 
