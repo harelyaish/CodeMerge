@@ -204,6 +204,13 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 
 ## Changelog
 
+### 1.1.2
+
+- Timer redesigned: big time with presets and a Custom entry, compact cards, +10s / +1m quick-add, up to 3 timers at once.
+- Converter redesigned: From / To cards, swap, and tap to copy.
+- Window layouts: glass-tile preview and 12 layouts, including new mixed-size ones (Main + Side, Focus, Center, Top + Two, Big + Three).
+- Fixes: Spotify and other Electron apps are now found by the layout preview; fixed a crash when switching layouts.
+
 ### 1.1.1
 
 - Themes: separate Light and Dark groups (Default, Midnight, Forest, Sunset, Monochrome, Mirror in each), a sun/moon quick switch in the main window, frosted-glass panels, and controls that follow the theme.
