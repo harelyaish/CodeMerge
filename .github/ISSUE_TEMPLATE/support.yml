@@ -1,0 +1,15 @@
+name: Contact support
+description: A question about using CodeMerge, or help getting it working.
+labels: [question]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: How can I help?
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: CodeMerge version
+      placeholder: e.g. 1.1.3
