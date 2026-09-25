@@ -149,6 +149,23 @@ h2{font-size:clamp(30px,4.4vw,52px);letter-spacing:-.03em;line-height:1.08;margi
 @keyframes fill{0%{width:0}60%,100%{width:88%}}
 .ls{width:120px;height:100%;position:relative;overflow:hidden}.ls div{position:absolute;left:0;right:0;top:0;display:grid;gap:6px;padding:8px;animation:scrollup 5s linear infinite}.ls div i{height:10px;border-radius:3px;background:var(--card2);border:1px solid var(--line)}.ls::after{content:"";position:absolute;inset:6px;border:2px solid var(--orange);border-radius:8px}
 @keyframes scrollup{to{transform:translateY(-50%)}}
+/* The real app: screenshots, and the mascot peeking around the page */
+.real{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:start}
+.nstage{position:relative;border-radius:24px;border:1px solid var(--line);overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#3a2a55 0%,#161420 55%,#0b0b0d 100%);padding:0 18px 22px}
+.nstage .bar{height:26px;background:rgba(0,0,0,.35);display:flex;align-items:center;gap:14px;padding:0 14px;font:600 11px -apple-system,sans-serif;color:rgba(255,255,255,.7);margin:0 -18px}
+.nstage .bar b{flex:1}.nstage .shot{display:block;margin:0 auto;width:100%;max-width:560px;height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.5));transition:opacity .35s,transform .35s}
+.nstage .shot.swap{opacity:0;transform:translateY(-6px)}
+.nseg{display:flex;gap:6px;justify-content:center;margin-top:16px}.nseg button{font:600 12.5px -apple-system,sans-serif;color:var(--muted);background:var(--card2);border:1px solid var(--line);border-radius:99px;padding:6px 14px;cursor:pointer}
+.nseg button.on{color:#fff;background:var(--orange);border-color:var(--orange)}
+.mw{border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,#2a2d3a,#15161c);display:grid;place-items:center;padding:26px;height:100%}
+.mw img{width:100%;max-width:284px;height:auto;filter:drop-shadow(0 20px 36px rgba(0,0,0,.55))}
+.nsets{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.nsets figure{margin:0}.nsets img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,.35)}
+.nsets figcaption,.cap2{color:var(--muted);font-size:13.5px;margin-top:10px;text-align:center}
+@media(max-width:940px){.real,.nsets{grid-template-columns:1fr}}
+.peeker{position:fixed;width:58px;height:58px;z-index:60;pointer-events:none;transition:transform .5s cubic-bezier(.3,1.4,.5,1);will-change:transform}
+.peeker svg{width:100%;height:100%;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+.peeker .eyes{transition:transform .15s}
+.peeker .lid{animation:blink 4.5s infinite;transform-origin:center}@keyframes blink{0%,94%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
 @property --v{syntax:"<percentage>";inherits:false;initial-value:0%}
 .ring2{width:78px;height:78px;border-radius:50%;background:conic-gradient(var(--orange) var(--v,0%),var(--line) 0);display:grid;place-items:center;animation:tm 8s linear infinite}
 .ring2 i{width:64px;height:64px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-style:normal;font-size:16px}
@@ -395,7 +412,7 @@ footer a:hover{color:var(--text)}
 
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="assets/app-icon.png" alt="">CodeMerge</a>
-  <div class="links"><a href="#features">Features</a><a href="#try">Try it</a><a href="#tools">Mini tools</a><a href="#updates">Updates</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="#help">Help</a></div>
+  <div class="links"><a href="#features">Features</a><a href="#real">Screenshots</a><a href="#try">Try it</a><a href="#tools">Mini tools</a><a href="#updates">Updates</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="#help">Help</a></div>
   <div class="navr">
     <button class="iconbtn" id="palBtn" title="Search tools (⌘K)">⌕</button>
     <button class="iconbtn" id="themeBtn" title="Light / dark site">☾</button>
@@ -459,6 +476,28 @@ footer a:hover{color:var(--text)}
   </div>
 </div></section>
 
+
+<section id="real" style="padding-top:20px"><div class="wrap">
+  <div class="head"><div class="eyebrow rv">The real thing</div><h2 class="rv">This is what it looks like.</h2><p class="lead rv">Straight from a Mac running CodeMerge 1.2 — no mockups.</p></div>
+  <div class="real rv">
+    <div>
+      <div class="nstage"><div class="bar"><b></b><span>Wi‑Fi</span><span>100%</span><span id="clk">9:41</span></div>
+        <img class="shot" id="notchShot" src="assets/app/notch-home.webp" width="790" height="400" alt="The CodeMerge notch panel open on its Home screen: the mascot, a status line, five widgets and a chat field" loading="lazy">
+      </div>
+      <div class="nseg" role="tablist" aria-label="Notch screens">
+        <button class="on" data-shot="notch-home" data-alt="The notch Home screen">Home</button>
+        <button data-shot="notch-timers" data-alt="The notch Timers tab with presets and a reminder field">Timers</button>
+        <button data-shot="notch-today" data-alt="The notch Today tab with an add-event field">Today</button>
+      </div>
+      <p class="cap2">The notch — hover it and it opens. Widgets, tabs, a chat that takes plain commands.</p>
+    </div>
+    <div><div class="mw"><img src="assets/app/main-window.webp" width="284" height="387" alt="The CodeMerge main window: app shortcuts, CPU, memory and disk, and a grid of tools" loading="lazy"></div><p class="cap2">The main window — from the menu bar icon.</p></div>
+  </div>
+  <div class="nsets rv">
+    <figure><img src="assets/app/settings-notch.webp" width="1230" height="948" alt="CodeMerge Settings, Notch page" loading="lazy"><figcaption>Settings — search finds anything, on any page.</figcaption></figure>
+    <figure><img src="assets/app/settings-typingsounds.webp" width="1230" height="948" alt="CodeMerge Settings, Typing Sounds page with nine recorded keyboards" loading="lazy"><figcaption>Typing sounds — nine keyboards, recorded for real.</figcaption></figure>
+  </div>
+</div></section>
 
 <section id="story" style="padding-top:20px"><div class="wrap">
   <div class="head"><div class="eyebrow rv">How it feels</div><h2 class="rv">Scroll — watch your Mac get faster.</h2></div>
@@ -820,6 +859,35 @@ g("myv").addEventListener("input",e=>{const v=e.target.value.trim().replace(/^v/
 g("ideaBtn").onclick=()=>{const t=g("ideaTxt").value.trim(),m=g("ideaMsg");if(t.length<8){m.textContent="Please write a sentence or two first.";return}
  const sub=encodeURIComponent("CodeMerge idea: "+g("ideaType").value),v=g("ideaVer").value.trim(),body=encodeURIComponent(t+"\n\n— Type: "+g("ideaType").value+(v?"\n— CodeMerge version: "+v:"")+"\n— Sent from harelyaish.github.io/CodeMerge");
  m.innerHTML=`Opening your email app… didn't open? Write to <b>${CONTACT}</b>.`;location.href=`mailto:${CONTACT}?subject=${sub}&body=${body}`}})();
+</script>
+<div class="peeker" id="peeker" aria-hidden="true"><svg viewBox="0 0 60 60"><g transform="rotate(-6 30 30)"><rect x="6" y="8" width="48" height="44" rx="14" fill="#f6c7a1"/><rect x="6" y="8" width="48" height="44" rx="14" fill="url(#pkShade)"/></g><defs><linearGradient id="pkShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity=".08"/></linearGradient></defs><g class="eyes"><g class="lid"><rect x="21" y="23" width="4.6" height="11" rx="2.3" fill="#2a1d16"/><rect x="33" y="22" width="4.6" height="11" rx="2.3" fill="#2a1d16"/></g></g></svg></div>
+<script>
+/* The mascot, as in the app: now and then it peeks in from an edge of the
+   page, looks at your cursor, and ducks away if you come close. */
+(function(){
+  const el=document.getElementById("peeker");if(!el||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const eyes=el.querySelector(".eyes"),S=58,show=.62;let mouse={x:-1e4,y:-1e4},cur=null,t=null;
+  addEventListener("mousemove",e=>{mouse={x:e.clientX,y:e.clientY};look();if(cur&&near())hide(true)},{passive:true});
+  function place(edge,pos,out){const W=innerWidth,H=innerHeight,h=out?S*(1-show):S*1.1;let x,y,r;
+    if(edge==="bottom"){x=pos*(W-S);y=H-S+(out?0:0)+(out?S*(1-show):S*1.1);r=0}
+    if(edge==="left"){x=out?-S*(1-show):-S*1.1;y=pos*(H-S);r=90}
+    if(edge==="right"){x=W-S+(out?S*(1-show):S*1.1);y=pos*(H-S);r=-90}
+    el.style.left="0";el.style.top="0";el.style.transform=`translate(${x}px,${y}px) rotate(${r}deg)`}
+  function center(){const b=el.getBoundingClientRect();return{x:b.left+b.width/2,y:b.top+b.height/2}}
+  function near(){const c=center();return Math.hypot(mouse.x-c.x,mouse.y-c.y)<140}
+  function look(){if(!cur)return;const c=center(),dx=mouse.x-c.x,dy=mouse.y-c.y,d=Math.hypot(dx,dy)||1;eyes.style.transform=`translate(${dx/d*3}px,${dy/d*2.5}px)`}
+  function hide(shy){if(!cur)return;place(cur.edge,cur.pos,false);const from=cur;cur=null;clearTimeout(t);t=setTimeout(peek,shy?1200+Math.random()*800:3000+Math.random()*3000);el.dataset.last=JSON.stringify(from)}
+  function peek(){const edges=["bottom","left","right"],cands=[...Array(6)].map(()=>({edge:edges[Math.random()*3|0],pos:.25+Math.random()*.5}));
+    // the spot farthest from the cursor
+    let best=cands[0],bd=-1;for(const c of cands){place(c.edge,c.pos,true);const p=center(),d=Math.hypot(p.x-mouse.x,p.y-mouse.y);if(d>bd){bd=d;best=c}}
+    el.style.transition="none";place(best.edge,best.pos,false);el.getBoundingClientRect();el.style.transition="";
+    cur=best;place(best.edge,best.pos,true);look();t=setTimeout(()=>hide(false),2600+Math.random()*1800)}
+  place("bottom",.5,false);t=setTimeout(peek,2500);
+})();
+/* Real screenshots: switch the notch between its screens. */
+(function(){const img=document.getElementById("notchShot");if(!img)return;
+  document.querySelectorAll(".nseg button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".nseg button").forEach(x=>x.classList.toggle("on",x===b));
+    img.classList.add("swap");setTimeout(()=>{img.src=`assets/app/${b.dataset.shot}.webp`;img.alt=b.dataset.alt;img.onload=()=>img.classList.remove("swap")},200)}))})();
 </script>
 </body>
 </html>

@@ -77,7 +77,7 @@ CodeMerge lives in your menu bar — click its icon to open the dropdown, or rig
 
 ## Features
 
-Every tool below is in the $5 lifetime license — nothing is held back for a “Pro” tier.
+Every tool below comes with the $5 lifetime license.
 
 <table>
 <tr>
