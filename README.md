@@ -23,7 +23,7 @@
   <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/terminal-hero.svg" alt="CodeMerge in a terminal — the app logo, a dozen tools, $5 once" width="100%">
 </p>
 
-**CodeMerge** is a macOS menu-bar utility that bundles a dozen small daily-use tools into one dropdown, so you stop juggling separate apps (and their separate Dock icons, keyboard shortcuts, and menu bars) for things you do constantly. Everything lives behind a single icon in your menu bar — click it, or use a global keyboard shortcut, and it's there.
+**CodeMerge** is a macOS menu-bar utility that bundles dozens of small daily-use tools into one dropdown — and, on Macs with a notch, into the notch itself, so you stop juggling separate apps (and their separate Dock icons, keyboard shortcuts, and menu bars) for things you do constantly. Everything lives behind a single icon in your menu bar — click it, or use a global keyboard shortcut, and it's there.
 
 Free to try for 30 days, full features. $5 once, for life — no subscription, no recurring charge.
 
@@ -33,7 +33,7 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 
 ## Contents
 
-[Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Every feature, explained](#every-feature-explained) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
+[Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Features](#features) · [The notch](#the-notch) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
 
 ## Install
 
@@ -75,62 +75,34 @@ CodeMerge lives in your menu bar — click its icon to open the dropdown, or rig
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:FF6B35&height=3&section=header" width="100%">
 </p>
 
-## Every feature, explained
+## Features
 
-The grid in the middle of the dropdown holds these tools — Settings → Main Window controls which ones show and in what order:
+Everything below is in the $5 lifetime license — nothing is held back for a “Pro” tier.
 
-| Icon | Feature | What it does |
-|---|---|---|
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screenshot-full.png" width="28"> | Screenshot (full screen) | Captures the whole screen straight to the clipboard, and keeps a copy in Recent Captures (unless you've turned that off in Settings → Screenshots). |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screenshot-area.png" width="28"> | Screenshot (select area) | Same as above, but you drag to select a region first, using macOS's own native selection tool. After either, tap **Annotate** on the toast to mark it up (see below). |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/eject.png" width="28"> | Eject disks | Unmounts every ejectable external volume at once. If any refuse (e.g. a file is still open on them), it tells you which ones and why. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clean-keyboard.png" width="28"> | Clean keyboard | Puts up a full-screen overlay that blocks every keystroke, so you can wipe your keyboard without triggering anything — your trackpad or mouse still work, so you can click to end it (or use the shortcut you assigned it). |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quit-all.png" width="28"> | Quit all apps | Quits every other running app in one click. Never quits CodeMerge itself. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clipboard.png" width="28"> | Clipboard history | Keeps your last 200 copied items with search, and lets you pin snippets you reuse. Click any one to copy it again. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/file-shelf.png" width="28"> | File shelf | A temporary drag-and-drop holding tray for files, images, or videos — drag something in, it stays for 5 minutes or until it hits 100 MB (whichever comes first), and you can preview it (Quick Look), send it by AirDrop, or drag it back out into any other app or folder. Large PNGs are compressed automatically when that makes them smaller. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/prevent-sleep.png" width="28"> | Prevent sleep | Toggles keeping your Mac awake on/off, the same idea as `caffeinate` — the icon fills in solid while it's active. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/window-split.png" width="28"> | Window split / Custom layouts | Cycles the frontmost window through split layouts (half-screen, quarters, or a full custom grid you design), or full-screen. In Custom Layout mode you can drag windows between grid cells in a live preview; windows that don't fit the current grid wait in a small overflow tray until you assign them a spot. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/now-playing.png" width="28"> | Now Playing | Shows what's currently playing in Music or Spotify, with cover art, a live seekable progress bar, and play/pause/skip and volume controls (Music and Spotify volume, not your system volume). For Music you can also add to Library or a playlist, and when nothing is playing, click the Music icon for Shuffle All, Favorites, Playlists and Genres. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/timer.png" width="28"> | Timer | Start as many simultaneous countdowns as you want, each with its own label — the nearest one counts down live on the menu-bar icon itself, so you don't need the dropdown open to track it. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/color-picker.png" width="28"> | Color picker | Turns your cursor into an eyedropper — click any pixel on your screen and its hex color code is copied to your clipboard. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/command-palette.png" width="28"> | Command palette | Search and run commands you've saved yourself — a shell command, an AppleScript, a URL to open, or **Plain Text** to just copy something to your clipboard (handy for canned replies or text you paste often). Add and edit these in Settings → Command Palette. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screen-recording.png" width="28"> | Screen recording | Starts a screen recording with a small floating pause/stop control that stays on top; finished recordings land in Recent Captures, same as screenshots. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/weather.png" width="28"> | Weather | Shows current conditions — temperature, feels-like, high/low, humidity, wind — for your location, worked out from your IP address (no location permission prompt, no GPS). |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quick-note.png" width="28"> | Quick Note | One scratch note that's still exactly as you left it the next time you open the dropdown — good for something you need to jot down for a minute, not a full notes app. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/lock-screen.png" width="28"> | Lock Screen | Locks your Mac straight to the login screen, one click. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/converter.png" width="28"> | Converter | Converts length, weight, and temperature entirely offline, plus currency using live exchange rates that refresh periodically and are cached so it still works if you're briefly offline. The **Clocks** tab shows live times for up to 5 cities you find with free-text search (city or country), with day/night, the offset from your time, and a slider that shifts every clock together to plan a meeting. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/image-resizer.png" width="28"> | Image Resizer | Drop in a picture and make the file smaller — pick Light, Medium or Max compression and it re-saves it as a JPEG at the same dimensions, then tells you the real size before and after. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/random-generator.png" width="28"> | Random Generator | Numbers, dice, coin flip, a Yes/No answer, and more — one click each. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/audio-output.png" width="28"> | Audio Output | See every speaker, headphone and AirPlay output your Mac knows about and switch between them with one click. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/text-grab.png" width="28"> | Text Grab | Select any area of the screen and the text in it (OCR) is copied to your clipboard. Needs Screen Recording permission. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/workflows.png" width="28"> | Workflows | Combine tools into one command: hide desktop icons, keep the Mac awake, switch audio output, start a timer, open or quit apps, open URLs, arrange windows, eject disks, lock the screen, run a shell command or AppleScript, or wait. Build them in Settings → Workflows (templates: Presentation mode, End work, Dev mode, Focus session) and run them from the dropdown with live progress. A failing step never stops the rest. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/kill-port.png" width="28"> | Kill Process on Port | Type a port number (3000, 8080, 5173…) and whatever is blocking it is terminated instantly. |
-
-### Annotating screenshots
-
-Tap **Annotate** on the capture toast (or turn on Settings → Screenshots → *Open the annotation editor after each screenshot*). Tools: Select, Arrow, Line, Rectangle, Ellipse, Highlighter, Pen, numbered Steps, Blur and Text, in seven colours and three thicknesses. With **Select** you can drag any shape to move it, drag its handles to resize, double-click text to edit it, recolour it, duplicate it (⌘D) or delete it (⌫). ⌘Z / ⇧⌘Z undo and redo, ⌘S saves to your Desktop, ⇧⌘C copies.
-
-### The action row (bottom of the dropdown)
-
-| Icon | What it does |
+| | What you get |
 |---|---|
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/settings.png" width="28"> Settings | Opens the Settings window, right where you'd expect it, anchored to the menu-bar icon. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/theme-switch.png" width="28"> <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/theme-dark.png" width="28"> Light / Dark switch | Flips the whole dropdown between your chosen Light theme and your chosen Dark theme — the sun shows in light mode, the moon in dark. Pick one theme for each in Settings → Appearance (Default, Midnight, Forest, Sunset, Monochrome or the frosted Mirror). |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/hide-desktop.png" width="28"> Hide desktop icons & Dock | One click covers every icon and widget on your desktop and auto-hides the Dock, so you get a clean screen for a screenshot or screen share — click again (or use the same switch in Settings → General) to bring everything back. |
-| <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/power.png" width="28"> Quit CodeMerge | Quits the app itself. |
+| **🖼 Capture** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screenshot-area.png" width="18" valign="middle"> Screenshots (full or area) with an **annotation editor** · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screen-recording.png" width="18" valign="middle"> Screen recording · **Scrolling screenshots** — click a window, it captures top to bottom · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/text-grab.png" width="18" valign="middle"> Text Grab (OCR) · **Measure** — ruler & magnifier: drag to copy a size, click to copy a colour |
+| **🪟 Windows & desktop** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/window-split.png" width="18" valign="middle"> Window split & custom grid layouts · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/hide-desktop.png" width="18" valign="middle"> Hide desktop icons & Dock · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clean-keyboard.png" width="18" valign="middle"> Clean keyboard · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quit-all.png" width="18" valign="middle"> Quit all apps · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/eject.png" width="18" valign="middle"> Eject disks · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/lock-screen.png" width="18" valign="middle"> Lock screen · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/prevent-sleep.png" width="18" valign="middle"> Prevent sleep |
+| **📋 Everyday** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clipboard.png" width="18" valign="middle"> Clipboard history (200 items, pins) · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/file-shelf.png" width="18" valign="middle"> File shelf · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quick-note.png" width="18" valign="middle"> Quick note · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/timer.png" width="18" valign="middle"> Timers · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/converter.png" width="18" valign="middle"> Converter & world clocks · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/weather.png" width="18" valign="middle"> Weather · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/random-generator.png" width="18" valign="middle"> Random generator · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/color-picker.png" width="18" valign="middle"> Colour picker · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/audio-output.png" width="18" valign="middle"> Audio output switcher |
+| **🎵 Music** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/now-playing.png" width="18" valign="middle"> Now Playing for Music & Spotify — cover art, seeking, volume, **lyrics** |
+| **🛠 Power tools** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/command-palette.png" width="18" valign="middle"> Command palette · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/workflows.png" width="18" valign="middle"> Workflows (chain tools into one command) · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/kill-port.png" width="18" valign="middle"> Kill process on port · **Speed test** · **Package tracking** · **Convert any file to Markdown** · **Find a file** in plain words |
+| **🎤 Presenting** | **Draw on screen** (pen, highlighter, arrows, boxes) · show your **clicks** and **shortcuts** on screen |
+| **🌿 Wellbeing** | **Water & stretch reminders** that learn how you work · **Sunrise, sunset & golden hour** · **Typing sounds** recorded from 9 real keyboards |
+
+### The notch
+
+On a Mac with a notch, CodeMerge turns it into a small live panel. Hover it to open:
+
+- **Home** — a mascot that reacts to what you're doing, status chips, up to **5 widgets** of your favourite tools, and a chat that takes plain commands (“skip”, “timer 25m”, “remind me at 5 to call mom”, “find my resume”).
+- **Tabs** (up to 8) — Today's calendar, music with lyrics, timers & reminders, clipboard, file shelf, voice notes, speed test, packages and more.
+- **Live ears** beside the camera — music, timers, meetings, recording and downloads, visible even when it's closed.
+- **Any tool opens right inside the notch**, and a camera **mirror** and **voice notes** are one tap away.
+
+The mascot also peeks into the main window and Settings now and then — and hides when your cursor gets close.
 
 ### Settings, in brief
 
-Open Settings from the <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/settings.png" width="18" valign="middle"> icon or by right-clicking the menu-bar icon:
-
-- **Main Window** — choose exactly which icons/stats show in the dropdown, and drag to reorder them.
-- **Appearance** — choose one Light and one Dark theme (six each: Default, Midnight, Forest, Sunset, Monochrome, Mirror), previewed live; the sun/moon button in the dropdown switches between them.
-- **Keyboard Shortcuts** — assign a system-wide keyboard shortcut to almost any feature (opening the dropdown, screenshots, window split, lock screen, and more), so you never need to click the menu bar at all for the things you use most.
-- **Command Palette** — add, edit, and reorder your own saved commands (shell/AppleScript/URL/plain-text).
-- **License** — see your trial status, or enter the license key Gumroad emails you after purchase.
-- **General** — launch-at-login, the desktop/Dock declutter toggle, and update checking.
-
-CodeMerge also launches automatically at login (if you leave that on) and has no Dock icon — it behaves purely as a background menu-bar utility.
+A searchable Settings window — search finds any setting on any page. Pages include **Notch** (style, Home, widgets, tabs), **Mascot**, **Main Window** (which tools show, in what order, and themes), **Keyboard Shortcuts** (a global shortcut for almost anything), **Screenshots**, **Timer**, **Workflows**, **Command Palette**, **Typing Sounds**, **Water & Stretch**, **Weather**, **Connectors** (Pocket) and **License**. CodeMerge starts at login if you like and has no Dock icon.
 
 ### Permissions it may ask you for
 
@@ -138,17 +110,27 @@ Nothing is requested up front. Each permission below is only asked for the first
 
 | Feature | Permission | Where to check/change it |
 |---|---|---|
-| Screenshots, screen recording | Screen Recording | System Settings → Privacy & Security → Screen & System Audio Recording |
-| Clean Keyboard, global keyboard shortcuts, Lock Screen | Accessibility | System Settings → Privacy & Security → Accessibility |
-| Text Grab | Screen Recording | System Settings → Privacy & Security → Screen & System Audio Recording |
+| Screenshots, screen recording, Text Grab, Measure, scrolling screenshots | Screen Recording | System Settings → Privacy & Security → Screen & System Audio Recording |
+| Clean Keyboard, global shortcuts, Lock Screen, window split, typing sounds in other apps, showing shortcuts while presenting, auto-scrolling screenshots | Accessibility | System Settings → Privacy & Security → Accessibility |
 | Now Playing controls | Automation (Music, Spotify) | Prompted automatically the first time you use it |
-| Window split / Custom Layouts | Accessibility | System Settings → Privacy & Security → Accessibility |
+| Today tab, meeting reminders | Calendars | System Settings → Privacy & Security → Calendars |
+| Notch mirror | Camera | System Settings → Privacy & Security → Camera |
+| Voice notes | Microphone | System Settings → Privacy & Security → Microphone |
 
 CPU temperature and the desktop/Dock declutter feature need **no permission at all**.
 
 ### What talks to the network
 
-Almost nothing in CodeMerge does. Two features make plain HTTPS calls, neither needing any account or API key: **Weather** (`ipapi.co` for your approximate location from your IP, `api.open-meteo.com` for the forecast) and the **currency converter** (`api.frankfurter.app`, which republishes European Central Bank exchange rates). Nothing else talks to the network, and no credentials of yours are ever read or sent anywhere.
+Very little, and only when you use the feature — no account or API key needed for any of these:
+
+- **Weather** — `ipapi.co` (approximate location from your IP) and `api.open-meteo.com` (forecast).
+- **Currency converter** — `api.frankfurter.app` (European Central Bank rates).
+- **Lyrics** — `lrclib.net`, sent the song's title and artist.
+- **Speed test** — macOS's own `networkQuality` tool, which talks to Apple's test servers.
+- **Voice notes to Pocket** — only if you connect your Pocket account in Settings → Connectors.
+- **License check** — Gumroad, when you enter a license key.
+
+Package tracking just opens the carrier's own tracking page in your browser. Typing sounds never read what you type — only which key position was pressed — and nothing you type leaves your Mac.
 
 ## Updates
 
@@ -196,6 +178,15 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 (Installed via Homebrew? `brew uninstall --cask codemerge` does both steps for you.)
 
 ## Changelog
+
+### 1.2.0
+
+- **The notch, redesigned:** Home widgets (up to 5), compact status chips, minimal tabs, new animations, and any tool opens right inside the notch.
+- **New tools:** Presenter tools (draw on screen, show clicks and shortcuts), speed test, package tracking, Measure (ruler and magnifier), one-click scrolling screenshots, sunrise/sunset/golden hour, water and stretch reminders, lyrics in the music tab.
+- **Typing sounds** recorded from 9 real keyboards.
+- **Settings, redesigned**, with a search that finds any setting and a Widgets editor.
+- **The mascot** peeks around the main window and Settings, and shies away from your cursor.
+- **Smaller:** 6 MB download, 13 MB installed (was 37 MB).
 
 ### 1.1.3
 
