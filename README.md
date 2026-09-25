@@ -33,7 +33,7 @@ Free to try for 30 days, full features. $5 once, for life — no subscription, n
 
 ## Contents
 
-[Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Features](#features) · [The notch](#the-notch) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
+[Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Features](#features) · [The notch](#the-notch--new-in-12) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
 
 ## Install
 
@@ -77,28 +77,67 @@ CodeMerge lives in your menu bar — click its icon to open the dropdown, or rig
 
 ## Features
 
-Everything below is in the $5 lifetime license — nothing is held back for a “Pro” tier.
+Every tool below is in the $5 lifetime license — nothing is held back for a “Pro” tier.
 
-| | What you get |
-|---|---|
-| **🖼 Capture** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screenshot-area.png" width="18" valign="middle"> Screenshots (full or area) with an **annotation editor** · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/screen-recording.png" width="18" valign="middle"> Screen recording · **Scrolling screenshots** — click a window, it captures top to bottom · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/text-grab.png" width="18" valign="middle"> Text Grab (OCR) · **Measure** — ruler & magnifier: drag to copy a size, click to copy a colour |
-| **🪟 Windows & desktop** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/window-split.png" width="18" valign="middle"> Window split & custom grid layouts · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/hide-desktop.png" width="18" valign="middle"> Hide desktop icons & Dock · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clean-keyboard.png" width="18" valign="middle"> Clean keyboard · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quit-all.png" width="18" valign="middle"> Quit all apps · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/eject.png" width="18" valign="middle"> Eject disks · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/lock-screen.png" width="18" valign="middle"> Lock screen · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/prevent-sleep.png" width="18" valign="middle"> Prevent sleep |
-| **📋 Everyday** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/clipboard.png" width="18" valign="middle"> Clipboard history (200 items, pins) · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/file-shelf.png" width="18" valign="middle"> File shelf · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/quick-note.png" width="18" valign="middle"> Quick note · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/timer.png" width="18" valign="middle"> Timers · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/converter.png" width="18" valign="middle"> Converter & world clocks · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/weather.png" width="18" valign="middle"> Weather · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/random-generator.png" width="18" valign="middle"> Random generator · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/color-picker.png" width="18" valign="middle"> Colour picker · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/audio-output.png" width="18" valign="middle"> Audio output switcher |
-| **🎵 Music** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/now-playing.png" width="18" valign="middle"> Now Playing for Music & Spotify — cover art, seeking, volume, **lyrics** |
-| **🛠 Power tools** | <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/command-palette.png" width="18" valign="middle"> Command palette · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/workflows.png" width="18" valign="middle"> Workflows (chain tools into one command) · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/icons/kill-port.png" width="18" valign="middle"> Kill process on port · **Speed test** · **Package tracking** · **Convert any file to Markdown** · **Find a file** in plain words |
-| **🎤 Presenting** | **Draw on screen** (pen, highlighter, arrows, boxes) · show your **clicks** and **shortcuts** on screen |
-| **🌿 Wellbeing** | **Water & stretch reminders** that learn how you work · **Sunrise, sunset & golden hour** · **Typing sounds** recorded from 9 real keyboards |
+<table>
+<tr>
+<td width="50%" valign="top">
 
-### The notch
+#### 🖼 Capture
+
+**Screenshots** — full screen or an area, with an annotation editor<br>**Scrolling screenshots** — click a window, get the whole page<br>**Screen recording** — with a floating pause/stop<br>**Text Grab** — copy any text on screen<br>**Measure** — ruler and magnifier
+
+</td>
+<td width="50%" valign="top">
+
+#### 🪟 Windows & desktop
+
+**Window layouts** — halves, quarters or your own grid<br>**Hide desktop & Dock** — a clean screen in one click<br>**Quit all apps**, **Eject disks**, **Lock screen**<br>**Prevent sleep**<br>**Clean keyboard** — lock the keys while you wipe
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### 📋 Everyday
+
+**Clipboard history** — 200 items, searchable, pinned snippets<br>**File shelf** — a drag-and-drop holding tray<br>**Timers**, **Quick note**, **Weather**<br>**Converter** — units, currency and world clocks<br>**Colour picker**, **Random generator**, **Audio output**
+
+</td>
+<td width="50%" valign="top">
+
+#### 🛠 Power tools
+
+**Command palette** — your own saved commands<br>**Workflows** — chain tools into one command<br>**Kill process on port**<br>**Speed test** and **Package tracking**<br>**Find a file** in plain words · **Convert any file to Markdown**
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### 🎵 Music & presenting
+
+**Now Playing** — Music & Spotify, with **lyrics**<br>**Draw on screen** — pen, highlighter, arrows, boxes<br>**Show clicks and shortcuts** while you present
+
+</td>
+<td width="50%" valign="top">
+
+#### 🌿 Wellbeing & fun
+
+**Water & stretch reminders** that learn your rhythm<br>**Sunrise, sunset & golden hour**<br>**Typing sounds** — 9 keyboards, recorded for real<br>**A mascot** that peeks in and hides from your cursor
+
+</td>
+</tr>
+</table>
+
+### The notch — new in 1.2
 
 On a Mac with a notch, CodeMerge turns it into a small live panel. Hover it to open:
 
-- **Home** — a mascot that reacts to what you're doing, status chips, up to **5 widgets** of your favourite tools, and a chat that takes plain commands (“skip”, “timer 25m”, “remind me at 5 to call mom”, “find my resume”).
-- **Tabs** (up to 8) — Today's calendar, music with lyrics, timers & reminders, clipboard, file shelf, voice notes, speed test, packages and more.
-- **Live ears** beside the camera — music, timers, meetings, recording and downloads, visible even when it's closed.
-- **Any tool opens right inside the notch**, and a camera **mirror** and **voice notes** are one tap away.
-
-The mascot also peeks into the main window and Settings now and then — and hides when your cursor gets close.
+- **Home** — a mascot that reacts to what you're doing, status at a glance, up to **5 widgets** of your favourite tools, and a chat that takes plain commands: “skip”, “timer 25m”, “remind me at 5 to call mom”, “find my resume”.
+- **Tabs** — Today's calendar, music with lyrics, timers and reminders, clipboard, file shelf, voice notes and more; pick up to 8.
+- **Live beside the camera** — music, timers, meetings and recordings stay visible while it's closed.
+- **Any tool opens right inside it**, plus a camera **mirror** and **voice notes**.
 
 ### Settings, in brief
 
@@ -181,7 +220,7 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 
 ### 1.2.0
 
-- **The notch, redesigned:** Home widgets (up to 5), compact status chips, minimal tabs, new animations, and any tool opens right inside the notch.
+- **New: the notch.** On Macs with a notch, it becomes a live panel — a mascot, your music with lyrics, timers, calendar, up to 5 widgets, and a chat that takes plain commands. Any tool opens right inside it.
 - **New tools:** Presenter tools (draw on screen, show clicks and shortcuts), speed test, package tracking, Measure (ruler and magnifier), one-click scrolling screenshots, sunrise/sunset/golden hour, water and stretch reminders, lyrics in the music tab.
 - **Typing sounds** recorded from 9 real keyboards.
 - **Settings, redesigned**, with a search that finds any setting and a Widgets editor.
