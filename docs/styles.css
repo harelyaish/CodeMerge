@@ -326,3 +326,59 @@ details[open] p{animation:fadeup .4s both}
 .bstage .bw>img.ml{position:absolute;left:0;top:0;opacity:0;transition:opacity .45s}
 .bstage .bw.light>img.ml{opacity:1}
 .bstage .bw{border-radius:22px}
+
+
+/* ===== second polish pass ===== */
+.head .eyebrow::before{content:"";display:inline-block;width:22px;height:2px;background:currentColor;margin-right:10px;vertical-align:middle;opacity:.6}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(520px circle at var(--gx,50%) var(--gy,28%),rgba(255,138,76,.16),transparent 62%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(60% 55% at 50% 30%,#000,transparent);mask-image:radial-gradient(60% 55% at 50% 30%,#000,transparent);opacity:.7}
+
+/* floating chips around the hero notch */
+.stagewrap{position:relative;max-width:980px;margin:46px auto 0}
+.stagewrap .stage{margin:0 auto}
+.chips span{position:absolute;z-index:6;display:flex;gap:8px;align-items:center;font-size:13px;font-weight:600;padding:9px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 14px 40px rgba(0,0,0,.25);animation:floaty 7s ease-in-out infinite;will-change:transform}
+.chips i{font-style:normal}
+.chip1{top:60px;left:-26px}.chip2{top:150px;right:-30px;animation-delay:-2s!important}.chip3{bottom:92px;left:2%;animation-delay:-4s!important}.chip4{bottom:44px;right:5%;animation-delay:-1s!important}
+@keyframes floaty{50%{transform:translateY(-12px)}}
+@media(max-width:1040px){.chips{display:none}}
+
+/* story: the notch pinned while the day scrolls */
+.story{display:grid;grid-template-columns:1fr 1.2fr;gap:44px;align-items:start}
+.steps .step{min-height:62vh;display:flex;flex-direction:column;justify-content:center;opacity:.32;transition:opacity .45s,transform .45s;transform:translateX(-8px)}
+.steps .step.on{opacity:1;transform:none}
+.step h3{font-size:clamp(28px,3.6vw,42px);letter-spacing:-.03em;line-height:1.05;margin:8px 0 12px}
+.step p{color:var(--muted);font-size:18px;max-width:420px}
+.story-pic{position:sticky;top:96px}
+.story-stage{position:relative;border-radius:26px;aspect-ratio:1190/700;overflow:hidden;background:linear-gradient(160deg,#3b2a4a,#7a3f52 55%,#c0704f);border:1px solid var(--glass-line);box-shadow:var(--shadow)}
+.story-bar{height:26px;background:rgba(0,0,0,.2)}
+.story-stage img{position:absolute;left:50%;top:0;width:min(92%,640px);transform:translateX(-50%);opacity:0;filter:drop-shadow(0 22px 34px rgba(0,0,0,.5));pointer-events:none}
+.story-stage img.on{opacity:1;animation:swap .45s cubic-bezier(.2,.8,.2,1)}
+.story-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.story-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);transition:all .3s}
+.story-dots i.on{width:26px;border-radius:99px;background:#fff}
+@media(max-width:860px){.story{grid-template-columns:1fr;gap:12px}.story-pic{order:-1;top:68px;z-index:3}.steps .step{min-height:46vh}}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{position:relative;overflow:hidden;border-radius:24px;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.tile:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 50%,var(--glass-line))}
+.tile.big{grid-column:span 2;grid-row:span 2}.tile.wide{grid-column:span 4}
+.tile .pic{position:relative;overflow:hidden;height:190px;background:linear-gradient(160deg,#3b2a4a,#7a3f52 55%,#c0704f)}
+.tile.big .pic{height:auto;flex:1;min-height:330px}.tile.wide .pic{height:260px}
+.tile .pic img{position:absolute;top:0;left:50%;width:150%;max-width:none;transform:translateX(-50%);transition:transform .6s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 18px 28px rgba(0,0,0,.45))}
+.tile.big .pic img{width:110%}.tile.wide .pic img{width:72%;top:14px}
+.tile:hover .pic img{transform:translateX(-50%) scale(1.05)}
+.tile .tt{padding:18px 20px 22px}.tile h3{font-size:18px;letter-spacing:-.01em;margin-bottom:4px}.tile p{color:var(--muted);font-size:14.5px}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr)}.tile.big{grid-column:span 2;grid-row:auto}.tile.wide{grid-column:span 2}.tile.big .pic{min-height:240px}.tile.wide .pic{height:200px}}
+@media(max-width:560px){.bento{grid-template-columns:1fr}.tile.big,.tile.wide{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){.chips span{animation:none}.steps .step{transform:none}.story-stage img.on{animation:none}}
+
+/* bento: three columns, whole panels visible */
+.bento{grid-template-columns:repeat(3,1fr)}
+.bento .tile.big{grid-column:span 2;grid-row:span 2}
+.bento .tile .pic{display:grid;place-items:center;padding:18px;height:auto;min-height:0}
+.bento .tile.big .pic{flex:1;padding:28px}
+.bento .tile .pic img{position:static;transform:none;width:100%;max-width:100%;height:auto}
+.bento .tile:hover .pic img{transform:scale(1.04)}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr)}.bento .tile.big{grid-column:span 2;grid-row:auto}}
+@media(max-width:560px){.bento{grid-template-columns:1fr}.bento .tile.big{grid-column:auto}}

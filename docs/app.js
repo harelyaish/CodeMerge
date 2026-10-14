@@ -49,4 +49,19 @@
  // count-up numbers
  var cs=[].slice.call(document.querySelectorAll("[data-count]"));
  if(cs.length&&"IntersectionObserver" in window&&!rm){var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);var el=e.target,to=+el.dataset.count,t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1400);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)})},{threshold:.6});cs.forEach(function(e){e.textContent="0";co.observe(e)})}
+
+ // second pass: story, cursor glow, floating chips, magnetic buttons
+ try{
+  var sp=[].slice.call(document.querySelectorAll(".step")),si=[].slice.call(document.querySelectorAll(".story-stage img")),sd=[].slice.call(document.querySelectorAll("#sdots i"));
+  function pick(i){sp.forEach(function(s,k){s.classList.toggle("on",k===i)});si.forEach(function(s,k){s.classList.toggle("on",k===i)});sd.forEach(function(s,k){s.classList.toggle("on",k===i)})}
+  if(sp.length){pick(0);if("IntersectionObserver" in window){var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)pick(+e.target.dataset.i)})},{rootMargin:"-45% 0px -45% 0px"});sp.forEach(function(s){so.observe(s)})}}
+ }catch(e){}
+ try{
+  var hero=document.querySelector(".hero");
+  if(hero&&matchMedia("(hover:hover)").matches){
+   hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;hero.style.setProperty("--gx",x+"px");hero.style.setProperty("--gy",y+"px");
+    if(!rm){var px=(x/r.width-.5),py=(y/r.height-.5);[].forEach.call(hero.querySelectorAll(".chips span"),function(c,k){var d=(k%2?-1:1)*(10+k*4);c.style.translate=(px*d)+"px "+(py*d)+"px"})}});
+   if(!rm)[].forEach.call(document.querySelectorAll(".btn:not(.ghost)"),function(b){b.addEventListener("pointermove",function(e){var r=b.getBoundingClientRect();b.style.translate=((e.clientX-r.left-r.width/2)*.12)+"px "+((e.clientY-r.top-r.height/2)*.2)+"px"});b.addEventListener("pointerleave",function(){b.style.translate=""})})
+  }
+ }catch(e){}
 })();
