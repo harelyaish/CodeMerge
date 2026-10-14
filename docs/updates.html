@@ -8,8 +8,11 @@
 <meta name="theme-color" content="#0a090c">
 <link rel="icon" href="assets/app-icon.png">
 <script>document.documentElement.className="js"</script>
-<link rel="stylesheet" href="styles.css?v=1791979190">
+<link rel="stylesheet" href="styles.css?v=1791979476">
 </head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="ig" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="24" y2="24"><stop offset="0" stop-color="#ffa36b"/><stop offset="1" stop-color="#f26b35"/></linearGradient></defs></svg>
+<div id="veil" aria-hidden="true"><img src="assets/app-icon.png" alt=""></div>
+<div id="cur"></div><div id="curd"></div>
 <div id="prog"></div>
 <nav><div class="wrap">
 <a class="brand" href="./"><img src="assets/app-icon.png" alt="">CodeMerge</a>
@@ -30,9 +33,10 @@ function md(t){t=(t||"").replace(/</g,"&lt;");var o=[],ul=false;t.split(/\r?\n/)
 fetch("https://api.github.com/repos/harelyaish/CodeMerge/releases").then(function(r){return r.json()}).then(function(rs){if(!Array.isArray(rs)||!rs.length)throw 0;
  document.getElementById("tl").innerHTML=rs.map(function(r,i){return '<div class="glass rel '+(i?"":"new")+'"><h2>'+(r.name||r.tag_name)+(i?"":'<span class="chip">latest</span>')+'<small>'+new Date(r.published_at).toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"})+'</small></h2>'+(md(r.body)||"<p>No notes.</p>")+'<a class="dl" href="'+r.html_url+'">View on GitHub</a></div>'}).join("")}).catch(function(){document.getElementById("tl").innerHTML='<div class="glass rel"><h2>Couldn\'t load releases</h2><p>See them on <a class="dl" href="https://github.com/harelyaish/CodeMerge/releases">GitHub</a>.</p></div>'});
 </script>
+<div class="bigword" aria-hidden="true">CodeMerge</div>
 <footer><div class="wrap">
 <span>© CodeMerge · macOS notch app</span>
 <a href="https://github.com/harelyaish/CodeMerge">GitHub</a><a href="./#help">Help</a><a href="features.html">Features</a><a href="updates.html">Changelog</a><a href="cards.html">Share cards</a>
 <a href="https://github.com/harelyaish/CodeMerge/releases.atom">RSS</a><a href="https://www.paypal.com/paypalme/HarelYaish">Tip</a>
 </div></footer>
-<script src="app.js?v=1791979190"></script></body></html>
+<script src="app.js?v=1791979476"></script></body></html>

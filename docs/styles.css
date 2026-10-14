@@ -382,3 +382,105 @@ details[open] p{animation:fadeup .4s both}
 .bento .tile:hover .pic img{transform:scale(1.04)}
 @media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr)}.bento .tile.big{grid-column:span 2;grid-row:auto}}
 @media(max-width:560px){.bento{grid-template-columns:1fr}.bento .tile.big{grid-column:auto}}
+
+
+/* ===== icons & motion, third pass ===== */
+.grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.ic svg{width:28px;height:28px;overflow:visible}
+.card .ic,.step>.ic,.trust .glass>.ic{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 28%,transparent),color-mix(in srgb,var(--accent2) 8%,transparent));border:1px solid var(--glass-line);box-shadow:0 10px 30px -12px var(--glow);margin-bottom:14px;position:relative}
+.card:hover .ic{box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 12%,transparent),0 12px 34px -8px var(--glow)}
+.step>.ic{margin-bottom:10px}
+.trust .glass>.ic{margin:0 0 10px}
+.ei{display:flex;align-items:center;gap:12px}.ei .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--glass);border:1px solid var(--glass-line)}
+.ei::before{display:none}
+
+/* draw-in: strokes trace themselves when their card appears */
+.js .reveal .ic svg *{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s cubic-bezier(.3,.7,.2,1) .15s}
+.js .reveal.in .ic svg *{stroke-dashoffset:0}
+
+/* each icon moves in its own way */
+.a-ring:hover svg,.in .a-ring svg{transform-origin:50% 10%}
+.a-ring:hover svg{animation:ringb .9s ease-in-out}
+.a-spin:hover svg{animation:spin360 1.4s linear}
+.a-wiggle:hover svg{animation:wig .6s ease-in-out}
+.a-glow svg{animation:glowp 3.2s ease-in-out infinite}
+.a-bounce:hover svg{animation:bnc .7s ease}
+.a-flash:hover svg{animation:flashi .6s ease}
+.a-tick:hover svg{animation:tickr 1s steps(8)}
+.a-tumble:hover svg{animation:tum 1s ease}
+.a-drip:hover svg{animation:drp .9s ease}
+.a-blink:hover svg{animation:blk .5s ease}
+.a-launch:hover svg{animation:lau .7s ease}
+.a-float svg{animation:flo 5s ease-in-out infinite}
+@keyframes ringb{0%,100%{transform:rotate(0)}15%{transform:rotate(16deg)}30%{transform:rotate(-14deg)}45%{transform:rotate(10deg)}60%{transform:rotate(-8deg)}80%{transform:rotate(4deg)}}
+@keyframes spin360{to{transform:rotate(360deg)}}
+@keyframes wig{25%{transform:rotate(-12deg) scale(1.1)}75%{transform:rotate(12deg) scale(1.1)}}
+@keyframes glowp{50%{filter:drop-shadow(0 0 7px rgba(255,150,80,.9))}}
+@keyframes bnc{30%{transform:translateY(-6px)}60%{transform:translateY(0)}80%{transform:translateY(-2px)}}
+@keyframes flashi{40%{transform:scale(1.25);filter:drop-shadow(0 0 10px #fff)}}
+@keyframes tickr{to{transform:rotate(360deg)}}
+@keyframes tum{50%{transform:rotate(180deg) scale(1.15)}to{transform:rotate(360deg)}}
+@keyframes drp{40%{transform:translateY(5px) scaleY(.85)}70%{transform:translateY(-2px)}}
+@keyframes blk{50%{transform:scaleY(.1)}}
+@keyframes lau{40%{transform:translate(4px,-4px) scale(1.12)}}
+@keyframes flo{50%{transform:translateY(-2.5px)}}
+
+/* section headings: words rise out of a mask */
+.hw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+.hw>span{display:inline-block;transform:translateY(112%);transition:transform .85s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms)}
+.head.in .hw>span{transform:none}
+
+/* ticker */
+.ticker{overflow:hidden;padding:28px 0;border-block:1px solid var(--line);margin:30px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.tt2{display:flex;align-items:center;gap:34px;width:max-content;animation:scroll 60s linear infinite}
+.tt2 span{font-size:clamp(38px,6vw,76px);font-weight:800;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--text) 38%,transparent);transition:color .3s}
+.tt2 span:hover{color:var(--accent);-webkit-text-stroke-color:var(--accent)}
+.tt2 i{font-style:normal;color:var(--accent);font-size:28px;animation:spin360 8s linear infinite;display:inline-block}
+.ticker:hover .tt2{animation-play-state:paused}
+
+/* bento badge */
+.tile .badge{position:absolute;top:14px;left:14px;z-index:3}
+.tile .badge .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(0,0,0,.4);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);margin:0}
+
+/* footer wordmark */
+.bigword{font-size:clamp(70px,17vw,230px);font-weight:900;letter-spacing:-.06em;line-height:.9;text-align:center;margin:40px 0 -10px;background:linear-gradient(100deg,var(--text),var(--accent2),#ff5fa2,#6a5cff,var(--text));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.16;animation:shine 12s linear infinite;user-select:none;pointer-events:none}
+
+/* custom cursor */
+#cur{position:fixed;left:0;top:0;width:30px;height:30px;margin:-15px 0 0 -15px;border:1.5px solid var(--accent);border-radius:50%;pointer-events:none;z-index:200;opacity:0;transition:width .25s,height .25s,margin .25s,background .25s,opacity .3s;mix-blend-mode:normal}
+#cur.on{opacity:.9}
+#cur.big{width:56px;height:56px;margin:-28px 0 0 -28px;background:color-mix(in srgb,var(--accent) 14%,transparent)}
+#curd{position:fixed;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:201;opacity:0}
+#curd.on{opacity:1}
+@media(hover:none){#cur,#curd{display:none}}
+
+/* sparkle burst */
+.spk{position:fixed;width:7px;height:7px;border-radius:50%;pointer-events:none;z-index:300;animation:spk .8s cubic-bezier(.1,.7,.3,1) forwards}
+@keyframes spk{from{opacity:1;transform:translate(0,0) scale(1)}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2)}}
+
+/* page-load veil */
+#veil{position:fixed;inset:0;background:var(--bg);z-index:400;display:grid;place-items:center;transition:opacity .6s .15s,visibility .6s .15s}
+#veil img{width:68px;height:68px;border-radius:18px;animation:vpop 1s cubic-bezier(.2,.9,.2,1) both}
+#veil.go{opacity:0;visibility:hidden}
+@keyframes vpop{from{transform:scale(.4) rotate(-20deg);opacity:0}to{transform:none;opacity:1}}
+
+/* FAQ plus rotates */
+summary::after{transition:transform .3s}
+details[open] summary::after{transform:rotate(180deg)}
+
+/* hero scroll depth */
+.stagewrap{transform:perspective(1300px) rotateX(calc(var(--sp,0)*7deg)) translateY(calc(var(--sp,0)*-20px));transform-origin:50% 100%;will-change:transform}
+.orbs{transform:translateY(calc(var(--sp,0)*90px))}
+
+@media(prefers-reduced-motion:reduce){
+ .a-glow svg,.a-float svg,.tt2,.tt2 i,.bigword{animation:none!important}
+ .js .ic svg *{stroke-dashoffset:0!important;transition:none}
+ .hw>span{transform:none!important}
+ .stagewrap,.orbs{transform:none!important}
+ #veil{display:none}
+}
+
+html:not(.js) #veil{display:none}
+#veil{animation:vfail .01s 2.6s forwards}
+@keyframes vfail{to{opacity:0;visibility:hidden}}
+
+.group .grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
