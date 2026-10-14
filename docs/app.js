@@ -23,9 +23,9 @@
  var sv=document.getElementById("sv"),sw=document.getElementById("setwin");
  if(sv&&sw)[].forEach.call(sv.children,function(x){x.onclick=function(){[].forEach.call(sv.children,function(y){y.classList.toggle("on",y===x)});[].forEach.call(sw.children,function(i){i.classList.toggle("on",i.dataset.s===x.dataset.s)})}});
  }catch(e){}
- // the light/dark switch in the menu-bar picture flips the site
+ // the light/dark switch in the menu-bar picture flips the window picture
  var mt=document.getElementById("mtheme");
- if(mt)mt.onclick=function(){var tb=document.getElementById("theme");if(tb)tb.click()};
+ if(mt)mt.onclick=function(){var w=document.getElementById("bw");if(w)w.classList.toggle("light")};
  // install tabs
  [].forEach.call(document.querySelectorAll("[data-tabs]"),function(g){
   var bs=g.querySelectorAll("button");bs.forEach(function(x){x.onclick=function(){bs.forEach(function(y){y.classList.toggle("on",y===x)});document.querySelectorAll(".ipane").forEach(function(p){p.classList.toggle("on",p.id===x.dataset.t)})}})});

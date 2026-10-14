@@ -320,3 +320,9 @@ details[open] p{animation:fadeup .4s both}
 .nshots img.on{animation:swap .35s cubic-bezier(.2,.8,.2,1)}
 @keyframes swap{from{opacity:0;transform:translateY(6px) scale(.985)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.nshots img.on{animation:none}.mtheme span{animation:none}}
+
+/* the light/dark switch flips the window picture itself */
+.bstage .bw{position:absolute}
+.bstage .bw>img.ml{position:absolute;left:0;top:0;opacity:0;transition:opacity .45s}
+.bstage .bw.light>img.ml{opacity:1}
+.bstage .bw{border-radius:22px}
