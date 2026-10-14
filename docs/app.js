@@ -9,7 +9,7 @@
  var els=[].slice.call(document.querySelectorAll(".reveal"));
  if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add("in")});
  // notch demo: a clickable dock over the real captures
- var ns=document.getElementById("nshots"),nl=document.getElementById("nlabel");
+ try{ var ns=document.getElementById("nshots"),nl=document.getElementById("nlabel");
  if(ns){
   var im=[].slice.call(ns.querySelectorAll("img")),bt=[].slice.call(ns.querySelectorAll(".dock button")),ci=0,hold=false;
   function go(j){ci=j;im.forEach(function(x,k){x.classList.toggle("on",k===j)});if(nl)nl.textContent=bt[j].getAttribute("aria-label")}
@@ -17,9 +17,12 @@
   ns.addEventListener("keydown",function(e){if(e.key==="ArrowRight")go((ci+1)%im.length);if(e.key==="ArrowLeft")go((ci+im.length-1)%im.length)});
   setInterval(function(){if(!hold&&!document.hidden)go((ci+1)%im.length)},3400);
  }
+ }catch(e){}
  // settings viewer
+ try{
  var sv=document.getElementById("sv"),sw=document.getElementById("setwin");
  if(sv&&sw)[].forEach.call(sv.children,function(x){x.onclick=function(){[].forEach.call(sv.children,function(y){y.classList.toggle("on",y===x)});[].forEach.call(sw.children,function(i){i.classList.toggle("on",i.dataset.s===x.dataset.s)})}});
+ }catch(e){}
  // the light/dark switch in the menu-bar picture flips the site
  var mt=document.getElementById("mtheme");
  if(mt)mt.onclick=function(){var tb=document.getElementById("theme");if(tb)tb.click()};

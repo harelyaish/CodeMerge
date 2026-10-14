@@ -173,8 +173,8 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
 .preview{display:flex;justify-content:center;padding:24px}
 .preview canvas{max-width:100%;max-height:70vh;border-radius:10px;box-shadow:var(--shadow)}
 
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
+
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.js .reveal.in{opacity:1;transform:none}
 
 /* ===== motion & polish ===== */
 #prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--accent2),var(--accent));z-index:99}
@@ -237,21 +237,21 @@ h1 em .w{background:linear-gradient(90deg,var(--accent2),var(--accent),#ff5fa2,v
 .grid .card.reveal:nth-child(2){transition-delay:.08s}.grid .card.reveal:nth-child(3){transition-delay:.16s}.grid .card.reveal:nth-child(4){transition-delay:.24s}
 
 /* showcases: text and picture arrive from opposite sides */
-.show.reveal{opacity:1;transform:none}
-.show .txt{opacity:0;transform:translateX(-36px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
-.show .frame{opacity:0;transform:translateX(44px) scale(.96);transition:opacity .9s .1s,transform .9s .1s cubic-bezier(.2,.8,.2,1)}
-.show.flip .txt{transform:translateX(36px)}.show.flip .frame{transform:translateX(-44px) scale(.96)}
-.show.in .txt,.show.in .frame{opacity:1;transform:none}
-.show li{opacity:0;transform:translateX(-10px);transition:opacity .5s,transform .5s}
-.show.in li{opacity:1;transform:none}.show.in li:nth-child(1){transition-delay:.4s}.show.in li:nth-child(2){transition-delay:.55s}
+.js .show.reveal{opacity:1;transform:none}
+.js .show .txt{opacity:0;transform:translateX(-36px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .show .frame{opacity:0;transform:translateX(44px) scale(.96);transition:opacity .9s .1s,transform .9s .1s cubic-bezier(.2,.8,.2,1)}
+.js .show.flip .txt{transform:translateX(36px)}.js .show.flip .frame{transform:translateX(-44px) scale(.96)}
+.js .show.in .txt,.js .show.in .frame{opacity:1;transform:none}
+.js .show li{opacity:0;transform:translateX(-10px);transition:opacity .5s,transform .5s}
+.js .show.in li{opacity:1;transform:none}.show.in li:nth-child(1){transition-delay:.4s}.show.in li:nth-child(2){transition-delay:.55s}
 .frame,.way-view{transition:transform .25s ease-out;transform-style:preserve-3d;will-change:transform}
 .frame.tilt,.way-view.tilt{transition:none}
 
 /* menu-bar stage: window drops from the icon, callouts slide in */
-.bstage .bw{opacity:0;transform:translateY(-26px) scale(.94);transform-origin:90% 0;transition:opacity .6s .2s,transform .9s .2s cubic-bezier(.2,.9,.2,1)}
-.bstage.in .bw{opacity:1;transform:none}
-.callouts li{opacity:0;transform:translateX(-26px);transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1)}
-.bstage.in .callouts li{opacity:1;transform:none}
+.js .bstage .bw{opacity:0;transform:translateY(-26px) scale(.94);transform-origin:90% 0;transition:opacity .6s .2s,transform .9s .2s cubic-bezier(.2,.9,.2,1)}
+.js .bstage.in .bw{opacity:1;transform:none}
+.js .callouts li{opacity:0;transform:translateX(-26px);transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.js .bstage.in .callouts li{opacity:1;transform:none}
 .bstage.in .callouts li:nth-child(1){transition-delay:.25s}.bstage.in .callouts li:nth-child(2){transition-delay:.4s}.bstage.in .callouts li:nth-child(3){transition-delay:.55s}.bstage.in .callouts li:nth-child(4){transition-delay:.7s}
 .mb-on{animation:glowic 2.6s ease-in-out infinite}
 @keyframes glowic{50%{background:rgba(255,255,255,.42);box-shadow:0 0 16px rgba(255,255,255,.5)}}
@@ -271,41 +271,12 @@ details{transition:border-color .2s}details[open]{border-color:color-mix(in srgb
 details[open] p{animation:fadeup .4s both}
 
 @media(prefers-reduced-motion:reduce){
- h1 .w{opacity:1;transform:none;filter:none}.pill,.lead,.cta,.fine,.stage,.ntabs,.nshots{animation:none!important;opacity:1}
- .show .txt,.show .frame,.show li,.bstage .bw,.callouts li{opacity:1!important;transform:none!important}
- .marq .track,.orbs i,.price,.btn::after{animation:none!important}
+ /* respect the setting by dropping big movement, but keep gentle fades, the icon strip and the dock */
+ h1 .w{transform:none;filter:none;animation-duration:.01s}
+ .nshots{animation:grow 1.3s .4s both!important}
+ .nshots img.on{animation:none}
+ .btn::after,.price,.price .amt,.mb-on,.mtheme span,.pill i{animation:none!important}
+ .js .show .txt,.js .show .frame,.js .show li,.js .bstage .bw,.js .callouts li{transform:none!important}
+ .marq .track{animation-duration:140s}
+ .orbs i{animation-duration:60s}
 }
-
-/* interactive dock over the real notch */
-.dock{position:absolute;left:0;right:0;top:78.4%;height:13.4%;z-index:4}
-.dock button,.mhot button{position:absolute;top:0;height:100%;width:3.9%;border:0;background:none;border-radius:50%;cursor:pointer;padding:0}
-.dock button:focus-visible,.mhot button:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
-.dock button span,.mhot button span{position:absolute;bottom:118%;left:50%;transform:translate(-50%,6px);background:#fff;color:#000;font:600 12px/1 -apple-system,system-ui,sans-serif;padding:6px 10px;border-radius:99px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;box-shadow:0 6px 20px rgba(0,0,0,.35)}
-.dock button:hover span,.dock button:focus-visible span,.mhot button:hover span,.mhot button:focus-visible span{opacity:1;transform:translate(-50%,0)}
-.dock button::after{content:"";position:absolute;inset:6% 0;border-radius:50%;background:rgba(255,255,255,.0);transition:background .15s,transform .15s}
-.dock button:hover::after{background:rgba(255,255,255,.14);transform:scale(1.12)}
-.ntabs{background:rgba(0,0,0,.42);padding:7px 16px;gap:12px;align-items:center;color:#ddd;font-size:13px;white-space:nowrap}
-.ntabs b{color:#fff;font-weight:700;min-width:88px;text-align:right}
-.ntabs span{color:rgba(255,255,255,.7)}
-@media(max-width:700px){.ntabs span{display:none}.ntabs b{min-width:0}}
-
-/* menu-bar window hotspots */
-.bstage .bw{line-height:0}
-.bstage .bw>img{width:100%;display:block}
-.mhot{position:absolute;inset:0}
-.mhot button{width:12%;height:8.8%;border-radius:12px;transition:background .15s}
-.mhot button:hover{background:rgba(255,255,255,.1)}
-.mhot button span{bottom:104%}
-.mtheme{position:absolute;left:38.7%;top:85.4%;width:22.4%;height:5.6%;border:0;background:none;cursor:pointer;border-radius:99px;padding:0}
-.mtheme span{position:absolute;top:135%;left:50%;transform:translate(-50%,6px);background:linear-gradient(180deg,var(--accent2),var(--accent));color:#fff;font:700 12px/1 -apple-system,system-ui,sans-serif;padding:7px 12px;border-radius:99px;white-space:nowrap;box-shadow:0 8px 24px var(--glow);animation:nudge 2.4s ease-in-out infinite}
-@keyframes nudge{50%{transform:translate(-50%,-4px)}}
-
-/* settings viewer */
-.sv{margin-top:20px;flex-wrap:wrap}
-.setwin{display:grid}.setwin img{grid-area:1/1;opacity:0;transform:scale(.985);transition:opacity .45s,transform .45s}
-.setwin img.on{opacity:1;transform:none}
-.frame.win.setwin{filter:drop-shadow(0 24px 50px rgba(0,0,0,.45))}
-
-/* notch pictures in showcases */
-.frame.win.nb{background:linear-gradient(160deg,#3b2a4a,#7a3f52 55%,#c0704f);padding:0 20px 22px;border-radius:22px;overflow:hidden}
-.frame.win.nb img{filter:drop-shadow(0 16px 26px rgba(0,0,0,.45));border-radius:0}
