@@ -1,39 +1,32 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CodeMerge — share cards</title>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Share cards — CodeMerge</title>
+<meta name="description" content="Download ready-to-post CodeMerge cards.">
+<meta property="og:title" content="Share cards — CodeMerge"><meta property="og:description" content="Download ready-to-post CodeMerge cards.">
+<meta property="og:image" content="assets/og.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a090c">
 <link rel="icon" href="assets/app-icon.png">
-<style>
-*{box-sizing:border-box;margin:0}
-body{background:#0b0b0d;color:#f2f2f4;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;padding:32px 24px 60px}
-.wrap{max-width:1100px;margin:0 auto}
-a{color:#f26b35}
-h1{font-size:32px;letter-spacing:-.02em;margin:8px 0 6px}
-p.sub{color:#9a9aa3;margin-bottom:26px}
-.bar{display:flex;flex-wrap:wrap;gap:22px;align-items:center;margin-bottom:22px}
-.grp{display:flex;background:#0d0d10;border:1px solid #26262b;border-radius:10px;padding:3px;gap:3px}
-.grp button{border:0;background:none;color:#9a9aa3;padding:8px 14px;border-radius:8px;cursor:pointer;font:inherit;font-size:14px}
-.grp button.on{background:#25252b;color:#f2f2f4}
-.dl{margin-left:auto;background:#f26b35;color:#fff;border:0;border-radius:11px;padding:11px 22px;font:inherit;font-weight:600;cursor:pointer}
-.preview{display:flex;justify-content:center;background:#141417;border:1px solid #26262b;border-radius:18px;padding:24px}
-canvas{max-width:100%;max-height:74vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-small{display:block;color:#9a9aa3;margin-top:14px;font-size:13px}
-</style>
-</head>
-<body><div class="wrap">
-<a href="index.html">← CodeMerge</a>
-<h1>Share cards</h1>
-<p class="sub">Pick a template and a size, then download a PNG that's ready to post.</p>
-<div class="bar">
-  <div class="grp" id="tpl"><button data-v="promo" class="on">Promo</button><button data-v="tools">Tools</button><button data-v="themes">Themes</button></div>
-  <div class="grp" id="size"><button data-w="1080" data-h="1080" class="on">Square 1080</button><button data-w="1080" data-h="1920">Story 9:16</button><button data-w="1200" data-h="630">Link 1200×630</button></div>
-  <button class="dl" id="dl">Download PNG</button>
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<nav><div class="wrap">
+<a class="brand" href="./"><img src="assets/app-icon.png" alt="">CodeMerge</a>
+<a class="l" href="features.html">Features</a>
+<a class="l" href="./#pricing">Pricing</a>
+<a class="l" href="./#install">Install</a>
+<a class="l" href="updates.html">Updates</a>
+<button class="tbtn" id="theme" aria-label="Switch light or dark">☾</button>
+<a class="btn" href="https://harelyaish.gumroad.com/l/codemerge">Buy — $5</a>
+</div></nav>
+
+<div class="wrap"><div class="page-h"><h1>Share cards</h1><p class="lead">Pick a template and a size, then download a PNG that's ready to post.</p></div>
+<div class="cbar">
+ <div class="grp" id="tpl"><button data-v="promo" class="on">Promo</button><button data-v="tools">Tools</button><button data-v="themes">Themes</button></div>
+ <div class="grp" id="size"><button data-w="1080" data-h="1080" class="on">Square 1080</button><button data-w="1080" data-h="1920">Story 9:16</button><button data-w="1200" data-h="630">Link 1200×630</button></div>
+ <button class="btn" id="dl">Download PNG</button>
 </div>
-<div class="preview"><canvas id="c"></canvas></div>
-<small>Built only from the CodeMerge icons and app logo. If Download does nothing when opened straight from disk, serve the folder (<code>python3 -m http.server</code>) — browsers block saving canvases from local files.</small>
-</div>
+<div class="glass preview"><canvas id="c"></canvas></div>
+<p class="fine" style="text-align:center;margin:14px 0 80px">Built only from the CodeMerge icons and app logo. If Download does nothing when opened straight from disk, serve the folder (<code>python3 -m http.server</code>) — browsers block saving canvases from local files.</p></div>
 <script>
 const NAMES=["screenshot-full","screenshot-area","eject","clean-keyboard","quit-all","clipboard","file-shelf","prevent-sleep","window-split","now-playing","timer","color-picker","command-palette","screen-recording","weather","quick-note","lock-screen","converter","image-resizer","random-generator","audio-output","text-grab","kill-port"];
 const img={};let ready=0;
@@ -56,9 +49,9 @@ function draw(){
   const s=wide?150:tall?230:230;x.save();x.shadowColor="rgba(242,107,53,.5)";x.shadowBlur=60;
   const iy=wide?H*.5-s/2:tall?H*.2:H*.16;const ix=wide?W*.1:W/2-s/2;
   rr(ix,iy,s,s,s*.22);x.clip();x.drawImage(img.app,ix,iy,s,s);x.restore();
-  if(wide){text("One menu bar.",W*.1+s+50,H*.46,74,800,"#f5f5f7","left");text("A dozen tools.",W*.1+s+50,H*.46+84,74,800,"#F26B35","left");text("$5 once. No subscription.",W*.1+s+50,H*.46+150,30,500,"#9a9aa3","left")}
-  else{const ty=iy+s+(tall?120:100);text("One menu bar.",W/2,ty,tall?104:98,800);text("A dozen tools.",W/2,ty+(tall?116:110),tall?104:98,800,"#F26B35");
-   text("The menu-bar utility for macOS",W/2,ty+(tall?230:210),tall?38:34,500,"#9a9aa3");text("$5 once. No subscription.",W/2,H-(tall?200:90),tall?46:40,700,"#f5f5f7")}
+  if(wide){text("Your Mac's notch.",W*.1+s+50,H*.46,74,800,"#f5f5f7","left");text("Finally useful.",W*.1+s+50,H*.46+84,74,800,"#F26B35","left");text("$5 once. No subscription.",W*.1+s+50,H*.46+150,30,500,"#9a9aa3","left")}
+  else{const ty=iy+s+(tall?120:100);text("Your Mac's notch.",W/2,ty,tall?104:98,800);text("Finally useful.",W/2,ty+(tall?116:110),tall?104:98,800,"#F26B35");
+   text("The notch app for macOS",W/2,ty+(tall?230:210),tall?38:34,500,"#9a9aa3");text("$5 once. No subscription.",W/2,H-(tall?200:90),tall?46:40,700,"#f5f5f7")}
  }
  if(tpl==="tools"){
   text("Everything you reach for",W/2,H*(tall?.12:.14),wide?58:tall?84:78,800);text("in one click",W/2,H*(tall?.12:.14)+(wide?64:tall?92:86),wide?58:tall?84:78,800,"#F26B35");
@@ -81,5 +74,9 @@ function bind(id,fn){document.getElementById(id).addEventListener("click",e=>{co
 bind("tpl",b=>{tpl=b.dataset.v;draw()});bind("size",b=>{W=+b.dataset.w;H=+b.dataset.h;draw()});
 document.getElementById("dl").onclick=()=>c.toBlob(bl=>{const a=document.createElement("a");a.href=URL.createObjectURL(bl);a.download=`codemerge-${tpl}-${W}x${H}.png`;a.click()});
 </script>
-</body>
-</html>
+<footer><div class="wrap">
+<span>© CodeMerge · macOS notch app</span>
+<a href="https://github.com/harelyaish/CodeMerge">GitHub</a><a href="./#help">Help</a><a href="features.html">Features</a><a href="updates.html">Changelog</a><a href="cards.html">Share cards</a>
+<a href="https://github.com/harelyaish/CodeMerge/releases.atom">RSS</a><a href="https://www.paypal.com/paypalme/HarelYaish">Tip</a>
+</div></footer>
+<script src="app.js"></script></body></html>
