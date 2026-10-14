@@ -275,3 +275,37 @@ details[open] p{animation:fadeup .4s both}
  .show .txt,.show .frame,.show li,.bstage .bw,.callouts li{opacity:1!important;transform:none!important}
  .marq .track,.orbs i,.price,.btn::after{animation:none!important}
 }
+
+/* interactive dock over the real notch */
+.dock{position:absolute;left:0;right:0;top:78.4%;height:13.4%;z-index:4}
+.dock button,.mhot button{position:absolute;top:0;height:100%;width:3.9%;border:0;background:none;border-radius:50%;cursor:pointer;padding:0}
+.dock button:focus-visible,.mhot button:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
+.dock button span,.mhot button span{position:absolute;bottom:118%;left:50%;transform:translate(-50%,6px);background:#fff;color:#000;font:600 12px/1 -apple-system,system-ui,sans-serif;padding:6px 10px;border-radius:99px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.dock button:hover span,.dock button:focus-visible span,.mhot button:hover span,.mhot button:focus-visible span{opacity:1;transform:translate(-50%,0)}
+.dock button::after{content:"";position:absolute;inset:6% 0;border-radius:50%;background:rgba(255,255,255,.0);transition:background .15s,transform .15s}
+.dock button:hover::after{background:rgba(255,255,255,.14);transform:scale(1.12)}
+.ntabs{background:rgba(0,0,0,.42);padding:7px 16px;gap:12px;align-items:center;color:#ddd;font-size:13px;white-space:nowrap}
+.ntabs b{color:#fff;font-weight:700;min-width:88px;text-align:right}
+.ntabs span{color:rgba(255,255,255,.7)}
+@media(max-width:700px){.ntabs span{display:none}.ntabs b{min-width:0}}
+
+/* menu-bar window hotspots */
+.bstage .bw{line-height:0}
+.bstage .bw>img{width:100%;display:block}
+.mhot{position:absolute;inset:0}
+.mhot button{width:12%;height:8.8%;border-radius:12px;transition:background .15s}
+.mhot button:hover{background:rgba(255,255,255,.1)}
+.mhot button span{bottom:104%}
+.mtheme{position:absolute;left:38.7%;top:85.4%;width:22.4%;height:5.6%;border:0;background:none;cursor:pointer;border-radius:99px;padding:0}
+.mtheme span{position:absolute;top:135%;left:50%;transform:translate(-50%,6px);background:linear-gradient(180deg,var(--accent2),var(--accent));color:#fff;font:700 12px/1 -apple-system,system-ui,sans-serif;padding:7px 12px;border-radius:99px;white-space:nowrap;box-shadow:0 8px 24px var(--glow);animation:nudge 2.4s ease-in-out infinite}
+@keyframes nudge{50%{transform:translate(-50%,-4px)}}
+
+/* settings viewer */
+.sv{margin-top:20px;flex-wrap:wrap}
+.setwin{display:grid}.setwin img{grid-area:1/1;opacity:0;transform:scale(.985);transition:opacity .45s,transform .45s}
+.setwin img.on{opacity:1;transform:none}
+.frame.win.setwin{filter:drop-shadow(0 24px 50px rgba(0,0,0,.45))}
+
+/* notch pictures in showcases */
+.frame.win.nb{background:linear-gradient(160deg,#3b2a4a,#7a3f52 55%,#c0704f);padding:0 20px 22px;border-radius:22px;overflow:hidden}
+.frame.win.nb img{filter:drop-shadow(0 16px 26px rgba(0,0,0,.45));border-radius:0}

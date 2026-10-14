@@ -8,14 +8,21 @@
  // reveal on scroll
  var els=[].slice.call(document.querySelectorAll(".reveal"));
  if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add("in")});
- // notch demo: cycle the real captures
- var ns=document.getElementById("nshots"),nt=document.getElementById("ntabs");
- if(ns&&nt){
-  var im=[].slice.call(ns.children),bt=[].slice.call(nt.children),ci=0,hold=false;
-  function go(j){ci=j;im.forEach(function(x,k){x.classList.toggle("on",k===j)});bt.forEach(function(x,k){x.classList.toggle("on",k===j)})}
-  bt.forEach(function(x,k){x.onclick=function(){hold=true;go(k)}});
-  setInterval(function(){if(!hold&&!document.hidden)go((ci+1)%im.length)},3200);
+ // notch demo: a clickable dock over the real captures
+ var ns=document.getElementById("nshots"),nl=document.getElementById("nlabel");
+ if(ns){
+  var im=[].slice.call(ns.querySelectorAll("img")),bt=[].slice.call(ns.querySelectorAll(".dock button")),ci=0,hold=false;
+  function go(j){ci=j;im.forEach(function(x,k){x.classList.toggle("on",k===j)});if(nl)nl.textContent=bt[j].getAttribute("aria-label")}
+  bt.forEach(function(x,k){x.addEventListener("click",function(){hold=true;go(k)});x.addEventListener("mouseenter",function(){hold=true})});
+  ns.addEventListener("keydown",function(e){if(e.key==="ArrowRight")go((ci+1)%im.length);if(e.key==="ArrowLeft")go((ci+im.length-1)%im.length)});
+  setInterval(function(){if(!hold&&!document.hidden)go((ci+1)%im.length)},3400);
  }
+ // settings viewer
+ var sv=document.getElementById("sv"),sw=document.getElementById("setwin");
+ if(sv&&sw)[].forEach.call(sv.children,function(x){x.onclick=function(){[].forEach.call(sv.children,function(y){y.classList.toggle("on",y===x)});[].forEach.call(sw.children,function(i){i.classList.toggle("on",i.dataset.s===x.dataset.s)})}});
+ // the light/dark switch in the menu-bar picture flips the site
+ var mt=document.getElementById("mtheme");
+ if(mt)mt.onclick=function(){var tb=document.getElementById("theme");if(tb)tb.click()};
  // install tabs
  [].forEach.call(document.querySelectorAll("[data-tabs]"),function(g){
   var bs=g.querySelectorAll("button");bs.forEach(function(x){x.onclick=function(){bs.forEach(function(y){y.classList.toggle("on",y===x)});document.querySelectorAll(".ipane").forEach(function(p){p.classList.toggle("on",p.id===x.dataset.t)})}})});
