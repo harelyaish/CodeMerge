@@ -175,3 +175,103 @@ footer a{text-decoration:none}footer a:hover{color:var(--text)}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
+
+/* ===== motion & polish ===== */
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--accent2),var(--accent));z-index:99}
+nav{transition:background .3s,box-shadow .3s}
+nav.sc{box-shadow:0 10px 30px rgba(0,0,0,.12)}
+
+/* hero: drifting colour orbs */
+.hero{position:relative;overflow:hidden}
+.orbs{position:absolute;inset:0;pointer-events:none;z-index:0}
+.orbs i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 18s ease-in-out infinite alternate}
+.orbs i:nth-child(1){width:420px;height:420px;left:-80px;top:-60px;background:var(--accent)}
+.orbs i:nth-child(2){width:360px;height:360px;right:-60px;top:80px;background:#6a5cff;animation-duration:22s;animation-delay:-6s}
+.orbs i:nth-child(3){width:300px;height:300px;left:40%;top:260px;background:#ff5fa2;opacity:.3;animation-duration:26s;animation-delay:-12s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(60px,40px) scale(1.18)}}
+.hero .wrap{position:relative;z-index:1}
+
+/* headline: words rise in, gradient shimmers */
+h1 .w{display:inline-block;opacity:0;transform:translateY(.5em) rotate(2deg);filter:blur(8px);animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none;filter:none}}
+h1 em .w{background:linear-gradient(90deg,var(--accent2),var(--accent),#ff5fa2,var(--accent2));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards,shine 6s linear infinite}
+@keyframes shine{from{background-position:0 0}to{background-position:-300% 0}}
+.pill,.lead,.cta,.fine{animation:fadeup .9s .5s both cubic-bezier(.2,.8,.2,1)}
+.lead{animation-delay:.7s}.cta{animation-delay:.85s}.fine{animation-delay:1s}
+@keyframes fadeup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.pill i{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(63,209,122,0)}0%{box-shadow:0 0 0 0 rgba(63,209,122,.6)}}
+
+/* the notch grows out of the camera, then floats */
+.nshots{animation:grow 1.3s .6s both cubic-bezier(.2,.9,.2,1),bob 6s 2s ease-in-out infinite}
+@keyframes grow{from{clip-path:inset(0 38% 84% 38% round 0 0 24px 24px);opacity:.6}to{clip-path:inset(0 0 0 0 round 0 0 30px 30px);opacity:1}}
+@keyframes bob{50%{transform:translateX(-50%) translateY(7px)}}
+.ntabs{animation:fadeup .8s 1.5s both}
+
+/* buttons: shine sweep */
+.btn{position:relative;overflow:hidden}
+.btn:not(.ghost)::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sweep 4.5s 2s infinite}
+@keyframes sweep{0%{left:-60%}30%,100%{left:140%}}
+.btn:active{transform:scale(.97)}
+
+/* tool icons marquee */
+.marq{margin:46px 0 0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marq+.marq{margin-top:14px}
+.marq .track{display:flex;gap:16px;width:max-content;animation:scroll 48s linear infinite}
+.marq.rev .track{animation-direction:reverse;animation-duration:56s}
+.marq img{width:64px;height:64px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.25);flex:none}
+.marq:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:30px;text-align:center}
+.stats div{padding:20px 10px;border-radius:20px;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(14px)}
+.stats b{display:block;font-size:42px;font-weight:800;letter-spacing:-.04em;background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats i{font-style:normal}.stats span{color:var(--muted);font-size:14px}
+
+/* cards: cursor spotlight */
+.card{position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),var(--glow),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::before{opacity:1}
+.card .ic{transition:transform .3s}.card:hover .ic{transform:rotate(-8deg) scale(1.12)}
+.grid .card.reveal:nth-child(2){transition-delay:.08s}.grid .card.reveal:nth-child(3){transition-delay:.16s}.grid .card.reveal:nth-child(4){transition-delay:.24s}
+
+/* showcases: text and picture arrive from opposite sides */
+.show.reveal{opacity:1;transform:none}
+.show .txt{opacity:0;transform:translateX(-36px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.show .frame{opacity:0;transform:translateX(44px) scale(.96);transition:opacity .9s .1s,transform .9s .1s cubic-bezier(.2,.8,.2,1)}
+.show.flip .txt{transform:translateX(36px)}.show.flip .frame{transform:translateX(-44px) scale(.96)}
+.show.in .txt,.show.in .frame{opacity:1;transform:none}
+.show li{opacity:0;transform:translateX(-10px);transition:opacity .5s,transform .5s}
+.show.in li{opacity:1;transform:none}.show.in li:nth-child(1){transition-delay:.4s}.show.in li:nth-child(2){transition-delay:.55s}
+.frame,.way-view{transition:transform .25s ease-out;transform-style:preserve-3d;will-change:transform}
+.frame.tilt,.way-view.tilt{transition:none}
+
+/* menu-bar stage: window drops from the icon, callouts slide in */
+.bstage .bw{opacity:0;transform:translateY(-26px) scale(.94);transform-origin:90% 0;transition:opacity .6s .2s,transform .9s .2s cubic-bezier(.2,.9,.2,1)}
+.bstage.in .bw{opacity:1;transform:none}
+.callouts li{opacity:0;transform:translateX(-26px);transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.bstage.in .callouts li{opacity:1;transform:none}
+.bstage.in .callouts li:nth-child(1){transition-delay:.25s}.bstage.in .callouts li:nth-child(2){transition-delay:.4s}.bstage.in .callouts li:nth-child(3){transition-delay:.55s}.bstage.in .callouts li:nth-child(4){transition-delay:.7s}
+.mb-on{animation:glowic 2.6s ease-in-out infinite}
+@keyframes glowic{50%{background:rgba(255,255,255,.42);box-shadow:0 0 16px rgba(255,255,255,.5)}}
+
+/* trust tiles & pricing */
+.trust .glass{transition:transform .25s}.trust .glass:hover{transform:translateY(-4px)}
+.price{border:1px solid transparent;background:linear-gradient(var(--bg2),var(--bg2)) padding-box,conic-gradient(from var(--a,0deg),var(--accent),#6a5cff,#ff5fa2,var(--accent)) border-box;animation:spin 8s linear infinite}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes spin{to{--a:360deg}}
+.price .amt{display:inline-block;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-5px)}}
+.final.glass{background:radial-gradient(60% 120% at 50% 0%,var(--glow),transparent),var(--glass)}
+
+/* stage glow behind the hero notch */
+.stage{animation:fadeup 1s .3s both}
+details{transition:border-color .2s}details[open]{border-color:color-mix(in srgb,var(--accent) 50%,var(--glass-line))}
+details[open] p{animation:fadeup .4s both}
+
+@media(prefers-reduced-motion:reduce){
+ h1 .w{opacity:1;transform:none;filter:none}.pill,.lead,.cta,.fine,.stage,.ntabs,.nshots{animation:none!important;opacity:1}
+ .show .txt,.show .frame,.show li,.bstage .bw,.callouts li{opacity:1!important;transform:none!important}
+ .marq .track,.orbs i,.price,.btn::after{animation:none!important}
+}
