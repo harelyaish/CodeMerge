@@ -139,9 +139,18 @@ On a Mac with a notch, CodeMerge turns it into a small live panel. Hover it to o
 - **Live beside the camera** — music, timers, meetings and recordings stay visible while it's closed.
 - **Any tool opens right inside it**, plus a camera **mirror** and **voice notes**.
 
+### New since 1.2
+
+- **Shift wheel** — hold **Shift** while dragging a file and a wheel opens under the pointer (or right-click a file in Finder → Services → **CodeMerge Wheel**). Pictures: crop, edit, redact (faces and text too), add a background, compress, strip location, convert. PDFs and documents to Word, text or images; video to audio; zip.
+- **Mac Care: Memory, Duplicates, Organize** — close apps and browsers nobody is using (Auto Care can do it when memory runs short, with an Ignore List); let identical files share storage instead of each keeping a copy (nothing is deleted); sort a folder by type, month or the site a file came from, with a preview and a 90-day undo.
+- **Stocks** — Chart, Stats and News tabs: day range, volume, a 52-week bar, market cap, P/E, dividend, earnings date, headlines and market status, plus one bell that lists every price alert.
+- **Video downloader** — paste a link, pick a quality, get the file. Only download what you have the right to keep.
+- **Settings, redesigned** in dark glass: six places (General, Notch, Menu Bar, Tools, Automation, Account) with pages as pills.
+- Also: world clock, alarms and stopwatch laps; medicines, a pill cabinet and a cycle ring; a clearer Capture panel; reply to Messages and Mail from the notch; the notch remembers where you were for two minutes; and **all AI features were removed** — CodeMerge is local-first.
+
 ### Settings, in brief
 
-A searchable Settings window — search finds any setting on any page. Pages include **Notch** (style, Home, widgets, tabs), **Mascot**, **Main Window** (which tools show, in what order, and themes), **Keyboard Shortcuts** (a global shortcut for almost anything), **Screenshots**, **Timer**, **Workflows**, **Command Palette**, **Typing Sounds**, **Water & Stretch**, **Weather**, **Connectors** (Pocket) and **License**. CodeMerge starts at login if you like and has no Dock icon.
+A searchable Settings window — search finds any setting on any page. Pages include **Notch** (style, Home, widgets, tabs), **Mascot**, **Menu Bar** (look, position, and which tools show and in what order), **Keyboard Shortcuts** (a global shortcut for almost anything), **Screenshots**, **Timer**, **Workflows**, **Command Palette**, **Typing Sounds**, **Water & Stretch**, **Weather**, **Connectors** (Pocket) and **License**. CodeMerge starts at login if you like and has no Dock icon.
 
 ### Permissions it may ask you for
 
@@ -167,6 +176,8 @@ Very little, and only when you use the feature — no account or API key needed 
 - **Lyrics** — `lrclib.net`, sent the song's title and artist.
 - **Speed test** — macOS's own `networkQuality` tool, which talks to Apple's test servers.
 - **Voice notes to Pocket** — only if you connect your Pocket account in Settings → Connectors.
+- **Stocks** — Yahoo Finance (`query1.finance.yahoo.com`): prices, company facts and headlines for the symbols you add.
+- **Video downloader** — only the site whose link you paste; the first time it fetches `yt-dlp` (and `ffmpeg`/`deno`) from their official sources and checks their checksums.
 - **License check** — Gumroad, when you enter a license key.
 
 Package tracking just opens the carrier's own tracking page in your browser. Typing sounds never read what you type — only which key position was pressed — and nothing you type leaves your Mac.

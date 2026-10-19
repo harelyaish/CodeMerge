@@ -20,8 +20,8 @@
  }catch(e){}
  // settings viewer
  try{
- var sv=document.getElementById("sv"),sw=document.getElementById("setwin");
- if(sv&&sw)[].forEach.call(sv.children,function(x){x.onclick=function(){[].forEach.call(sv.children,function(y){y.classList.toggle("on",y===x)});[].forEach.call(sw.children,function(i){i.classList.toggle("on",i.dataset.s===x.dataset.s)})}});
+ [["sv","setwin"],["cv","carewin"]].forEach(function(p){var sv=document.getElementById(p[0]),sw=document.getElementById(p[1]);
+ if(sv&&sw)[].forEach.call(sv.children,function(x){x.onclick=function(){[].forEach.call(sv.children,function(y){y.classList.toggle("on",y===x)});[].forEach.call(sw.children,function(i){i.classList.toggle("on",i.dataset.s===x.dataset.s)})}})});
  }catch(e){}
  // the light/dark switch in the menu-bar picture flips the window picture
  var mt=document.getElementById("mtheme");

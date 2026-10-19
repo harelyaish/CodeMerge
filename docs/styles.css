@@ -484,3 +484,9 @@ html:not(.js) #veil{display:none}
 @keyframes vfail{to{opacity:0;visibility:hidden}}
 
 .group .grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+
+/* wheel showcase */
+.frame.wheelbox{background:radial-gradient(60% 60% at 50% 40%,color-mix(in srgb,var(--accent) 35%,transparent),transparent 70%),linear-gradient(160deg,#3b2a4a,#7a3f52 55%,#c0704f);display:grid;place-items:center;padding:26px}
+.frame.wheelbox img{width:min(100%,340px);animation:wspin 12s ease-in-out infinite;filter:drop-shadow(0 24px 40px rgba(0,0,0,.45))}
+@keyframes wspin{0%,100%{transform:rotate(-3deg) scale(1)}50%{transform:rotate(3deg) scale(1.03)}}
+@media(prefers-reduced-motion:reduce){.frame.wheelbox img{animation:none}}
