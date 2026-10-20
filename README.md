@@ -293,6 +293,12 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 
 ## Changelog
 
+### 1.3.1
+
+- **A welcome tour** for new installs — a short, branded walkthrough of the notch, the tools and your privacy.
+- **What's New after every update** — a window listing what changed, plus an "Updated to…" notice. Reopen it any time from the menu-bar icon's right-click menu or Settings → General.
+- **Smaller updates** — the in-app update downloads about 30% less.
+
 ### 1.3.0
 
 - **Shift wheel** — hold Shift while dragging a file (or right-click it in Finder → Services → **CodeMerge Wheel**) for a wheel of things to do with it: convert, compress, crop, redact, add a background.
