@@ -105,94 +105,93 @@ CodeMerge lives in your menu bar — click its icon to open the dropdown, or rig
 
 ## Features
 
-**60+ tools, one $5 license.** 🆕 marks what arrives in the next update (built, not in the 1.2.0 download yet).
+<p align="center"><b>60+ tools · one $5 license · no account</b><br><sub>🆕 = arrives in the next update (built, not in the 1.2.0 download yet)</sub></p>
 
 <table>
 <tr>
-<td width="33%" valign="top" align="center"><h4>🖼 Capture</h4>Screenshots, scrolling captures, recording and Text Grab — with an annotation editor.<br><a href="#capture">Jump ↓</a></td>
-<td width="33%" valign="top" align="center"><h4>🧹 Mac Care & files</h4>Free up memory, find duplicates, organize folders, and a Shift wheel for any file.<br><a href="#mac-care--files">Jump ↓</a></td>
-<td width="33%" valign="top" align="center"><h4>💊 Health & time</h4>Medicines, world clock, alarms, cycle ring, habits and water.<br><a href="#health--time">Jump ↓</a></td>
-</tr>
-<tr>
-<td width="33%" valign="top" align="center"><h4>📈 Markets & downloads</h4>Stocks with charts, stats, news and alerts. A video downloader.<br><a href="#markets--downloads">Jump ↓</a></td>
-<td width="33%" valign="top" align="center"><h4>📋 Everyday & power tools</h4>Clipboard, shelf, timers, command palette, workflows.<br><a href="#everyday">Jump ↓</a></td>
-<td width="33%" valign="top" align="center"><h4>🪟 Windows & desktop</h4>Layouts, a clean desktop, quit all, eject, lock.<br><a href="#windows--desktop">Jump ↓</a></td>
+<td width="46%" valign="middle"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-capture.png" alt="Capture panel"></td>
+<td width="54%" valign="middle">
+
+### Capture
+<sub>See it, grab it, mark it up</sub>
+
+<img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/screenshot-area.png" width="20" align="absmiddle"> **Screenshots** — full screen or an area, then annotate<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/screen-recording.png" width="20" align="absmiddle"> **Screen recording** with a floating pause and stop<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/text-grab.png" width="20" align="absmiddle"> **Text Grab** — copy any text you can see<br>📜 **Scrolling screenshots** — click a window, get the whole page<br>📏 **Measure** — ruler and magnifier<br>✏️ **Draw on screen** — pen, highlighter, arrows; show clicks and shortcuts
+
+</td>
 </tr>
 </table>
 
-### Capture
-
-| Tool | What it does |
-|---|---|
-| **Screenshots** | Full screen or an area, then an annotation editor |
-| **Scrolling screenshots** | Click a window, get the whole page |
-| **Screen recording** | With a floating pause and stop |
-| **Text Grab** | Copy any text you can see on screen |
-| **Measure** | Ruler and magnifier |
-| **Draw on screen** | Pen, highlighter, arrows and boxes — and show clicks and shortcuts while you present |
-
-### Windows & desktop
-
-| Tool | What it does |
-|---|---|
-| **Window layouts** | Halves, quarters or your own grid |
-| **Hide desktop & Dock** 🆕 | A clean screen in one click; your real wallpaper stays |
-| **Full view** 🆕 | Hide the Dock and stretch a window across the screen |
-| **Privacy blur** 🆕 | One button blurs the screen |
-| **Quit all apps · Eject disks · Lock screen · Prevent sleep** | One-click versions of the things you do every day |
-| **Clean keyboard** | Lock the keys while you wipe them |
-
-### Everyday
-
-| Tool | What it does |
-|---|---|
-| **Clipboard history** | 200 items, searchable, with pinned snippets |
-| **File shelf** | A drag-and-drop holding tray |
-| **Timers · Quick note · Weather** | Always one move away |
-| **Converter** | Units, currency and world clocks |
-| **Colour picker · Random generator · Audio output** | Small tools you reach for often |
-| **Now Playing** | Music and Spotify, with lyrics |
-| **Notifications you can answer** 🆕 | Reply to Messages and Mail from the notch |
-| **Command palette · Workflows** | Your own saved commands, and chains of tools in one |
-| **Find a file · Convert to Markdown** | Search in plain words; turn any file into Markdown |
-| **Kill process on port · Speed test · Package tracking** | The developer's drawer |
+<table>
+<tr>
+<td width="54%" valign="middle">
 
 ### Mac Care & files
+<sub>Free memory, drop duplicates, tidy up — undoable</sub>
 
-| Tool | What it does |
-|---|---|
-| **Free up memory** 🆕 | Close idle apps with a tap; Auto Care does it when RAM runs short |
-| **Duplicates** 🆕 | Finds copies and makes them share space — nothing is deleted |
-| **Organize a folder** 🆕 | By type, month or source, with undo for 90 days |
-| **Shift wheel** 🆕 | Hold Shift while dragging a file (or right-click → Services → CodeMerge Wheel): convert, compress, crop, redact, add a background |
+🧠 **Free up memory** 🆕 — close idle apps; Auto Care steps in when RAM runs short<br>♊ **Duplicates** 🆕 — copies share space, nothing is deleted<br>🗂 **Organize a folder** 🆕 — by type, month or source, undo for 90 days<br>🎡 **Shift wheel** 🆕 — hold Shift while dragging a file: convert, compress, crop, redact, add a background
+
+</td>
+<td width="46%" valign="middle"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-memory.png" alt="Mac Care: free up memory"></td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="46%" valign="middle"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-health.png" alt="Medicines and reminders"></td>
+<td width="54%" valign="middle">
 
 ### Health & time
+<sub>Doses, clocks and gentle habits</sub>
 
-| Tool | What it does |
-|---|---|
-| **Medicines** 🆕 | Dose times, units, a photo of the box, a pill cabinet, missed-dose recovery |
-| **Refill reminders** 🆕 | Know before you run out |
-| **World clock** 🆕 | Day and night skies with a time slider |
-| **Alarms · Timers · Stopwatch laps** 🆕 | All in one place |
-| **Cycle ring · Habits · Water** 🆕 | Gentle daily tracking |
-| **Water & stretch reminders** | They learn your rhythm |
-| **Sunrise, sunset & golden hour** | For where you are |
+💊 **Medicines** 🆕 — dose times, a photo of the box, a pill cabinet, missed-dose recovery, refill reminders<br>🌍 **World clock** 🆕 — day and night skies with a time slider<br>⏰ **Alarms, timers & stopwatch laps** 🆕<br>🌸 **Cycle ring, habits, water** 🆕<br>💧 **Water & stretch reminders** that learn your rhythm · 🌅 **Golden hour**
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="54%" valign="middle">
 
 ### Markets & downloads
+<sub>Watch the tickers, grab the video</sub>
 
-| Tool | What it does |
-|---|---|
-| **Stocks** 🆕 | Watchlist with Chart, Stats and News tabs, day range, 52-week bar, market cap, P/E and price alerts (one bell for all of them) |
-| **Video downloader** 🆕 | Paste a link, pick a quality, get the file |
+📈 **Stocks** 🆕 — Chart, Stats and News tabs, day range, 52-week bar, market cap, P/E<br>🔔 **One bell** for every price alert<br>⬇️ **Video downloader** 🆕 — paste a link, pick a quality, get the file<br>🔒 Only touches the network when *you* ask
 
-### Just for fun
+</td>
+<td width="46%" valign="middle"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-stocks.png" alt="Stocks"></td>
+</tr>
+</table>
 
-| Tool | What it does |
-|---|---|
-| **Typing sounds** | 9 keyboards, recorded for real |
-| **A mascot** | Peeks in and hides from your cursor |
+<table>
+<tr>
+<td width="46%" valign="middle"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-dashboard.png" alt="The Dashboard"></td>
+<td width="54%" valign="middle">
 
-<sub>Every tool is in the menu-bar window. On a Mac with a notch, hover it to open the same tools in the notch panel.</sub>
+### Everyday & power tools
+<sub>The small things you reach for all day</sub>
+
+<img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/clipboard.png" width="20" align="absmiddle"> **Clipboard history** — 200 items, searchable, pinned snippets<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/file-shelf.png" width="20" align="absmiddle"> **File shelf** — a drag-and-drop tray<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/timer.png" width="20" align="absmiddle"> **Timers · Quick note · Weather**<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/converter.png" width="20" align="absmiddle"> **Converter** — units, currency, world clocks<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/command-palette.png" width="20" align="absmiddle"> **Command palette & Workflows** — your commands, chained<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/now-playing.png" width="20" align="absmiddle"> **Now Playing** with lyrics<br>💬 **Reply to Messages and Mail** from the notch 🆕<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/kill-port.png" width="20" align="absmiddle"> **Kill port · Speed test · Package tracking · Find a file · To Markdown**
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="54%" valign="middle">
+
+### Windows & desktop
+<sub>A calm, clean screen</sub>
+
+<img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/window-split.png" width="20" align="absmiddle"> **Window layouts** — halves, quarters, your own grid<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/hide-desktop.png" width="20" align="absmiddle"> **Hide desktop & Dock** 🆕 — your real wallpaper stays<br>🪟 **Full view** 🆕 · 🫥 **Privacy blur** 🆕<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/quit-all.png" width="20" align="absmiddle"> **Quit all** · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/eject.png" width="20" align="absmiddle"> **Eject disks** · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/lock-screen.png" width="20" align="absmiddle"> **Lock** · <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/prevent-sleep.png" width="20" align="absmiddle"> **Prevent sleep**<br><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/icons/clean-keyboard.png" width="20" align="absmiddle"> **Clean keyboard** — lock the keys while you wipe
+
+</td>
+<td width="46%" valign="middle"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-presenter.png" alt="Presenting tools"></td>
+</tr>
+</table>
+
+<p align="center"><sub>Plus <b>typing sounds</b> (9 recorded keyboards) and a <b>mascot</b> that hides from your cursor. Every tool lives in the menu-bar window; on a notch Mac, hover the notch for the same tools.</sub></p>
 
 ### The notch — new in 1.2
 
