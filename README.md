@@ -79,7 +79,7 @@ That downloads the app, installs it to `/Applications`, and opens it — no extr
 
 <p align="center"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/dmg-window.png" alt="The CodeMerge disk image: drag the app onto Applications" width="560"></p>
 
-Because this went through a browser, macOS marks the file "quarantined" and will refuse to open the app the first time — see **[If macOS won't open the app](#if-macos-wont-open-the-app)** below for the exact steps (it takes ten seconds). There's also a [zip](https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip) if you'd rather unzip it yourself, and an [interactive install guide](https://harelyaish.github.io/CodeMerge/#install) on the website.
+The window has a button for each step: **Open CodeMerge** launches the installed app, and **Privacy & Security** opens System Settings straight at the Security section. Because this went through a browser, macOS marks the file "quarantined" and will refuse to open the app the first time — see **[If macOS won't open the app](#if-macos-wont-open-the-app)** below for the exact steps (it takes ten seconds). There's also a [zip](https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip) if you'd rather unzip it yourself, and an [interactive install guide](https://harelyaish.github.io/CodeMerge/#install) on the website.
 
 ### Prefer Homebrew?
 
