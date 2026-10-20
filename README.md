@@ -73,9 +73,13 @@ curl -fsSL https://raw.githubusercontent.com/harelyaish/CodeMerge/main/install.s
 
 That downloads the app, installs it to `/Applications`, and opens it — no extra "this app is from an unidentified developer" step needed, since it never goes through a browser download. **This is the recommended way to install** — it's the only method that skips macOS's blocking dialog entirely.
 
-### Prefer not to use Terminal?
+### Prefer a disk image?
 
-[Download the zip directly](https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip), unzip it, and drag `CodeMerge.app` to Applications. Because this went through a browser, macOS marks the file "quarantined" and will refuse to open it the first time — see **[If macOS won't open the app](#if-macos-wont-open-the-app)** below for the exact steps.
+[Download CodeMerge.dmg](https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.dmg), open it, and drag **CodeMerge** onto **Applications**:
+
+<p align="center"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/dmg-window.png" alt="The CodeMerge disk image: drag the app onto Applications" width="560"></p>
+
+Because this went through a browser, macOS marks the file "quarantined" and will refuse to open the app the first time — see **[If macOS won't open the app](#if-macos-wont-open-the-app)** below for the exact steps (it takes ten seconds). There's also a [zip](https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip) if you'd rather unzip it yourself, and an [interactive install guide](https://harelyaish.github.io/CodeMerge/#install) on the website.
 
 ### Prefer Homebrew?
 
@@ -88,7 +92,7 @@ Homebrew's download is also quarantined by macOS the same way a browser download
 
 ## If macOS won't open the app
 
-This only affects the **zip download** and **Homebrew** install methods (the curl command above skips it entirely). It's standard macOS behavior for any app that isn't distributed through the App Store or an Apple-notarized installer — it isn't specific to CodeMerge, and it isn't a sign anything is wrong with the download.
+This only affects the **disk image**, **zip** and **Homebrew** install methods (the curl command above skips it entirely). It's standard macOS behavior for any app that isn't distributed through the App Store or an Apple-notarized installer — it isn't specific to CodeMerge, and it isn't a sign anything is wrong with the download.
 
 1. Try **right-click (or Control-click) the app → Open**. On some macOS versions this shows a dialog with an **Open** button — click it and you're done, permanently, for this copy of the app.
 2. If that shows a blocking dialog instead (only "Move to Trash" and "Done", no way to open it), go to **System Settings → Privacy & Security**, scroll down to the **Security** section, and look for a line saying *"CodeMerge.app was blocked to protect your Mac"* with an **Open Anyway** button next to it. Click it, authenticate if asked, then try opening the app again — one more confirmation dialog appears, this time with a real **Open** button.

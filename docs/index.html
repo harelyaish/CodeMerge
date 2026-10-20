@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0a090c">
 <link rel="icon" href="assets/app-icon.png">
 <script>document.documentElement.className="js"</script>
-<link rel="stylesheet" href="styles.css?v=1792478943">
+<link rel="stylesheet" href="styles.css?v=1792479961">
 </head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="ig" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="24" y2="24"><stop offset="0" stop-color="#ffa36b"/><stop offset="1" stop-color="#f26b35"/></linearGradient></defs></svg>
 <div id="veil" aria-hidden="true"><img decoding="async" src="assets/app-icon.png" alt=""></div>
@@ -132,17 +132,49 @@
 
 <section id="install"><div class="wrap">
  <div class="head"><div class="eyebrow">Get started</div><h2>Installed in under a minute.</h2></div>
- <div class="two"><div>
-  <div class="tabsrow" data-tabs><button class="on" data-t="i1">Terminal</button><button data-t="i2">Homebrew</button><button data-t="i3">Manual</button></div>
-  <div class="ipane on" id="i1"><p class="fine" style="margin-bottom:10px">Recommended — skips the "unidentified developer" step.</p>
-   <div class="code"><code>curl -fsSL https://raw.githubusercontent.com/harelyaish/CodeMerge/main/install.sh | bash</code><button>Copy</button></div></div>
-  <div class="ipane" id="i2"><div class="code"><code>brew tap harelyaish/codemerge https://github.com/harelyaish/CodeMerge
+ <div class="tabsrow" data-tabs><button class="on" data-t="i3">Guided install</button><button data-t="i1">Terminal</button><button data-t="i2">Homebrew</button></div>
+ <div class="ipane" id="i1"><p class="fine" style="margin-bottom:10px">One line. It skips the "unidentified developer" step entirely.</p>
+  <div class="code"><code>curl -fsSL https://raw.githubusercontent.com/harelyaish/CodeMerge/main/install.sh | bash</code><button>Copy</button></div></div>
+ <div class="ipane" id="i2"><div class="code"><code>brew tap harelyaish/codemerge https://github.com/harelyaish/CodeMerge
 brew install --cask codemerge</code><button>Copy</button></div></div>
-  <div class="ipane" id="i3"><p><a href="https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.zip" style="text-decoration:underline">Download the zip</a>, unzip, and drag <b>CodeMerge.app</b> to Applications. macOS will block the first launch — see the steps on the right.</p></div>
+ <div class="ipane on" id="i3">
+  <div class="guide glass" id="guide">
+   <ol class="gsteps" id="gsteps">
+    <li class="on"><button data-g="0"><i>1</i><span><b>Download</b><small>One file, about 12 MB</small></span></button></li>
+    <li><button data-g="1"><i>2</i><span><b>Drag to Applications</b><small>Open the disk image first</small></span></button></li>
+    <li><button data-g="2"><i>3</i><span><b>Open it</b><small>From Applications or Launchpad</small></span></button></li>
+    <li><button data-g="3"><i>4</i><span><b>Allow it once</b><small>If macOS asks</small></span></button></li>
+    <li><button data-g="4"><i>5</i><span><b>Say hello</b><small>The welcome tour</small></span></button></li>
+   </ol>
+   <div class="gstage">
+    <div class="gbar"><b id="gprog"></b></div>
+    <div class="gview on" data-v="0">
+     <h3>Download CodeMerge</h3><p>Free for 30 days, every feature. Works on Apple Silicon and Intel, macOS 13 or later.</p>
+     <a class="btn" href="https://github.com/harelyaish/CodeMerge/releases/latest/download/CodeMerge.dmg" id="gdl">Download CodeMerge.dmg</a>
+     <div class="gdl"><img decoding="async" src="assets/app-icon.png" alt=""><span><b>CodeMerge.dmg</b><small>12 MB</small></span><i></i></div>
+    </div>
+    <div class="gview" data-v="1">
+     <h3>Drag it onto Applications</h3><p>Double-click the downloaded file. A window opens — drag <b>CodeMerge</b> onto <b>Applications</b>.</p>
+     <div class="gdmg"><img decoding="async" src="assets/install/dmg-window.webp" alt="The CodeMerge disk image window" loading="lazy"><img decoding="async" class="ghost" src="assets/app-icon.png" alt="" aria-hidden="true"><svg class="gcur" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 2 4 7-3 1-4-7-5 4z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+    </div>
+    <div class="gview" data-v="2">
+     <h3>Open CodeMerge</h3><p>Open it from <b>Applications</b> or Launchpad. The first time, macOS may say it can't check the app for malware — normal for apps outside the App Store.</p>
+     <div class="gmac"><div class="gdlg"><svg class="gsh" viewBox="0 0 96 96" aria-hidden="true"><rect x="6" y="4" width="80" height="80" rx="20" fill="#d9d9de"/><circle cx="46" cy="44" r="27" fill="#8e8e93"/><circle cx="46" cy="44" r="19" fill="#c7c7cc"/><circle cx="46" cy="44" r="6" fill="#636366"/><path d="M70 52l22 38H48z" fill="#ffd60a" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path d="M70 64v13" stroke="#3a3a3c" stroke-width="4" stroke-linecap="round"/><circle cx="70" cy="83" r="2.6" fill="#3a3a3c"/></svg><b>“CodeMerge.app” Not Opened</b><span>Apple could not verify “CodeMerge.app” is free of malware that may harm your Mac or compromise your privacy.</span><div class="gbtns"><u class="red">Move to Trash</u><u class="pri">Done</u></div></div></div>
+     <p class="fine">Click <b>Done</b> — not Move to Trash. The next step takes ten seconds.</p>
+    </div>
+    <div class="gview" data-v="3">
+     <h3>Allow it, once</h3><p>Open <b>System Settings → Privacy &amp; Security</b>, scroll to <b>Security</b> and click <b>Open Anyway</b>. Then click Open. You never do this again.</p>
+     <div class="gmac"><div class="gset"><b>Security</b><div class="grow"><span>“CodeMerge” was blocked to protect your Mac.</span><u class="pri pulse">Open Anyway</u></div></div></div>
+     <p class="fine">Tip: right-click the app → <b>Open</b> does the same in one step.</p>
+    </div>
+    <div class="gview" data-v="4">
+     <h3>Say hello</h3><p>A short tour opens. Hover the notch — or click the menu-bar icon on a Mac without one — and everything is one move away.</p>
+     <div class="gwelcome"><img decoding="async" src="assets/app-icon.png" alt=""><b>Welcome to CodeMerge</b><span>Your Mac's notch, finally useful.</span><i><em></em><em></em><em></em><em></em></i></div>
+    </div>
+    <div class="gnav"><button class="btn ghost" id="gprev">Back</button><button class="btn" id="gnext">Next</button></div>
+   </div>
+  </div>
  </div>
- <div class="glass"><b>macOS won't open it?</b><br>Normal for any indie app outside the App Store. One-time fix:<br><br>
-  Right-click (or Control-click) the app → <b>Open</b>, then click Open.<br><br>
-  If it only offers "Move to Trash": <b>System Settings → Privacy &amp; Security</b>, scroll to Security, click <b>Open Anyway</b>.</div></div>
 </div></section>
 
 <section><div class="wrap" style="max-width:780px">
@@ -176,4 +208,4 @@ brew install --cask codemerge</code><button>Copy</button></div></div>
 <a href="https://github.com/harelyaish/CodeMerge">GitHub</a><a href="./#help">Help</a><a href="features.html">Features</a><a href="updates.html">Changelog</a><a href="cards.html">Share cards</a>
 <a href="https://github.com/harelyaish/CodeMerge/releases.atom">RSS</a><a href="https://www.paypal.com/paypalme/HarelYaish">Tip</a>
 </div></footer>
-<script src="app.js?v=1792478943"></script></body></html>
+<script src="app.js?v=1792479961"></script></body></html>

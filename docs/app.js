@@ -96,4 +96,17 @@
 
  // pause looping animations that are off screen
  try{ if("IntersectionObserver" in window){var ao=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("idle",!e.isIntersecting)})},{rootMargin:"120px"});[].forEach.call(document.querySelectorAll("header,section,footer,.marq,.tt"),function(x){ao.observe(x)})} }catch(e){}
+
+ // guided install
+ try{
+  var gs=[].slice.call(document.querySelectorAll("#gsteps li")),gv=[].slice.call(document.querySelectorAll(".gview")),gi=0;
+  if(gs.length){
+   var gp=document.getElementById("gprog"),pv=document.getElementById("gprev"),nx=document.getElementById("gnext");
+   var gset=function(n){gi=Math.max(0,Math.min(gs.length-1,n));gs.forEach(function(l,k){l.classList.toggle("on",k===gi);l.classList.toggle("done",k<gi)});gv.forEach(function(v,k){v.classList.toggle("on",k===gi)});gp.style.width=((gi+1)/gs.length*100)+"%";pv.style.visibility=gi?"visible":"hidden";nx.textContent=gi===gs.length-1?"Done":"Next"};
+   gs.forEach(function(l,k){l.querySelector("button").addEventListener("click",function(){gset(k)})});
+   pv.addEventListener("click",function(){gset(gi-1)});nx.addEventListener("click",function(){gset(gi===gs.length-1?0:gi+1)});
+   document.getElementById("guide").addEventListener("keydown",function(e){if(e.key==="ArrowRight")gset(gi+1);if(e.key==="ArrowLeft")gset(gi-1)});
+   gset(0);
+  }
+ }catch(e){}
 })();
