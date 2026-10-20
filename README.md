@@ -210,7 +210,7 @@ In the latest download (1.3.0):
 - **Mac Care: Memory, Duplicates, Organize.**
 - **Stocks** — Chart / Stats / News tabs and a bell for every price alert.
 - **Video downloader**, redesigned; **Settings**, redesigned in dark glass with six places and pages as pills.
-- Also: world clock, alarms and stopwatch laps; medicines, a pill cabinet and a cycle ring; a clearer Capture panel; reply to Messages and Mail from the notch; the notch remembers where you were; hide-desktop now keeps your real wallpaper; and **all AI features were removed**.
+- Also: world clock, alarms and stopwatch laps; medicines, a pill cabinet and a cycle ring; a clearer Capture panel; reply to Messages and Mail from the notch; the notch remembers where you were; hide-desktop now keeps your real wallpaper.
 
 ### Settings, in brief
 
@@ -309,7 +309,6 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 - **Notch & notifications** — reply to Messages and Mail from the notch; the notch remembers where you were; a clearer Capture panel.
 - **Settings, redesigned** in dark glass with six places and pages as pills.
 - **Hide desktop & Dock** now keeps your real wallpaper and fades in with no flash.
-- **No AI** — all AI features were removed.
 
 ### 1.2.0
 
