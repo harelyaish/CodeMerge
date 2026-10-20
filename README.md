@@ -28,7 +28,7 @@
 
 ## Contents
 
-[See it](#see-it) · [Why](#why-codemerge) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Features](#features) · [Coming next](#coming-in-the-next-release) · [The notch](#the-notch--new-in-12) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
+[See it](#see-it) · [Why](#why-codemerge) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Features](#features) · [New in 1.3](#new-in-13) · [The notch](#the-notch--new-in-12) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
 
 ## See it
 
@@ -105,7 +105,7 @@ CodeMerge lives in your menu bar — click its icon to open the dropdown, or rig
 
 ## Features
 
-<p align="center"><b>60+ tools · one $5 license · no account</b><br><sub>🆕 = arrives in the next update (built, not in the 1.2.0 download yet)</sub></p>
+<p align="center"><b>60+ tools · one $5 license · no account</b><br><sub>🆕 = new in 1.3</sub></p>
 
 <table>
 <tr>
@@ -202,9 +202,9 @@ On a Mac with a notch, CodeMerge turns it into a small live panel. Hover it to o
 - **Live beside the camera** — music, timers, meetings and recordings stay visible while it's closed.
 - **Any tool opens right inside it**, plus a camera **mirror** and **voice notes**.
 
-### Coming in the next release
+### New in 1.3
 
-These are built and merged but not in the latest download yet (1.2.0). They arrive with the next update:
+In the latest download (1.3.0):
 
 - **Shift wheel** — hold Shift while dragging a file (or right-click it in Finder → Services → **CodeMerge Wheel**) for a wheel of things to do with it.
 - **Mac Care: Memory, Duplicates, Organize.**
@@ -293,9 +293,17 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 
 ## Changelog
 
-### Next release (in development)
+### 1.3.0
 
-Shift wheel · Mac Care Memory/Duplicates/Organize · Stocks Chart/Stats/News · redesigned Video downloader and Settings · world clock, medicines, capture and notification upgrades · no AI. Details under [Coming in the next release](#coming-in-the-next-release).
+- **Shift wheel** — hold Shift while dragging a file (or right-click it in Finder → Services → **CodeMerge Wheel**) for a wheel of things to do with it: convert, compress, crop, redact, add a background.
+- **Mac Care** — free up memory by closing idle apps (with Auto Care when RAM runs short), find duplicates that share space instead of deleting, and organize a folder by type, month or source, with undo.
+- **Stocks** — Chart, Stats and News tabs; day range, 52-week bar, market cap and P/E; one bell for every price alert.
+- **Video downloader**, redesigned: paste a link, pick a quality, get the file.
+- **Health & time** — world clock with day/night skies, alarms and stopwatch laps, medicines with a pill cabinet and refill reminders, a cycle ring.
+- **Notch & notifications** — reply to Messages and Mail from the notch; the notch remembers where you were; a clearer Capture panel.
+- **Settings, redesigned** in dark glass with six places and pages as pills.
+- **Hide desktop & Dock** now keeps your real wallpaper and fades in with no flash.
+- **No AI** — all AI features were removed.
 
 ### 1.2.0
 

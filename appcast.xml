@@ -6,6 +6,18 @@
         <description>Update feed for CodeMerge.</description>
         <language>en</language>
         <item>
+      <title>Version 1.3.0</title>
+      <pubDate>Tue, 20 Oct 2026 06:27:03 +0000</pubDate>
+      <sparkle:version>10</sparkle:version>
+      <sparkle:shortVersionString>1.3.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/harelyaish/CodeMerge/releases/download/v1.3.0/CodeMerge.zip"
+        length="15493944"
+        type="application/octet-stream"
+        sparkle:edSignature="Ug1hIbF78THqxeQMEmwPkuWIWaF6gaCR5yieixYFTPCZfwnnSLZhVBOOx1kv7aJ39GUO/8qgMAFOrwMVHh4iAw==" />
+    </item>
+        <item>
       <title>Version 1.2.0</title>
       <pubDate>Fri, 25 Sep 2026 11:50:18 +0000</pubDate>
       <sparkle:version>9</sparkle:version>
