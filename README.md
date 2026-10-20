@@ -1,39 +1,67 @@
 <p align="center">
-  <a href="https://harelyaish.github.io/CodeMerge/"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/site-banner.svg" alt="Try CodeMerge live in your browser — harelyaish.github.io/CodeMerge" width="100%"></a>
+  <a href="https://harelyaish.github.io/CodeMerge/"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/hero.png" alt="CodeMerge — your Mac's notch, finally useful. $5 once, 30-day trial." width="100%"></a>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/banner.png" alt="CodeMerge — the menu-bar utility for macOS" width="100%">
-</p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=18&pause=1800&color=FF6B35&center=true&vCenter=true&width=600&lines=One+menu+bar.+A+dozen+tools.;Screenshots%2C+clipboard%2C+timers%2C+weather...;Custom+window+layouts%2C+one+shortcut+away.;%245+once.+No+subscription.+Ever." alt="Typing SVG">
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=18&pause=1800&color=FF6B35&center=true&vCenter=true&width=640&lines=Your+Mac%27s+notch%2C+finally+useful.;Clocks%2C+capture%2C+health+reminders%2C+stocks...;Shift-drag+any+file+for+a+wheel+of+actions.;Local-first.+No+account.+No+AI.;%245+once.+No+subscription.+Ever." alt="Typing SVG">
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/github/downloads/harelyaish/CodeMerge/total?style=flat-square&label=downloads&color=FF6B35">
   <img src="https://img.shields.io/badge/macOS-13%2B-black?style=flat-square&logo=apple">
-  <img src="https://img.shields.io/badge/license-personal%20use-lightgrey?style=flat-square">
+  <img src="https://img.shields.io/badge/Apple%20Silicon%20%2B%20Intel-universal-black?style=flat-square">
+  <img src="https://img.shields.io/badge/local--first-no%20account%20%C2%B7%20no%20AI-3fd17a?style=flat-square">
   <img src="https://img.shields.io/github/v/release/harelyaish/CodeMerge?style=flat-square&color=FF6B35">
-  <a href="https://github.com/harelyaish"><img src="https://img.shields.io/badge/follow-%40harelyaish-black?style=flat-square&logo=github"></a>
   <a href="https://www.paypal.com/paypalme/HarelYaish"><img src="https://img.shields.io/badge/tip-PayPal-00457C?style=flat-square&logo=paypal&logoColor=white"></a>
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/terminal-hero.svg" alt="CodeMerge in a terminal — the app logo, a dozen tools, $5 once" width="100%">
-</p>
+**CodeMerge** puts a control center where your Mac's camera sits. Hover the notch (or click the menu-bar icon on any Mac) and everything you reach for all day is one move away — a world clock, screenshots, clipboard history, medicine and water reminders, notifications you can answer, window layouts, stocks, a video downloader and dozens of small tools — **instead of a folder of separate apps**, each with its own Dock icon and shortcut.
 
-**CodeMerge** is a macOS menu-bar utility that bundles dozens of small daily-use tools into one dropdown — and, on Macs with a notch, into the notch itself, so you stop juggling separate apps (and their separate Dock icons, keyboard shortcuts, and menu bars) for things you do constantly. Everything lives behind a single icon in your menu bar — click it, or use a global keyboard shortcut, and it's there.
+**Local-first by design:** no account, no cloud, no AI. Your clipboard, notes, doses and settings never leave your Mac.
 
-Free to try for 30 days, full features. $5 once, for life — no subscription, no recurring charge.
+**Free to try for 30 days, every feature. Then $5, once, for life** — no subscription, no recurring charge.
 
 [![Buy CodeMerge — $5](https://img.shields.io/badge/Buy_CodeMerge-%245_lifetime-FF6B35?style=for-the-badge)](https://harelyaish.gumroad.com/l/codemerge)
 [![Download latest release](https://img.shields.io/badge/Download-latest_release-black?style=for-the-badge&logo=apple)](https://github.com/harelyaish/CodeMerge/releases/latest)
 [![Website](https://img.shields.io/badge/Website-try_it_live-FF6B35?style=for-the-badge&logo=safari&logoColor=white)](https://harelyaish.github.io/CodeMerge/)
+[![Star on GitHub](https://img.shields.io/badge/%E2%98%85_Star-on_GitHub-black?style=for-the-badge&logo=github)](https://github.com/harelyaish/CodeMerge)
 
 ## Contents
 
-[Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Features](#features) · [The notch](#the-notch--new-in-12) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
+[See it](#see-it) · [Why](#why-codemerge) · [Install](#install) · [If macOS won't open the app](#if-macos-wont-open-the-app) · [After installing](#after-installing) · [Features](#features) · [Coming next](#coming-in-the-next-release) · [The notch](#the-notch--new-in-12) · [Settings](#settings-in-brief) · [Permissions](#permissions-it-may-ask-you-for) · [Updates](#updates) · [FAQ](#faq) · [Support](#support) · [License](#license) · [Uninstalling](#uninstalling) · [Changelog](#changelog)
+
+## See it
+
+<table>
+<tr>
+<td width="50%"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-dashboard.png" alt="The Dashboard in the notch"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-clock.png" alt="World clock with day and night skies and a time slider"></td>
+</tr>
+<tr>
+<td width="50%"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-health.png" alt="Medicines and reminders"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-capture.png" alt="Capture: one clear button"></td>
+</tr>
+<tr>
+<td width="50%"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-stocks.png" alt="Stocks with a 52-week bar, market cap and P/E"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-memory.png" alt="Mac Care: free up idle memory"></td>
+</tr>
+<tr>
+<td width="50%"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-video.png" alt="Video downloader"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/harelyaish/CodeMerge/main/docs/assets/readme/shot-wheel.png" alt="The Shift wheel for files"></td>
+</tr>
+</table>
+
+<sub>Real captures of the app. The notch panels above open from the camera area; every tool is also in the menu-bar window.</sub>
+
+## Why CodeMerge
+
+| | |
+|---|---|
+| 🔒 **Yours alone** | No account, no cloud, no AI. It only touches the network when *you* ask — Weather, Stocks, currency, downloads. |
+| 💸 **$5, once** | 30 days free with everything on. Then a lifetime licence — no subscription, ever. |
+| 🪶 **Light** | A small native SwiftUI app that sleeps when the notch is closed. No Electron. |
+| 🧰 **Instead of a folder of apps** | Clipboard manager, window snapper, screenshot tool, OCR, timers, converter, media widget, reminders — one install. |
+| 🖥 **Any Mac** | Notch panel on notch Macs; the same tools in a menu-bar window everywhere. Apple Silicon and Intel. |
 
 ## Install
 
@@ -128,6 +156,38 @@ Every tool below comes with the $5 lifetime license.
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+#### 💊 Health & time
+
+**Medicines** — dose times, units, a photo of the box, a pill cabinet, missed-dose recovery, refill reminders<br>**World clock** with day/night skies and a time slider<br>**Alarms, timers & stopwatch laps**<br>**Cycle ring**, **habits**, **water**
+
+</td>
+<td width="50%" valign="top">
+
+#### 🧹 Mac Care & files
+
+**Free up memory** — close idle apps, Auto Care when RAM runs short<br>**Duplicates** that share space (nothing deleted)<br>**Organize a folder** by type, month or source — with undo<br>**Shift wheel** — convert, compress, crop, redact, add a background
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### 📈 Markets & downloads
+
+**Stocks** — watchlist, charts, day range, 52-week bar, market cap, P/E, headlines, price alerts<br>**Video downloader** — paste a link, pick a quality, get the file
+
+</td>
+<td width="50%" valign="top">
+
+#### 💬 Stay in the flow
+
+**Notifications you can answer** — reply to Messages and Mail from the notch<br>**Full view** — hide the Dock and stretch a window across the screen<br>**Privacy blur** — one button blurs the screen
+
+</td>
+</tr>
 </table>
 
 ### The notch — new in 1.2
@@ -139,14 +199,15 @@ On a Mac with a notch, CodeMerge turns it into a small live panel. Hover it to o
 - **Live beside the camera** — music, timers, meetings and recordings stay visible while it's closed.
 - **Any tool opens right inside it**, plus a camera **mirror** and **voice notes**.
 
-### New since 1.2
+### Coming in the next release
 
-- **Shift wheel** — hold **Shift** while dragging a file and a wheel opens under the pointer (or right-click a file in Finder → Services → **CodeMerge Wheel**). Pictures: crop, edit, redact (faces and text too), add a background, compress, strip location, convert. PDFs and documents to Word, text or images; video to audio; zip.
-- **Mac Care: Memory, Duplicates, Organize** — close apps and browsers nobody is using (Auto Care can do it when memory runs short, with an Ignore List); let identical files share storage instead of each keeping a copy (nothing is deleted); sort a folder by type, month or the site a file came from, with a preview and a 90-day undo.
-- **Stocks** — Chart, Stats and News tabs: day range, volume, a 52-week bar, market cap, P/E, dividend, earnings date, headlines and market status, plus one bell that lists every price alert.
-- **Video downloader** — paste a link, pick a quality, get the file. Only download what you have the right to keep.
-- **Settings, redesigned** in dark glass: six places (General, Notch, Menu Bar, Tools, Automation, Account) with pages as pills.
-- Also: world clock, alarms and stopwatch laps; medicines, a pill cabinet and a cycle ring; a clearer Capture panel; reply to Messages and Mail from the notch; the notch remembers where you were for two minutes; and **all AI features were removed** — CodeMerge is local-first.
+These are built and merged but not in the latest download yet (1.2.0). They arrive with the next update:
+
+- **Shift wheel** — hold Shift while dragging a file (or right-click it in Finder → Services → **CodeMerge Wheel**) for a wheel of things to do with it.
+- **Mac Care: Memory, Duplicates, Organize.**
+- **Stocks** — Chart / Stats / News tabs and a bell for every price alert.
+- **Video downloader**, redesigned; **Settings**, redesigned in dark glass with six places and pages as pills.
+- Also: world clock, alarms and stopwatch laps; medicines, a pill cabinet and a cycle ring; a clearer Capture panel; reply to Messages and Mail from the notch; the notch remembers where you were; hide-desktop now keeps your real wallpaper; and **all AI features were removed**.
 
 ### Settings, in brief
 
@@ -199,7 +260,7 @@ CodeMerge isn't distributed through the App Store or Apple's notarization servic
 Yes, one universal build covers both.
 
 **Is my data sent anywhere?**
-No, aside from two plain HTTPS calls with no account or API key involved — see [What talks to the network](#what-talks-to-the-network) above. Everything else (clipboard history, screenshots, notes, timers, settings) stays on your Mac.
+No. The few features that use the internet (Weather, Stocks, currency, lyrics, downloads, the licence check) do it only when you use them, with no account or API key — see [What talks to the network](#what-talks-to-the-network) above. Everything else (clipboard history, screenshots, notes, timers, settings) stays on your Mac.
 
 **What if I want a refund?**
 Contact Gumroad support from your purchase receipt email — refunds are handled through Gumroad, not this repo.
@@ -228,6 +289,10 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 (Installed via Homebrew? `brew uninstall --cask codemerge` does both steps for you.)
 
 ## Changelog
+
+### Next release (in development)
+
+Shift wheel · Mac Care Memory/Duplicates/Organize · Stocks Chart/Stats/News · redesigned Video downloader and Settings · world clock, medicines, capture and notification upgrades · no AI. Details under [Coming in the next release](#coming-in-the-next-release).
 
 ### 1.2.0
 
