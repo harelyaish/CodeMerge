@@ -105,90 +105,94 @@ CodeMerge lives in your menu bar — click its icon to open the dropdown, or rig
 
 ## Features
 
-Every tool below comes with the $5 lifetime license.
+**60+ tools, one $5 license.** 🆕 marks what arrives in the next update (built, not in the 1.2.0 download yet).
 
 <table>
 <tr>
-<td width="50%" valign="top">
-
-#### 🖼 Capture
-
-**Screenshots** — full screen or an area, with an annotation editor<br>**Scrolling screenshots** — click a window, get the whole page<br>**Screen recording** — with a floating pause/stop<br>**Text Grab** — copy any text on screen<br>**Measure** — ruler and magnifier
-
-</td>
-<td width="50%" valign="top">
-
-#### 🪟 Windows & desktop
-
-**Window layouts** — halves, quarters or your own grid<br>**Hide desktop & Dock** — a clean screen in one click<br>**Quit all apps**, **Eject disks**, **Lock screen**<br>**Prevent sleep**<br>**Clean keyboard** — lock the keys while you wipe
-
-</td>
+<td width="33%" valign="top" align="center"><h4>🖼 Capture</h4>Screenshots, scrolling captures, recording and Text Grab — with an annotation editor.<br><a href="#capture">Jump ↓</a></td>
+<td width="33%" valign="top" align="center"><h4>🧹 Mac Care & files</h4>Free up memory, find duplicates, organize folders, and a Shift wheel for any file.<br><a href="#mac-care--files">Jump ↓</a></td>
+<td width="33%" valign="top" align="center"><h4>💊 Health & time</h4>Medicines, world clock, alarms, cycle ring, habits and water.<br><a href="#health--time">Jump ↓</a></td>
 </tr>
 <tr>
-<td width="50%" valign="top">
-
-#### 📋 Everyday
-
-**Clipboard history** — 200 items, searchable, pinned snippets<br>**File shelf** — a drag-and-drop holding tray<br>**Timers**, **Quick note**, **Weather**<br>**Converter** — units, currency and world clocks<br>**Colour picker**, **Random generator**, **Audio output**
-
-</td>
-<td width="50%" valign="top">
-
-#### 🛠 Power tools
-
-**Command palette** — your own saved commands<br>**Workflows** — chain tools into one command<br>**Kill process on port**<br>**Speed test** and **Package tracking**<br>**Find a file** in plain words · **Convert any file to Markdown**
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-#### 🎵 Music & presenting
-
-**Now Playing** — Music & Spotify, with **lyrics**<br>**Draw on screen** — pen, highlighter, arrows, boxes<br>**Show clicks and shortcuts** while you present
-
-</td>
-<td width="50%" valign="top">
-
-#### 🌿 Wellbeing & fun
-
-**Water & stretch reminders** that learn your rhythm<br>**Sunrise, sunset & golden hour**<br>**Typing sounds** — 9 keyboards, recorded for real<br>**A mascot** that peeks in and hides from your cursor
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-#### 💊 Health & time
-
-**Medicines** — dose times, units, a photo of the box, a pill cabinet, missed-dose recovery, refill reminders<br>**World clock** with day/night skies and a time slider<br>**Alarms, timers & stopwatch laps**<br>**Cycle ring**, **habits**, **water**
-
-</td>
-<td width="50%" valign="top">
-
-#### 🧹 Mac Care & files
-
-**Free up memory** — close idle apps, Auto Care when RAM runs short<br>**Duplicates** that share space (nothing deleted)<br>**Organize a folder** by type, month or source — with undo<br>**Shift wheel** — convert, compress, crop, redact, add a background
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-#### 📈 Markets & downloads
-
-**Stocks** — watchlist, charts, day range, 52-week bar, market cap, P/E, headlines, price alerts<br>**Video downloader** — paste a link, pick a quality, get the file
-
-</td>
-<td width="50%" valign="top">
-
-#### 💬 Stay in the flow
-
-**Notifications you can answer** — reply to Messages and Mail from the notch<br>**Full view** — hide the Dock and stretch a window across the screen<br>**Privacy blur** — one button blurs the screen
-
-</td>
+<td width="33%" valign="top" align="center"><h4>📈 Markets & downloads</h4>Stocks with charts, stats, news and alerts. A video downloader.<br><a href="#markets--downloads">Jump ↓</a></td>
+<td width="33%" valign="top" align="center"><h4>📋 Everyday & power tools</h4>Clipboard, shelf, timers, command palette, workflows.<br><a href="#everyday">Jump ↓</a></td>
+<td width="33%" valign="top" align="center"><h4>🪟 Windows & desktop</h4>Layouts, a clean desktop, quit all, eject, lock.<br><a href="#windows--desktop">Jump ↓</a></td>
 </tr>
 </table>
+
+### Capture
+
+| Tool | What it does |
+|---|---|
+| **Screenshots** | Full screen or an area, then an annotation editor |
+| **Scrolling screenshots** | Click a window, get the whole page |
+| **Screen recording** | With a floating pause and stop |
+| **Text Grab** | Copy any text you can see on screen |
+| **Measure** | Ruler and magnifier |
+| **Draw on screen** | Pen, highlighter, arrows and boxes — and show clicks and shortcuts while you present |
+
+### Windows & desktop
+
+| Tool | What it does |
+|---|---|
+| **Window layouts** | Halves, quarters or your own grid |
+| **Hide desktop & Dock** 🆕 | A clean screen in one click; your real wallpaper stays |
+| **Full view** 🆕 | Hide the Dock and stretch a window across the screen |
+| **Privacy blur** 🆕 | One button blurs the screen |
+| **Quit all apps · Eject disks · Lock screen · Prevent sleep** | One-click versions of the things you do every day |
+| **Clean keyboard** | Lock the keys while you wipe them |
+
+### Everyday
+
+| Tool | What it does |
+|---|---|
+| **Clipboard history** | 200 items, searchable, with pinned snippets |
+| **File shelf** | A drag-and-drop holding tray |
+| **Timers · Quick note · Weather** | Always one move away |
+| **Converter** | Units, currency and world clocks |
+| **Colour picker · Random generator · Audio output** | Small tools you reach for often |
+| **Now Playing** | Music and Spotify, with lyrics |
+| **Notifications you can answer** 🆕 | Reply to Messages and Mail from the notch |
+| **Command palette · Workflows** | Your own saved commands, and chains of tools in one |
+| **Find a file · Convert to Markdown** | Search in plain words; turn any file into Markdown |
+| **Kill process on port · Speed test · Package tracking** | The developer's drawer |
+
+### Mac Care & files
+
+| Tool | What it does |
+|---|---|
+| **Free up memory** 🆕 | Close idle apps with a tap; Auto Care does it when RAM runs short |
+| **Duplicates** 🆕 | Finds copies and makes them share space — nothing is deleted |
+| **Organize a folder** 🆕 | By type, month or source, with undo for 90 days |
+| **Shift wheel** 🆕 | Hold Shift while dragging a file (or right-click → Services → CodeMerge Wheel): convert, compress, crop, redact, add a background |
+
+### Health & time
+
+| Tool | What it does |
+|---|---|
+| **Medicines** 🆕 | Dose times, units, a photo of the box, a pill cabinet, missed-dose recovery |
+| **Refill reminders** 🆕 | Know before you run out |
+| **World clock** 🆕 | Day and night skies with a time slider |
+| **Alarms · Timers · Stopwatch laps** 🆕 | All in one place |
+| **Cycle ring · Habits · Water** 🆕 | Gentle daily tracking |
+| **Water & stretch reminders** | They learn your rhythm |
+| **Sunrise, sunset & golden hour** | For where you are |
+
+### Markets & downloads
+
+| Tool | What it does |
+|---|---|
+| **Stocks** 🆕 | Watchlist with Chart, Stats and News tabs, day range, 52-week bar, market cap, P/E and price alerts (one bell for all of them) |
+| **Video downloader** 🆕 | Paste a link, pick a quality, get the file |
+
+### Just for fun
+
+| Tool | What it does |
+|---|---|
+| **Typing sounds** | 9 keyboards, recorded for real |
+| **A mascot** | Peeks in and hides from your cursor |
+
+<sub>Every tool is in the menu-bar window. On a Mac with a notch, hover it to open the same tools in the notch panel.</sub>
 
 ### The notch — new in 1.2
 
