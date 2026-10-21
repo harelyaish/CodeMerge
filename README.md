@@ -201,16 +201,18 @@ CodeMerge lives in your menu bar — click its icon to open the dropdown, or rig
 
 On a Mac with a notch, CodeMerge turns it into a small live panel. Hover it to open:
 
-- **Home** — a mascot that reacts to what you're doing, status at a glance, up to **5 widgets** of your favourite tools, and a chat that takes plain commands: “skip”, “timer 25m”, “remind me at 5 to call mom”, “find my resume”.
-- **Tabs** — Today's calendar, music with lyrics, timers and reminders, clipboard, file shelf, voice notes and more; pick up to 8.
+- **Home** — a dashboard of glance cards: the date and weather, your launcher, music, reminders, health rings, quick tools, the shelf and your workday.
+- **A dock of modules** along the bottom — Today's calendar, music with lyrics, timers and reminders, file shelf, notes, System (stats, power, ports, sound, network) and more; choose what shows and reorder it.
 - **Live beside the camera** — music, timers, meetings and recordings stay visible while it's closed.
 - **Any tool opens right inside it**, plus a camera **mirror** and **voice notes**.
 
 ### New in 1.3
 
-In the latest download (1.3.0):
+In the latest download (1.3.2):
 
-- **Shift wheel** — hold Shift while dragging a file (or right-click it in Finder → Services → **CodeMerge Wheel**) for a wheel of things to do with it.
+- **CodeMerge in Finder's right-click menu** — right-click a file for the **Shift wheel** or **Delete Permanently** (like Shift+Delete on Windows, with a confirmation and protection for system and home folders); right-click a folder, or its empty space, for **New File** with 13 kinds. Switch it on once in Settings → Windows.
+- **Every port, live** — plug something into a port and the notch says what it is and how fast it runs, or how many watts the charger gives. System → Ports shows them all: USB-C, MagSafe, HDMI, the card slot and the headphone jack.
+- **Shift wheel** — hold Shift while dragging a file (or right-click it in Finder → **CodeMerge**) for a wheel of things to do with it: video to GIF, merge or split PDFs, pictures to one PDF, rename by pattern, and more.
 - **Mac Care: Memory, Duplicates, Organize.**
 - **Stocks** — Chart / Stats / News tabs and a bell for every price alert.
 - **Video downloader**, redesigned; **Settings**, redesigned in dark glass with six places and pages as pills.
@@ -218,7 +220,7 @@ In the latest download (1.3.0):
 
 ### Settings, in brief
 
-A searchable Settings window — search finds any setting on any page. Pages include **Notch** (style, Home, widgets, tabs), **Mascot**, **Menu Bar** (look, position, and which tools show and in what order), **Keyboard Shortcuts** (a global shortcut for almost anything), **Screenshots**, **Timer**, **Workflows**, **Command Palette**, **Typing Sounds**, **Water & Stretch**, **Weather**, **Connectors** (Pocket) and **License**. CodeMerge starts at login if you like and has no Dock icon.
+A searchable Settings window — search finds any setting on any page. Pages include **Notch** (look, tabs, mascot), **Mascot**, **Menu Bar** (look, position, and which tools show and in what order), **Keyboard Shortcuts** (a global shortcut for almost anything), **Screenshots**, **Timer**, **Workflows**, **Command Palette**, **Typing Sounds**, **Water & Stretch**, **Weather**, **Connectors** (Pocket) and **License**. CodeMerge starts at login if you like and has no Dock icon.
 
 ### Permissions it may ask you for
 
@@ -297,6 +299,13 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 
 ## Changelog
 
+### 1.3.2
+
+- **CodeMerge in Finder's right-click menu** — right-click a file for the Shift wheel or **Delete Permanently** (like Shift+Delete on Windows, with a confirmation and protection for system and home folders), or right-click a folder, or its empty space, for **New File** with 13 kinds. Switch it on once in Settings → Windows. This replaces the old Services entries.
+- **Every port, live** — plug something into a port and the notch tells you what it is and how fast it runs, or how many watts the charger gives. System → Ports shows all of them: USB-C, MagSafe, HDMI, the card slot and the headphone jack.
+- **One notch, one look** — the notch is now the Studio panel with its dock of modules. The older Classic and Dynamic styles are gone.
+- **A bigger Shift wheel** — video to GIF, merge or split PDFs, pictures to one PDF, rename by pattern, and a clean-metadata slice for PDFs and videos.
+
 ### 1.3.1
 
 - **A welcome tour** for new installs — a short, branded walkthrough of the notch, the tools and your privacy.
@@ -305,7 +314,7 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 
 ### 1.3.0
 
-- **Shift wheel** — hold Shift while dragging a file (or right-click it in Finder → Services → **CodeMerge Wheel**) for a wheel of things to do with it: convert, compress, crop, redact, add a background.
+- **Shift wheel** — hold Shift while dragging a file (or right-click it in Finder → **CodeMerge**) for a wheel of things to do with it: convert, compress, crop, redact, add a background.
 - **Mac Care** — free up memory by closing idle apps (with Auto Care when RAM runs short), find duplicates that share space instead of deleting, and organize a folder by type, month or source, with undo.
 - **Stocks** — Chart, Stats and News tabs; day range, 52-week bar, market cap and P/E; one bell for every price alert.
 - **Video downloader**, redesigned: paste a link, pick a quality, get the file.
