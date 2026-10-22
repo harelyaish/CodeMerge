@@ -7,7 +7,7 @@
  paint();
  // reveal on scroll
  var els=[].slice.call(document.querySelectorAll(".reveal"));
- if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add("in")});
+ if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.01,rootMargin:"0px 0px 12% 0px"});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add("in")});
  // notch demo: a clickable dock over the real captures
  try{ var ns=document.getElementById("nshots"),nl=document.getElementById("nlabel");
  if(ns){
@@ -65,18 +65,14 @@
   }
  }catch(e){}
 
- // third pass: veil, heading words, scroll depth, cursor, sparkles
- try{
-  var vl=document.getElementById("veil");
-  if(vl){var hide=function(){vl.classList.add("go")};if(rm){hide()}else{setTimeout(hide,550)}}
- }catch(e){}
+ // third pass: heading words, scroll depth, cursor, sparkles
  try{
   [].forEach.call(document.querySelectorAll(".head h2"),function(h){
    var t=h.textContent.trim().split(/\s+/);h.setAttribute("aria-label",h.textContent.trim());
    h.innerHTML=t.map(function(w,i){return '<span class="hw" aria-hidden="true"><span style="--i:'+i+'">'+w+'</span></span>'}).join(" ");
   });
   var hs=[].slice.call(document.querySelectorAll(".head"));
-  if("IntersectionObserver" in window){var ho=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");ho.unobserve(e.target)}})},{threshold:.3});hs.forEach(function(h){ho.observe(h)})}else hs.forEach(function(h){h.classList.add("in")});
+  if("IntersectionObserver" in window){var ho=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");ho.unobserve(e.target)}})},{threshold:.1,rootMargin:"0px 0px 8% 0px"});hs.forEach(function(h){ho.observe(h)})}else hs.forEach(function(h){h.classList.add("in")});
  }catch(e){}
  try{
   var hero2=document.querySelector(".hero"),tk2=false;

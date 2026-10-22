@@ -457,11 +457,6 @@ details[open] p{animation:fadeup .4s both}
 .spk{position:fixed;width:7px;height:7px;border-radius:50%;pointer-events:none;z-index:300;animation:spk .8s cubic-bezier(.1,.7,.3,1) forwards}
 @keyframes spk{from{opacity:1;transform:translate(0,0) scale(1)}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2)}}
 
-/* page-load veil */
-#veil{position:fixed;inset:0;background:var(--bg);z-index:400;display:grid;place-items:center;transition:opacity .6s .15s,visibility .6s .15s}
-#veil img{width:68px;height:68px;border-radius:18px;animation:vpop 1s cubic-bezier(.2,.9,.2,1) both}
-#veil.go{opacity:0;visibility:hidden}
-@keyframes vpop{from{transform:scale(.4) rotate(-20deg);opacity:0}to{transform:none;opacity:1}}
 
 /* FAQ plus rotates */
 summary::after{transition:transform .3s}
@@ -476,12 +471,8 @@ details[open] summary::after{transform:rotate(180deg)}
  .js .ic svg *{stroke-dashoffset:0!important;transition:none}
  .hw>span{transform:none!important}
  .stagewrap,.orbs{transform:none!important}
- #veil{display:none}
 }
 
-html:not(.js) #veil{display:none}
-#veil{animation:vfail .01s 2.6s forwards}
-@keyframes vfail{to{opacity:0;visibility:hidden}}
 
 .group .grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
 
@@ -551,3 +542,21 @@ html:not(.js) #veil{display:none}
 .gbtns u.red{background:#ee5a5a}
 .gbtns u.pri{background:transparent;border:2px solid #ffffff66;position:relative;animation:gpulse2 1.8s ease-in-out infinite}
 @keyframes gpulse2{0%,100%{box-shadow:0 0 0 0 #ffffff55}50%{box-shadow:0 0 0 8px #ffffff00}}
+
+/* phones and touch: lighter, quicker, less empty space */
+@media(max-width:700px){
+ section{padding:52px 0}
+ .hero{padding:48px 0 28px}
+ .group{padding:34px 0}
+ .page-h{padding:44px 0 18px}
+ .js .reveal{transform:translateY(10px);transition:opacity .4s,transform .4s}
+ .js .show .txt,.js .show .frame{transform:none;transition:opacity .45s}
+ .js .show.flip .txt,.js .show.flip .frame{transform:none}
+ .js .show li{transform:none;transition:opacity .3s}
+ .js .show.in li:nth-child(n){transition-delay:0s}
+ .grid .card.reveal:nth-child(n){transition-delay:0s}
+}
+@media(hover:none){
+ .orbs i{animation:none;will-change:auto}
+ .stagewrap,.orbs{transform:none!important;will-change:auto}
+}
