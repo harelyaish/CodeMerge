@@ -208,8 +208,9 @@ On a Mac with a notch, CodeMerge turns it into a small live panel. Hover it to o
 
 ### New in 1.3
 
-In the latest download (1.3.2):
+In the latest download (1.3.3):
 
+- **App Lock** — keep chosen apps behind Touch ID or your password. **Record a call** — the notch offers, you tap, it saves on your Mac only (tell people you're recording). **Privacy log** of which apps used your mic and camera. **Display controls**, **apps with updates**, **ports history**, a **new-startup-item alert** and a **slow-charger warning**, all under System in the notch.
 - **CodeMerge in Finder's right-click menu** — right-click a file for the **Shift wheel** or **Delete Permanently** (like Shift+Delete on Windows, with a confirmation and protection for system and home folders); right-click a folder, or its empty space, for **New File** with 13 kinds. Switch it on once in Settings → Windows.
 - **Every port, live** — plug something into a port and the notch says what it is and how fast it runs, or how many watts the charger gives. System → Ports shows them all: USB-C, MagSafe, HDMI, the card slot and the headphone jack.
 - **Shift wheel** — hold Shift while dragging a file (or right-click it in Finder → **CodeMerge**) for a wheel of things to do with it: video to GIF, merge or split PDFs, pictures to one PDF, rename by pattern, and more.
@@ -298,6 +299,19 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 (Installed via Homebrew? `brew uninstall --cask codemerge` does both steps for you.)
 
 ## Changelog
+
+### 1.3.3
+
+- **App Lock** — keep chosen apps (Messages, Notes, a password manager) behind Touch ID or your password. A privacy screen covers the app each time you open it. Settings → Tools → App Lock.
+- **Record a call** — when a call starts, the notch asks if you want to record it, and you tap Record. It saves the call's sound, your voice and, if you like, the screen, on your Mac only. It never starts by itself, and nobody on the call is told, so tell them yourself. Settings → Live Activities.
+- **Privacy log** — System → Privacy lists which apps used your microphone and camera, and for how long. It stays on this Mac and can be turned off or cleared.
+- **Display controls** — System → Displays: pick a screen size and refresh rate for any screen, with a Keep-or-revert prompt.
+- **Apps with updates** — System → Updates lists installed apps that have a newer version (from their own update feeds, the App Store and Homebrew).
+- **Ports history** — System → Ports → History shows what you plugged in and when. It can be turned off in Settings.
+- **New startup items** — the notch tells you when an app adds itself to start at login, with Show and Turn off.
+- **Slow-charger warning** — the notch tells you when a charger is too small or can't keep up with your Mac.
+- **Servers show their project** — Code → Ports shows which project folder each local server runs from.
+- **Cut text opens on hover** — hover a cut-off name in a list and the full text opens in place.
 
 ### 1.3.2
 
