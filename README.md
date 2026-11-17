@@ -208,7 +208,20 @@ On a Mac with a notch, CodeMerge turns it into a small live panel. Hover it to o
 
 ### New in 1.3
 
-In the latest download (1.3.3):
+In the latest download (1.3.4):
+
+- **The pill, redesigned** — one calm place for your notes, Read later, voice notes, Pocket, Obsidian, AI documents and every file on this Mac. Search everything with Spotlight, quick capture with ⌃⌥N, and a new **Paper** look next to Glass.
+- **Claude, Codex, Copilot and Cursor side by side** — the Code tab shows each tool's limits with reset times, spend, sessions, pull requests, repos and setup. Answer Claude Code's permission questions straight from the notch.
+- **Projects that run and report** — add a folder and see how to run it, its port, git, env names, size and README. Start it inside the app with **live logs** (run output, Docker containers and log files, with errors in red), a **ready-to-ship score**, a secrets check, outdated and unused packages, GitHub status, Docker containers, SQLite tables, agent rule files (`CLAUDE.md`, `AGENTS.md`, Cursor, Copilot), and sort, filters and groups.
+- **Calendar in Notes** — a month with dots on busy days, the day's events with Join, the notes you wrote that day, and a line to add an event in plain words.
+- **Stocks, deeper** — Markets, analyst ratings, earnings, dividends, compare, move alerts, an article reader and holdings with profit and loss, in the side notch.
+- **On-screen keyboard** — movable, with a Mac layout, Hebrew and emoji, a language key, nine themes and three sizes.
+- **Summary and Insights** — see where a folder's space goes and tidy it with undo. The side notch reads your Instagram and WhatsApp exports, counts only, nothing sent anywhere.
+- **Clip panel** — wider, with a Shelf, bulk actions, search by the words inside pictures, and keys and tokens that leave the history after 30 seconds.
+- **Share the app** — Settings → Account → Share the app gives a QR code and a link to the website and to GitHub.
+- Plus: a side-notch week view and meeting notes, buddy animations, Cursor and Copilot icons, and many smaller fixes.
+
+Also in 1.3:
 
 - **App Lock** — keep chosen apps behind Touch ID or your password. **Record a call** — the notch offers, you tap, it saves on your Mac only (tell people you're recording). **Privacy log** of which apps used your mic and camera. **Display controls**, **apps with updates**, **ports history**, a **new-startup-item alert** and a **slow-charger warning**, all under System in the notch.
 - **CodeMerge in Finder's right-click menu** — right-click a file for the **Shift wheel** or **Delete Permanently** (like Shift+Delete on Windows, with a confirmation and protection for system and home folders); right-click a folder, or its empty space, for **New File** with 13 kinds. Switch it on once in Settings → Windows.
@@ -299,6 +312,19 @@ rm -f ~/Library/Preferences/com.harelyaish.ClaudeUsageNotch.plist
 (Installed via Homebrew? `brew uninstall --cask codemerge` does both steps for you.)
 
 ## Changelog
+
+### 1.3.4
+
+- **The pill, redesigned** — one calm place for your notes, Read later, voice notes, Pocket, Obsidian, AI documents and every file on this Mac. Search everything with Spotlight, quick capture with ⌃⌥N, and a new **Paper** look next to Glass.
+- **Claude, Codex, Copilot and Cursor side by side** — the Code tab shows each tool's limits with reset times, spend, sessions, pull requests, repos and setup. Answer Claude Code's permission questions straight from the notch.
+- **Projects that run and report** — add a folder and see how to run it, its port, git, env names, size and README. Start it inside the app with **live logs** (run output, Docker containers and log files, with errors in red), a **ready-to-ship score**, a secrets check, outdated and unused packages, GitHub status, Docker containers, SQLite tables, agent rule files (`CLAUDE.md`, `AGENTS.md`, Cursor, Copilot), and sort, filters and groups.
+- **Calendar in Notes** — a month with dots on busy days, the day's events with Join, the notes you wrote that day, and a line to add an event in plain words.
+- **Stocks, deeper** — Markets, analyst ratings, earnings, dividends, compare, move alerts, an article reader and holdings with profit and loss, in the side notch.
+- **On-screen keyboard** — movable, with a Mac layout, Hebrew and emoji, a language key, nine themes and three sizes.
+- **Summary and Insights** — see where a folder's space goes and tidy it with undo. The side notch reads your Instagram and WhatsApp exports, counts only, nothing sent anywhere.
+- **Clip panel** — wider, with a Shelf, bulk actions, search by the words inside pictures, and keys and tokens that leave the history after 30 seconds.
+- **Share the app** — Settings → Account → Share the app gives a QR code and a link to the website and to GitHub.
+- Plus: a side-notch week view and meeting notes, buddy animations, Cursor and Copilot icons, and many smaller fixes.
 
 ### 1.3.3
 
